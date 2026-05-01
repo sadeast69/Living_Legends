@@ -1,0 +1,56 @@
+name: Bug report
+description: Report a crash, broken behavior, or bad generated result.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: minecraft_version
+    attributes:
+      label: Minecraft version
+      placeholder: "1.21.1"
+    validations:
+      required: true
+  - type: input
+    id: loader
+    attributes:
+      label: Loader and version
+      placeholder: "Fabric Loader 0.16.14"
+    validations:
+      required: true
+  - type: input
+    id: mod_version
+    attributes:
+      label: World Remembers version
+      placeholder: "1.0.0-rc.1"
+    validations:
+      required: true
+  - type: textarea
+    id: other_mods
+    attributes:
+      label: Other relevant mods
+      description: Include Fabric API, ModMenu, and any mod that may affect events, mobs, dimensions, or UI.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Start world...\n2. Run command...\n3. See..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: latest.log or crash report
+      description: Paste the relevant part, or attach the file if it is long.
+      render: text

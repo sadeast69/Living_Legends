@@ -1,0 +1,67 @@
+{
+  "entries": [
+    {
+      "entity": "minecraft:creeper",
+      "mobTheme": "creeper",
+      "mobGroup": "explosive",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "mobTheme": "skeleton",
+      "mobGroup": "skeleton",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "minecraft:zombie",
+      "mobTheme": "zombie",
+      "mobGroup": "undead",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "minecraft:pillager",
+      "mobTheme": "pillager",
+      "mobGroup": "illager",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "minecraft:blaze",
+      "mobTheme": "blaze",
+      "mobGroup": "nether",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "minecraft:enderman",
+      "mobTheme": "enderman",
+      "mobGroup": "end",
+      "combatRole": "neutral",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "minecraft:breeze",
+      "mobTheme": "breeze",
+      "mobGroup": "trial",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

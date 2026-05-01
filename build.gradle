@@ -1,0 +1,37 @@
+plugins {
+    id 'fabric-loom' version "${loom_version}" apply false
+}
+
+allprojects {
+    repositories {
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        maven {
+            name = 'Terraformers'
+            url = 'https://maven.terraformersmc.com/'
+        }
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java-library'
+
+    group = project.maven_group
+    version = project.mod_version
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+
+        withSourcesJar()
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+        options.release = 21
+    }
+}

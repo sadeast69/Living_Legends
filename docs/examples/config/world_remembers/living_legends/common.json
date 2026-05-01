@@ -1,0 +1,172 @@
+{
+  "general": {
+    "enabled": true,
+    "configVersion": 1,
+    "locale": "en_us",
+    "autosaveIntervalSeconds": 300
+  },
+  "generation": {
+    "enabled": true,
+    "scanRadiusChunks": 8,
+    "minEventsForNamedPlace": 4,
+    "maxGeneratedPlacesPerChunk": 1,
+    "mergeDistanceBlocks": 96,
+    "defaultHorizontalRadiusBlocks": 64,
+    "defaultVerticalRadiusBlocks": 48,
+    "placeMaxMergeDistanceBlocks": 96,
+    "placeMaxClusterRadiusBlocks": 64,
+    "placeMaxCenterShiftOnUpdateBlocks": 24,
+    "deathSiteMaxMergeDistanceBlocks": 48,
+    "deathSiteMaxClusterRadiusBlocks": 40,
+    "deathSiteMaxCenterShiftOnUpdateBlocks": 12,
+    "verticalSeparationMinYGap": 32,
+    "allowMixedDeathSiteEnvironments": false,
+    "allowUnknownDeathSiteEnvironmentFallback": false,
+    "generalLandmarkMaxMergeDistanceBlocks": 48,
+    "generalLandmarkMaxClusterRadiusBlocks": 48,
+    "generalLandmarkMaxCenterShiftOnUpdateBlocks": 12,
+    "portalLandmarkMaxMergeDistanceBlocks": 48,
+    "portalLandmarkMaxClusterRadiusBlocks": 24,
+    "portalLandmarkMaxCenterShiftOnUpdateBlocks": 12,
+    "pointPlaceMaxMergeDistanceBlocks": 24,
+    "pointPlaceMaxClusterRadiusBlocks": 16,
+    "pointPlaceMaxCenterShiftOnUpdateBlocks": 8,
+    "deletedPlaceSuppressionEnabled": true,
+    "deletedPlaceSuppressionDays": -1
+  },
+  "thresholds": {
+    "namedPlaceScore": 25.0,
+    "rarePlaceScore": 75.0,
+    "legendaryPlaceScore": 150.0,
+    "mythicPlaceScore": 300.0,
+    "minimumUniqueVisitors": 1,
+    "minimumEvents": 3
+  },
+  "requiredCounts": {
+    "playerDeathsForDeathSite": 5,
+    "hostileKillsForBattlefield": 45,
+    "passiveKillsForSlaughterField": 30,
+    "pvpDeathsForPvpArena": 5,
+    "valuableBlocksForMiningSite": 5,
+    "portalUsesForLandmark": 16,
+    "visitsForGeneralLandmark": 80,
+    "blocksPlacedForSettlementCandidate": 250,
+    "respawnPointsForSettlementCandidate": 3,
+    "bossKillsForBossSite": 1,
+    "petDeathsForPetMemorial": 1,
+    "namedMobDeathsForMemorial": 1,
+    "raidWinsForRaidSite": 1,
+    "firstDimensionEntryForDiscovery": 1,
+    "firstMajorDiscovery": 1
+  },
+  "scoreThresholds": {
+    "deathSite": 100.0,
+    "battlefield": 300.0,
+    "slaughterField": 180.0,
+    "pvpArena": 100.0,
+    "miningSite": 100.0,
+    "portalLandmark": 140.0,
+    "generalLandmark": 240.0,
+    "settlement": 250.0,
+    "firstDiscovery": 20.0,
+    "bossSite": 30.0,
+    "petMemorial": 20.0,
+    "namedMobMemorial": 20.0,
+    "raidSite": 40.0,
+    "dimensionThreshold": 30.0
+  },
+  "display": {
+    "discoveryMessages": true,
+    "showCoordinates": false,
+    "showRarity": true,
+    "nearbyPlaceRadiusBlocks": 128,
+    "maxPlacesInList": 20
+  },
+  "performance": {
+    "maxScoreEvaluationsPerTick": 4,
+    "candidateGenerationCooldownTicks": 1200,
+    "maxClusterRadiusChunks": 2,
+    "visitSampleIntervalTicks": 400,
+    "displayCheckIntervalTicks": 100,
+    "structureDiscoveryCheckIntervalTicks": 200
+  },
+  "eventCollection": {
+    "countCreativeModeEvents": true
+  },
+  "antiFarm": {
+    "enabled": true,
+    "repeatEventCooldownSeconds": 120,
+    "samePositionRadiusBlocks": 8,
+    "maxEventsPerPlayerPerMinute": 12,
+    "repeatedEventScoreMultiplier": 0.25
+  },
+  "naming": {
+    "enabled": true,
+    "enableNamePacks": true,
+    "defaultStyle": "vanilla_adventure",
+    "enabledStyles": [
+      "vanilla_adventure"
+    ],
+    "styleSelectionMode": "DEFAULT_ONLY",
+    "styleWeights": {
+      "vanilla_adventure": 100,
+      "dark_fantasy": 0,
+      "cozy_survival": 0,
+      "epic_mythology": 0,
+      "neutral_server": 0,
+      "funny_community": 0
+    },
+    "allowMixedStyleTokens": false,
+    "existingPlacesKeepOriginalStyle": true,
+    "allowAutoRenameOnCauseShift": false,
+    "allowPerPlaceTypeStyleOverrides": true,
+    "placeTypeStyleOverrides": {},
+    "fallbackName": "Unnamed Place",
+    "maxNameLength": 48,
+    "duplicateNameAvoidanceRadiusBlocks": 192,
+    "allowPlayerNamesInGeneratedNames": false
+  },
+  "commands": {
+    "requiredOpLevel": 2
+  },
+  "placeTypes": {
+    "displayExistingWhenDisabled": true,
+    "allowManualCreateWhenDisabled": true,
+    "autoGeneration": {
+      "DEATH_SITE": true,
+      "BATTLEFIELD": true,
+      "SLAUGHTER_FIELD": true,
+      "PVP_ARENA": true,
+      "MINING_SITE": true,
+      "PORTAL_LANDMARK": true,
+      "GENERAL_LANDMARK": true,
+      "FIRST_DISCOVERY": true,
+      "BOSS_SITE": true,
+      "PET_MEMORIAL": true,
+      "NAMED_MOB_MEMORIAL": true,
+      "RAID_SITE": true,
+      "DIMENSION_THRESHOLD": true,
+      "SETTLEMENT": true,
+      "CUSTOM": true
+    }
+  },
+  "decay": {
+    "enabled": false,
+    "inactiveDaysBeforeDecay": 30,
+    "dailyScoreRetention": 0.995,
+    "minimumScoreAfterDecay": 10.0
+  },
+  "permissions": {
+    "reloadPermissionLevel": 2,
+    "exportPermissionLevel": 2,
+    "allowClientPlaceQueries": true
+  },
+  "debug": {
+    "enabled": false,
+    "logConfigLoad": true,
+    "logGeneratedNames": false,
+    "logScoring": false,
+    "writeDebugExports": false,
+    "useTestingThresholds": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "entries": [
+    {
+      "biome": "minecraft:plains",
+      "biomeTheme": "open_field",
+      "biomeGroup": "plains",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "minecraft:forest",
+      "biomeTheme": "woodland_trail",
+      "biomeGroup": "forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "minecraft:desert",
+      "biomeTheme": "desert_marker",
+      "biomeGroup": "desert",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "minecraft:cherry_grove",
+      "biomeTheme": "woodland_trail",
+      "biomeGroup": "cherry_grove",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "minecraft:swamp",
+      "biomeTheme": "swamp_path",
+      "biomeGroup": "swamp",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

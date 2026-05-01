@@ -1,0 +1,32 @@
+name: Feature request
+description: Suggest an improvement, compat idea, or porting task.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to add?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?
+    validations:
+      required: true
+  - type: input
+    id: minecraft_version
+    attributes:
+      label: Minecraft version
+      placeholder: "1.21.1"
+  - type: input
+    id: loader
+    attributes:
+      label: Loader
+      placeholder: "Fabric / NeoForge / other"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Extra notes
+      description: For compat requests, include mod ids and useful registry ids if you know them.

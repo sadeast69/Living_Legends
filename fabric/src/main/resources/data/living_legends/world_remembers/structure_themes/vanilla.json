@@ -1,0 +1,14 @@
+{
+  "entries": [
+    {
+      "structure": "minecraft:stronghold",
+      "structureTheme": "stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["end"]
+    }
+  ]
+}
