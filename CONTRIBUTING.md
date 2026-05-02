@@ -2,8 +2,9 @@
 
 Thanks for wanting to help with World Remembers: Living Legends.
 
-The project is currently Fabric `1.21.1` first. Ports, datapack compat, small
-fixes, bug reports, and pull requests are welcome.
+The project currently targets Fabric `1.21.1` and NeoForge `1.21.1`. Fabric
+remains the gameplay reference implementation, and parity fixes, datapack
+compat, small fixes, bug reports, and pull requests are welcome.
 
 ## Before A Large Change
 
@@ -41,7 +42,8 @@ Please include:
 - Minecraft version
 - loader and loader version
 - World Remembers version
-- Fabric API version
+- Fabric API version, if using Fabric
+- NeoForge version, if using NeoForge
 - other relevant mods
 - `latest.log` or crash report
 - steps to reproduce

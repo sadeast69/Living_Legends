@@ -329,6 +329,37 @@ public final class NameGenerator {
         return patternKeys;
     }
 
+    public static boolean isRuntimeMemorialPatternKey(String styleId, String patternKey) {
+        String key = WorldPos.optionalId(patternKey);
+        if (key.isBlank()) {
+            return false;
+        }
+        for (String sharedKey : SHARED_RUNTIME_MEMORIAL_PATTERN_KEYS) {
+            if (sharedKey.equals(key)) {
+                return true;
+            }
+        }
+
+        String resolvedStyleId = WorldPos.optionalId(styleId);
+        if (!resolvedStyleId.isBlank()) {
+            for (String styleKey : runtimeMemorialPatternKeys(resolvedStyleId)) {
+                if (styleKey.equals(key)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        for (String[] styleKeys : STYLE_RUNTIME_MEMORIAL_PATTERN_KEYS.values()) {
+            for (String styleKey : styleKeys) {
+                if (styleKey.equals(key)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     private static String runtimeFallbackName(String patternKey, String runtimeName) {
         String name = RuntimeNameFormatter.sanitize(runtimeName);
         if (name.isBlank()) {

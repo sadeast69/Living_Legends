@@ -6,8 +6,8 @@ bosses, structures, biomes, mobs, valuable blocks, and dimensions.
 Simple compat does not need a Java dependency. A datapack can add a new id or
 override a vanilla mapping.
 
-This system is new in `1.0.0-rc.1` and may grow during RC testing. Keep compat
-packs simple and report issues.
+This system is available in `1.0.0` on both Fabric `1.21.1` and NeoForge
+`1.21.1`. Keep compat packs simple and report issues.
 
 ## Datapack Paths
 

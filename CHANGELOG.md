@@ -1,15 +1,19 @@
 # Changelog
 
-## 1.0.0-rc.1
+## 1.0.0
 
-First release-candidate packaging for World Remembers: Living Legends.
+First public 1.0.0 release for World Remembers: Living Legends.
 
 ### Highlights
 
 - Important world events can become named places.
+- Fabric `1.21.1` support.
+- NeoForge `1.21.1` support.
 - Six generated naming styles.
-- World Journal item and GUI.
-- Place title overlay.
+- World Journal item and GUI on both supported loaders.
+- Place title overlay on both supported loaders.
+- `/places` commands, storage, events, networking, and compat registry support
+  on both supported loaders.
 - Candidate decay for unpromoted activity.
 - General landmark spacing.
 - Deleted-place suppression.
@@ -22,8 +26,7 @@ First release-candidate packaging for World Remembers: Living Legends.
 
 ### Known Limitations
 
-- Fabric `1.21.1` only.
-- NeoForge module is placeholder-only.
+- Fabric and NeoForge are both targeted at Minecraft `1.21.1`.
 - No map or waypoint integration yet.
 - Third-party compat packs are not bundled yet.
-- Balance may still change during RC testing.
+- Balance may still change in future updates.

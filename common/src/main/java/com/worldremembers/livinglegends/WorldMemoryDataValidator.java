@@ -204,6 +204,10 @@ public final class WorldMemoryDataValidator {
         if (!recipe.fallbackResolvedName().isBlank()) {
             return true;
         }
+        if (NameGenerator.isRuntimeMemorialPatternKey(recipe.styleId(), recipe.patternKey())
+                && recipe.selectedTokenIds().stream().anyMatch(NameRecipe::isLiteralToken)) {
+            return true;
+        }
         NameDataPack pack = BuiltInNameData.packForStyle(recipe.styleId());
         for (NamePattern pattern : pack.patterns()) {
             if (pattern.translationKey().equals(recipe.patternKey())) {

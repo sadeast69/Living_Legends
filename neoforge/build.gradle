@@ -1,3 +1,52 @@
+plugins {
+    id 'net.neoforged.moddev'
+}
+
 base {
     archivesName = "${mod_id}-neoforge"
+}
+
+neoForge {
+    version = project.neo_version
+
+    mods {
+        living_legends {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    implementation project(':common')
+}
+
+processResources {
+    def resourceProperties = [
+        minecraft_version      : project.minecraft_version,
+        minecraft_version_range: project.minecraft_version_range,
+        neo_version            : project.neo_version,
+        neo_version_range      : project.neo_version_range,
+        loader_version_range   : project.loader_version_range,
+        mod_id                 : project.mod_id,
+        mod_name               : project.mod_name,
+        mod_license            : project.mod_license,
+        mod_version            : project.mod_version,
+        mod_authors            : project.mod_authors,
+        mod_description        : project.mod_description
+    ]
+
+    inputs.properties(resourceProperties)
+
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand(resourceProperties)
+    }
+}
+
+tasks.named('jar') {
+    dependsOn project(':common').tasks.named('classes')
+    from(project(':common').sourceSets.main.output)
+}
+
+tasks.named('sourcesJar') {
+    from(project(':common').sourceSets.main.allSource)
 }

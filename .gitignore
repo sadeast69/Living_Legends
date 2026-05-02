@@ -1,24 +1,42 @@
-# Compiled class file
-*.class
+.gradle/
+build/
+**/build/
 
-# Log file
-*.log
+run/
+**/run/
+logs/
+crash-reports/
+config/
+saves/
+out/
 
-# BlueJ files
-*.ctxt
+local_backup_not_for_git/
+dev_test_datapacks/
+release_artifacts/
+final-artifacts/
+dist/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
+screenshots/
 *.zip
-*.tar.gz
+*.7z
 *.rar
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+*.class
+*.log
+*.tmp
+
+.DS_Store
+Thumbs.db
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+.vscode/
+AGENTS.md
+docs/[C]ODEX_PROJECT_CONTEXT.md
+[W]orld_Remembers_Living_Legends_Context_For_[C]hat[G]PT*.md
+**/[W]orld_Remembers_Living_Legends_Context_For_[C]hat[G]PT*.md

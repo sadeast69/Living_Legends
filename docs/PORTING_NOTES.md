@@ -1,16 +1,19 @@
 # Porting Notes
 
 These notes are for contributors who want to port World Remembers to another
-loader or Minecraft version.
+loader or Minecraft version, or keep existing loader implementations in parity.
 
-Current public target:
+Current public targets:
 
 - Fabric `1.21.1`
+- NeoForge `1.21.1`
 - Java 21
 - Yarn mappings
+- Mojmap/NeoForge mappings
 
-The NeoForge module is placeholder-only. It is not a supported public release
-target yet.
+Fabric is the gameplay reference implementation. The NeoForge module is a
+supported `1.21.1` loader implementation and should remain behavior-compatible
+with Fabric unless a loader-specific API requires a small adaptation.
 
 ## What Is Portable
 
@@ -60,7 +63,7 @@ Compat registries are data-driven. This is the easiest area to keep portable:
 load the same datapack JSON folders and feed the same definition objects into
 the resolver.
 
-## Suggested Porting Order
+## Suggested Porting Order For New Loader Ports
 
 1. Storage.
 2. Commands.

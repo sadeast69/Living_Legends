@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "block": "minecraft:diamond_ore",
+      "blockTheme": "diamond",
+      "miningTheme": "diamond",
+      "valuable": true,
+      "firstDiscoveryKey": "world:first_diamond_ore_mined",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "blockTheme": "diamond",
+      "miningTheme": "diamond",
+      "valuable": true,
+      "firstDiscoveryKey": "world:first_diamond_ore_mined",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "minecraft:ancient_debris",
+      "blockTheme": "ancient_debris",
+      "miningTheme": "ancient_debris",
+      "valuable": true,
+      "firstDiscoveryKey": "world:first_ancient_debris_mined",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

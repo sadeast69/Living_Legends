@@ -21,7 +21,7 @@ body:
     id: mod_version
     attributes:
       label: World Remembers version
-      placeholder: "1.0.0-rc.1"
+      placeholder: "1.0.0"
     validations:
       required: true
   - type: textarea

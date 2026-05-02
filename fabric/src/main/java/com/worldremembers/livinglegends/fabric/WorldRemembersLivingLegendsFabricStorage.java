@@ -375,6 +375,12 @@ final class WorldRemembersLivingLegendsFabricStorage {
         if (delegate == null) {
             return false;
         }
+        if (delegate.data().namedPlace(placeId) == null) {
+            if (logger != null && WorldRemembersLivingLegends.config().debug.enabled) {
+                logger.debug("Skipping journal discovery for missing place id {}", placeId);
+            }
+            return false;
+        }
         boolean changed = delegate.data().recordDiscoveredPlace(playerId, placeId);
         if (changed) {
             markDirty(state, "journal_discovery " + placeId, logger);
@@ -396,6 +402,7 @@ final class WorldRemembersLivingLegendsFabricStorage {
         delegate.data().recordDeletedPlaceMarker(DeletedPlaceMarker.fromPlace(place, gameTime(world)));
         boolean changed = delegate.data().deleteNamedPlace(placeId);
         if (changed) {
+            delegate.data().removeDiscoveredPlaceFromAllPlayers(placeId);
             WorldRemembersLivingLegendsFabricPlaceTitles.invalidateIndex();
             markDirty(state, "delete_place " + placeId, logger);
         }

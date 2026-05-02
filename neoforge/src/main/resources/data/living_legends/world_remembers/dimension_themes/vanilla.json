@@ -1,0 +1,20 @@
+{
+  "entries": [
+    {
+      "dimension": "minecraft:the_nether",
+      "dimensionTheme": "nether",
+      "portalTheme": "nether",
+      "firstDiscoveryKey": "world:first_nether_entry",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "dimension": "minecraft:the_end",
+      "dimensionTheme": "end",
+      "portalTheme": "end",
+      "firstDiscoveryKey": "world:first_end_entry",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

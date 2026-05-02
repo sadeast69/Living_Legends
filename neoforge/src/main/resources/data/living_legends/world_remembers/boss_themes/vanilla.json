@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "entity": "minecraft:wither",
+      "bossTheme": "wither",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["undead"]
+    },
+    {
+      "entity": "minecraft:ender_dragon",
+      "bossTheme": "ender_dragon",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["dragon", "end"]
+    },
+    {
+      "entity": "minecraft:warden",
+      "bossTheme": "warden",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["deep_dark"]
+    },
+    {
+      "entity": "minecraft:elder_guardian",
+      "bossTheme": "elder_guardian",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["aquatic"]
+    }
+  ]
+}

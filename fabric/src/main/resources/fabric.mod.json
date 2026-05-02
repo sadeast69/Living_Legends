@@ -8,6 +8,7 @@
     "sadeast"
   ],
   "license": "MIT",
+  "icon": "assets/living_legends/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [

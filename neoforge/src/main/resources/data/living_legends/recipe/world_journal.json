@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "minecraft:compass"
+    },
+    {
+      "item": "minecraft:feather"
+    }
+  ],
+  "result": {
+    "id": "living_legends:world_journal",
+    "count": 1
+  }
+}

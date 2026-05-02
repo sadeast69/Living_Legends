@@ -222,6 +222,28 @@ public final class WorldMemoryStorageData {
         return places.add(place);
     }
 
+    public synchronized boolean removeDiscoveredPlaceFromAllPlayers(String placeId) {
+        String place = WorldPos.optionalId(placeId);
+        if (place.isBlank()) {
+            return false;
+        }
+
+        boolean changed = false;
+        List<String> emptyPlayers = new ArrayList<>();
+        for (Map.Entry<String, LinkedHashSet<String>> entry : discoveredPlaceIdsByPlayer.entrySet()) {
+            if (entry.getValue().remove(place)) {
+                changed = true;
+            }
+            if (entry.getValue().isEmpty()) {
+                emptyPlayers.add(entry.getKey());
+            }
+        }
+        for (String playerId : emptyPlayers) {
+            discoveredPlaceIdsByPlayer.remove(playerId);
+        }
+        return changed;
+    }
+
     public synchronized int chunkStatsCount() {
         return chunkStatsByKey.size();
     }
