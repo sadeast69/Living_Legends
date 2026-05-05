@@ -1,0 +1,30 @@
+{
+  "entries": [
+    {
+      "block": "voidz:void_portal",
+      "blockTheme": "voidz_void_portal",
+      "miningTheme": "voidz_void_portal",
+      "valuable": false,
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "voidz:void_stone",
+      "blockTheme": "voidz_void_stone",
+      "miningTheme": "voidz_void_stone",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:voidz:void_stone"
+    },
+    {
+      "block": "voidz:infested_void_stone",
+      "blockTheme": "voidz_infested_void_stone",
+      "miningTheme": "voidz_infested_void_stone",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:voidz:infested_void_stone"
+    }
+  ]
+}

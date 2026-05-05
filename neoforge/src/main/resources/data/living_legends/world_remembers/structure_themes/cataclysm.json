@@ -1,0 +1,94 @@
+{
+  "entries": [
+    {
+      "structure": "cataclysm:soul_black_smith",
+      "structureTheme": "cataclysm_soul_forge",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["cataclysm", "nether", "forge"]
+    },
+    {
+      "structure": "cataclysm:burning_arena",
+      "structureTheme": "cataclysm_burning_arena",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["cataclysm", "arena", "fire"]
+    },
+    {
+      "structure": "cataclysm:ruined_citadel",
+      "structureTheme": "cataclysm_ruined_citadel",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["cataclysm", "end", "citadel"]
+    },
+    {
+      "structure": "cataclysm:cursed_pyramid",
+      "structureTheme": "cataclysm_cursed_pyramid",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["cataclysm", "desert", "curse"]
+    },
+    {
+      "structure": "cataclysm:ancient_factory",
+      "structureTheme": "cataclysm_factory",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["cataclysm", "factory", "wither"]
+    },
+    {
+      "structure": "cataclysm:sunken_city",
+      "structureTheme": "cataclysm_sunken_city",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["cataclysm", "abyss", "ocean"]
+    },
+    {
+      "structure": "cataclysm:frosted_prison",
+      "structureTheme": "cataclysm_frost_prison",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["cataclysm", "ice", "prison"]
+    },
+    {
+      "structure": "cataclysm:acropolis",
+      "structureTheme": "cataclysm_acropolis",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["cataclysm", "storm", "acropolis"]
+    },
+    {
+      "structure": "cataclysm:amethyst_nest",
+      "structureTheme": "cataclysm_amethyst_nest",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["cataclysm", "amethyst", "nest"]
+    }
+  ]
+}

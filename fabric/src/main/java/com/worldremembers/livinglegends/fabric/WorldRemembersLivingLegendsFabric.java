@@ -3,11 +3,11 @@ package com.worldremembers.livinglegends.fabric;
 import com.worldremembers.livinglegends.BuiltInNameData;
 import com.worldremembers.livinglegends.NameDataDiagnostics;
 import com.worldremembers.livinglegends.WorldRemembersLivingLegends;
+import com.worldremembers.livinglegends.config.SimpleJson;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -16,14 +16,11 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.nio.file.Path;
 import java.nio.charset.StandardCharsets;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public final class WorldRemembersLivingLegendsFabric implements ModInitializer {
     private static final Logger LOGGER = LoggerFactory.getLogger(WorldRemembersLivingLegends.MOD_ID);
-    private static final Pattern JSON_KEY = Pattern.compile("\"([^\"]+)\"\\s*:");
 
     @Override
     public void onInitialize() {
@@ -32,6 +29,7 @@ public final class WorldRemembersLivingLegendsFabric implements ModInitializer {
         WorldRemembersLivingLegendsFabricItems.register(LOGGER);
         WorldRemembersLivingLegendsFabricPlaceTitles.registerNetworking(LOGGER);
         WorldJournalService.registerNetworking(LOGGER);
+        FabricMapIntegrationManager.registerNetworking(LOGGER);
         WorldRemembersCompatDataLoader.register(LOGGER);
         WorldRemembersLivingLegendsFabricEvents.register(LOGGER);
         WorldRemembersLivingLegendsFabricCommands.register(LOGGER);
@@ -136,40 +134,45 @@ public final class WorldRemembersLivingLegendsFabric implements ModInitializer {
     }
 
     private static void logNameDataWarnings(String locale) {
-        Set<String> keys = loadLangKeys(locale);
-        if (keys.isEmpty()) {
+        Map<String, String> translations = loadLangValues(locale);
+        if (translations.isEmpty()) {
             LOGGER.warn("Could not validate built-in name translations for locale " + locale + "; lang keys unavailable");
             return;
         }
 
         for (var pack : BuiltInNameData.allPacks()) {
-            for (String warning : NameDataDiagnostics.validate(pack, keys)) {
+            for (String warning : NameDataDiagnostics.validate(pack, translations.keySet())) {
+                LOGGER.warn("Name data warning [" + locale + "][" + pack.styleId() + "]: " + warning);
+            }
+            for (String warning : NameDataDiagnostics.validateTranslationValues(pack, translations)) {
                 LOGGER.warn("Name data warning [" + locale + "][" + pack.styleId() + "]: " + warning);
             }
         }
     }
 
-    private static Set<String> loadLangKeys(String locale) {
+    private static Map<String, String> loadLangValues(String locale) {
         String path = "assets/" + WorldRemembersLivingLegends.MOD_ID + "/lang/" + locale + ".json";
         try (InputStream stream = WorldRemembersLivingLegendsFabric.class.getClassLoader().getResourceAsStream(path)) {
             if (stream == null) {
-                return Set.of();
+                return Map.of();
             }
 
-            Set<String> keys = new HashSet<>();
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    Matcher matcher = JSON_KEY.matcher(line);
-                    if (matcher.find()) {
-                        keys.add(matcher.group(1));
+            try (InputStreamReader reader = new InputStreamReader(stream, StandardCharsets.UTF_8)) {
+                Map<String, Object> raw = SimpleJson.parseObject(reader);
+                Map<String, String> values = new LinkedHashMap<>();
+                for (Map.Entry<String, Object> entry : raw.entrySet()) {
+                    if (entry.getValue() instanceof String value) {
+                        values.put(entry.getKey(), value);
                     }
                 }
+                return values;
             }
-            return keys;
         } catch (IOException exception) {
             LOGGER.warn("Could not read built-in name lang file " + path + ": " + exception.getMessage());
-            return Set.of();
+            return Map.of();
+        } catch (IllegalArgumentException exception) {
+            LOGGER.warn("Could not parse built-in name lang file " + path + ": " + exception.getMessage());
+            return Map.of();
         }
     }
 

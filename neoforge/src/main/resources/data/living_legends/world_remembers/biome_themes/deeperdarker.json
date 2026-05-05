@@ -1,0 +1,32 @@
+{
+  "entries": [
+    {
+      "biome": "deeperdarker:blooming_caverns",
+      "biomeTheme": "sculk_echo",
+      "biomeGroup": "sculk_echo",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "deeperdarker:deeplands",
+      "biomeTheme": "deep_echo",
+      "biomeGroup": "otherside",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "deeperdarker:echoing_forest",
+      "biomeTheme": "sculk_echo",
+      "biomeGroup": "sculk_echo",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "deeperdarker:overcast_columns",
+      "biomeTheme": "otherside",
+      "biomeGroup": "otherside",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

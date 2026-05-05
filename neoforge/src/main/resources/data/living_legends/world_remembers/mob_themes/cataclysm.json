@@ -1,0 +1,211 @@
+{
+  "entries": [
+    {
+      "entity": "cataclysm:deepling",
+      "mobTheme": "cataclysm_abyssal",
+      "mobGroup": "cataclysm_abyss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:deepling_angler",
+      "mobTheme": "cataclysm_abyssal",
+      "mobGroup": "cataclysm_abyss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:deepling_brute",
+      "mobTheme": "cataclysm_abyssal",
+      "mobGroup": "cataclysm_abyss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:deepling_priest",
+      "mobTheme": "cataclysm_abyssal",
+      "mobGroup": "cataclysm_abyss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:deepling_warlock",
+      "mobTheme": "cataclysm_abyssal",
+      "mobGroup": "cataclysm_abyss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:drowned_host",
+      "mobTheme": "cataclysm_abyssal",
+      "mobGroup": "cataclysm_abyss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:coral_golem",
+      "mobTheme": "cataclysm_abyssal",
+      "mobGroup": "cataclysm_abyss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:coralssus",
+      "mobTheme": "cataclysm_abyssal",
+      "mobGroup": "cataclysm_abyss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:draugr",
+      "mobTheme": "cataclysm_draugr",
+      "mobGroup": "cataclysm_frost",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:elite_draugr",
+      "mobTheme": "cataclysm_draugr",
+      "mobGroup": "cataclysm_frost",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:royal_draugr",
+      "mobTheme": "cataclysm_draugr",
+      "mobGroup": "cataclysm_frost",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:aptrgangr",
+      "mobTheme": "cataclysm_draugr",
+      "mobGroup": "cataclysm_frost",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:koboleton",
+      "mobTheme": "cataclysm_desert",
+      "mobGroup": "cataclysm_desert",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:wadjet",
+      "mobTheme": "cataclysm_desert",
+      "mobGroup": "cataclysm_desert",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:the_watcher",
+      "mobTheme": "cataclysm_desert",
+      "mobGroup": "cataclysm_desert",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:the_prowler",
+      "mobTheme": "cataclysm_desert",
+      "mobGroup": "cataclysm_desert",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:ignited_berserker",
+      "mobTheme": "cataclysm_infernal",
+      "mobGroup": "cataclysm_infernal",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:netherite_ministrosity",
+      "mobTheme": "cataclysm_infernal",
+      "mobGroup": "cataclysm_infernal",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:endermaptera",
+      "mobTheme": "cataclysm_void",
+      "mobGroup": "cataclysm_void",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:modern_remnant",
+      "mobTheme": "cataclysm_void",
+      "mobGroup": "cataclysm_void",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:cindaria",
+      "mobTheme": "cataclysm_acropolis",
+      "mobGroup": "cataclysm_acropolis",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:urchinkin",
+      "mobTheme": "cataclysm_acropolis",
+      "mobGroup": "cataclysm_acropolis",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "cataclysm:symbiocto",
+      "mobTheme": "cataclysm_acropolis",
+      "mobGroup": "cataclysm_acropolis",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

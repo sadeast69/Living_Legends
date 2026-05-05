@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "entity": "aether:slider",
+      "bossTheme": "aether_slider",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["aether", "bronze_dungeon", "construct"]
+    },
+    {
+      "entity": "aether:valkyrie_queen",
+      "bossTheme": "aether_valkyrie",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["aether", "silver_dungeon", "valkyrie"]
+    },
+    {
+      "entity": "aether:sun_spirit",
+      "bossTheme": "aether_sun_spirit",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["aether", "gold_dungeon", "sun"]
+    }
+  ]
+}

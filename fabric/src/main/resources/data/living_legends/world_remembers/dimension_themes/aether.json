@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "dimension": "aether:the_aether",
+      "dimensionTheme": "aether_sky",
+      "portalTheme": "aether_sky",
+      "firstDiscoveryKey": "compat:first_dimension:aether:the_aether",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

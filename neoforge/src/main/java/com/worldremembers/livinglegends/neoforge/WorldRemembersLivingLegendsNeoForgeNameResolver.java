@@ -3,6 +3,7 @@ package com.worldremembers.livinglegends.neoforge;
 import com.worldremembers.livinglegends.BuiltInNameData;
 import com.worldremembers.livinglegends.NameDataPack;
 import com.worldremembers.livinglegends.NameRecipe;
+import com.worldremembers.livinglegends.NameTextSafety;
 import com.worldremembers.livinglegends.NameToken;
 import com.worldremembers.livinglegends.NameTokenForm;
 import net.minecraft.network.chat.Component;
@@ -40,19 +41,25 @@ final class WorldRemembersLivingLegendsNeoForgeNameResolver {
                     : Component.translatable(token.translationKey(form)));
         }
 
-        if (resolvedRecipe.patternKey().isBlank()) {
-            return Component.literal(resolvedRecipe.fallbackResolvedName());
+        Component resolved = resolvedRecipe.patternKey().isBlank()
+                ? Component.literal(resolvedRecipe.fallbackResolvedName())
+                : Component.translatable(resolvedRecipe.patternKey(), tokenTexts.toArray());
+        if (!NameTextSafety.looksBrokenOrTechnical(resolved.getString())) {
+            return resolved;
         }
-        return Component.translatable(resolvedRecipe.patternKey(), tokenTexts.toArray());
+        String fallback = resolvedRecipe.fallbackResolvedName();
+        return NameTextSafety.looksBrokenOrTechnical(fallback)
+                ? Component.translatable(NameTextSafety.SAFE_FALLBACK_PATTERN_KEY)
+                : Component.literal(fallback);
     }
 
     static String resolveToString(NameRecipe recipe) {
         NameRecipe resolvedRecipe = recipe == null ? NameRecipe.empty() : recipe;
         String fallback = resolvedRecipe.fallbackResolvedName();
-        if (!fallback.isBlank()) {
+        if (!fallback.isBlank() && !NameTextSafety.looksBrokenOrTechnical(fallback)) {
             return fallback;
         }
         String resolved = resolve(resolvedRecipe).getString();
-        return resolved == null ? "" : resolved;
+        return NameTextSafety.looksBrokenOrTechnical(resolved) ? NameTextSafety.safeLiteralFallback(fallback) : resolved;
     }
 }

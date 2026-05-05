@@ -1,0 +1,303 @@
+{
+  "entries": [
+    {
+      "structure": "explorify:badlands_pyramid",
+      "structureTheme": "explorify_old_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:black_spiral",
+      "structureTheme": "explorify_old_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:campsite",
+      "structureTheme": "explorify_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_stop",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:dark_forest_settlement",
+      "structureTheme": "explorify_small_settlement",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "small_settlement",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:desert_shrine",
+      "structureTheme": "explorify_old_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:end_shipwreck",
+      "structureTheme": "explorify_shipwreck",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "end_wreck",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:farmstead",
+      "structureTheme": "explorify_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_stop",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:guide_post_cold",
+      "structureTheme": "explorify_waypoint",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "waypoint_tower",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:guide_post_warm",
+      "structureTheme": "explorify_waypoint",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "waypoint_tower",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:mangrove_hut",
+      "structureTheme": "explorify_small_settlement",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "small_settlement",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:mausoleum",
+      "structureTheme": "explorify_old_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:ruins",
+      "structureTheme": "explorify_ruins",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:supply_cache/birch",
+      "structureTheme": "explorify_supply_cache",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "supply_cache",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:supply_cache/dark",
+      "structureTheme": "explorify_supply_cache",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "supply_cache",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:supply_cache/desert",
+      "structureTheme": "explorify_supply_cache",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "supply_cache",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:supply_cache/forest",
+      "structureTheme": "explorify_supply_cache",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "supply_cache",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:supply_cache/jungle",
+      "structureTheme": "explorify_supply_cache",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "supply_cache",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:supply_cache/mangrove",
+      "structureTheme": "explorify_supply_cache",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "supply_cache",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:supply_cache/taiga",
+      "structureTheme": "explorify_supply_cache",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "supply_cache",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:tavern",
+      "structureTheme": "explorify_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_stop",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:watchtower/plains",
+      "structureTheme": "explorify_waypoint",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "waypoint_tower",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:watchtower/savanna",
+      "structureTheme": "explorify_waypoint",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "waypoint_tower",
+        "explorify"
+      ]
+    },
+    {
+      "structure": "explorify:watchtower/taiga",
+      "structureTheme": "explorify_waypoint",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "waypoint_tower",
+        "explorify"
+      ]
+    }
+  ]
+}

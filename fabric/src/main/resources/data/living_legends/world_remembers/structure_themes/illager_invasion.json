@@ -1,0 +1,69 @@
+{
+  "entries": [
+    {
+      "structure": "illagerinvasion:firecaller_hut",
+      "structureTheme": "illager_invasion_hut",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_hut",
+        "illager_invasion"
+      ]
+    },
+    {
+      "structure": "illagerinvasion:illager_fort",
+      "structureTheme": "illager_invasion_stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_stronghold",
+        "illager_invasion"
+      ]
+    },
+    {
+      "structure": "illagerinvasion:illusioner_tower",
+      "structureTheme": "illager_invasion_stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_stronghold",
+        "illager_invasion"
+      ]
+    },
+    {
+      "structure": "illagerinvasion:labyrinth",
+      "structureTheme": "illager_invasion_stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_stronghold",
+        "illager_invasion"
+      ]
+    },
+    {
+      "structure": "illagerinvasion:sorcerer_hut",
+      "structureTheme": "illager_invasion_hut",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_hut",
+        "illager_invasion"
+      ]
+    }
+  ]
+}

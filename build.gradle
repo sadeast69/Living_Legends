@@ -17,6 +17,28 @@ allprojects {
             name = 'Terraformers'
             url = 'https://maven.terraformersmc.com/'
         }
+        maven {
+            name = 'BlameJared'
+            url = 'https://maven.blamejared.com/'
+        }
+        maven {
+            name = "Xaero's Maven"
+            url = 'https://chocolateminecraft.com/maven'
+        }
+        maven {
+            name = 'FTB'
+            url = 'https://maven.ftb.dev/releases'
+            content {
+                includeGroup 'dev.ftb.mods'
+            }
+        }
+        maven {
+            name = 'Architectury'
+            url = 'https://maven.architectury.dev/'
+            content {
+                includeGroup 'dev.architectury'
+            }
+        }
         mavenCentral()
     }
 }

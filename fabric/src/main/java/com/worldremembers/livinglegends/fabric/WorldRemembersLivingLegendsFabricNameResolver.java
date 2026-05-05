@@ -3,6 +3,7 @@ package com.worldremembers.livinglegends.fabric;
 import com.worldremembers.livinglegends.BuiltInNameData;
 import com.worldremembers.livinglegends.NameDataPack;
 import com.worldremembers.livinglegends.NameRecipe;
+import com.worldremembers.livinglegends.NameTextSafety;
 import com.worldremembers.livinglegends.NameToken;
 import com.worldremembers.livinglegends.NameTokenForm;
 import net.minecraft.text.MutableText;
@@ -41,13 +42,22 @@ final class WorldRemembersLivingLegendsFabricNameResolver {
                     : Text.translatable(token.translationKey(form)));
         }
 
-        if (resolvedRecipe.patternKey().isBlank()) {
-            return Text.literal(resolvedRecipe.fallbackResolvedName());
+        MutableText resolved = resolvedRecipe.patternKey().isBlank()
+                ? Text.literal(resolvedRecipe.fallbackResolvedName())
+                : Text.translatable(resolvedRecipe.patternKey(), tokenTexts.toArray());
+        if (!NameTextSafety.looksBrokenOrTechnical(resolved.getString())) {
+            return resolved;
         }
-        return Text.translatable(resolvedRecipe.patternKey(), tokenTexts.toArray());
+        String fallback = resolvedRecipe.fallbackResolvedName();
+        return NameTextSafety.looksBrokenOrTechnical(fallback)
+                ? Text.translatable(NameTextSafety.SAFE_FALLBACK_PATTERN_KEY)
+                : Text.literal(fallback);
     }
 
     static String resolveToString(NameRecipe recipe) {
-        return resolve(recipe).getString();
+        String resolved = resolve(recipe).getString();
+        return NameTextSafety.looksBrokenOrTechnical(resolved)
+                ? NameTextSafety.safeLiteralFallback(recipe == null ? "" : recipe.fallbackResolvedName())
+                : resolved;
     }
 }

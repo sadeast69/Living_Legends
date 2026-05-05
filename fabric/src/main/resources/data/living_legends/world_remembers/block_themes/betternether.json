@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "block": "betternether:cincinnasite_ore",
+      "blockTheme": "betternether_cincinnasite_ore",
+      "miningTheme": "betternether_cincinnasite_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betternether:cincinnasite_ore"
+    },
+    {
+      "block": "betternether:nether_ruby_ore",
+      "blockTheme": "betternether_nether_ruby_ore",
+      "miningTheme": "betternether_nether_ruby_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betternether:nether_ruby_ore"
+    },
+    {
+      "block": "betternether:nether_lapis_ore",
+      "blockTheme": "betternether_nether_lapis_ore",
+      "miningTheme": "betternether_nether_lapis_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betternether:nether_lapis_ore"
+    },
+    {
+      "block": "betternether:nether_redstone_ore",
+      "blockTheme": "betternether_nether_redstone_ore",
+      "miningTheme": "betternether_nether_redstone_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betternether:nether_redstone_ore"
+    }
+  ]
+}

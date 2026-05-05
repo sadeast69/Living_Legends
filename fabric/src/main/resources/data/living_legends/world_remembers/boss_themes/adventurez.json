@@ -1,0 +1,100 @@
+{
+  "entries": [
+    {
+      "entity": "adventurez:blackstone_golem",
+      "bossTheme": "adventurez_blackstone_golem",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": [
+        "adventurez",
+        "boss"
+      ]
+    },
+    {
+      "entity": "adventurez:nightmare",
+      "bossTheme": "adventurez_nightmare",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": [
+        "adventurez",
+        "boss"
+      ]
+    },
+    {
+      "entity": "adventurez:soul_reaper",
+      "bossTheme": "adventurez_soul_reaper",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": [
+        "adventurez",
+        "boss"
+      ]
+    },
+    {
+      "entity": "adventurez:blaze_guardian",
+      "bossTheme": "adventurez_blaze_guardian",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": [
+        "adventurez",
+        "boss"
+      ]
+    },
+    {
+      "entity": "adventurez:the_eye",
+      "bossTheme": "adventurez_the_eye",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": [
+        "adventurez",
+        "boss"
+      ]
+    },
+    {
+      "entity": "adventurez:void_shadow",
+      "bossTheme": "adventurez_void_shadow",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": [
+        "adventurez",
+        "boss"
+      ]
+    },
+    {
+      "entity": "adventurez:dragon",
+      "bossTheme": "adventurez_dragon",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": [
+        "adventurez",
+        "boss"
+      ]
+    },
+    {
+      "entity": "adventurez:amethyst_golem",
+      "bossTheme": "adventurez_amethyst_golem",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": [
+        "adventurez",
+        "boss"
+      ]
+    }
+  ]
+}

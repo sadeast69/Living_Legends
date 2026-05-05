@@ -1,0 +1,524 @@
+{
+  "entries": [
+    {
+      "structure": "dungeons_arise:abandoned_temple",
+      "structureTheme": "wda_old_sanctuary",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "old_sanctuary",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:aviary",
+      "structureTheme": "wda_large_dungeon",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "great_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:bandit_towers",
+      "structureTheme": "wda_large_dungeon",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "great_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:bandit_village",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:bathhouse",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:ceryneian_hind",
+      "structureTheme": "wda_legendary_keep",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "legendary_keep",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:coliseum",
+      "structureTheme": "wda_coliseum",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "arena_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:fishing_hut",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:foundry",
+      "structureTheme": "wda_industrial_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "industrial_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:giant_mushroom",
+      "structureTheme": "wda_large_dungeon",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "great_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:greenwood_pub",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:heavenly_challenger",
+      "structureTheme": "wda_heavenly_fortress",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "sky_fortress",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:heavenly_conqueror",
+      "structureTheme": "wda_heavenly_fortress",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "sky_fortress",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:heavenly_rider",
+      "structureTheme": "wda_heavenly_fortress",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "sky_fortress",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:illager_campsite",
+      "structureTheme": "wda_illager_stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_fortress",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:illager_corsair",
+      "structureTheme": "wda_illager_stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_fortress",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:illager_fort",
+      "structureTheme": "wda_illager_stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_fortress",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:illager_galley",
+      "structureTheme": "wda_illager_stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_fortress",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:illager_windmill",
+      "structureTheme": "wda_illager_stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_fortress",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:infested_temple",
+      "structureTheme": "wda_old_sanctuary",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "old_sanctuary",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:jungle_tree_house",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:keep_kayra",
+      "structureTheme": "wda_legendary_keep",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "legendary_keep",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:kisegi_sanctuary",
+      "structureTheme": "wda_old_sanctuary",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "old_sanctuary",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:lighthouse",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:mechanical_nest",
+      "structureTheme": "wda_large_dungeon",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "great_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:merchant_campsite",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:mining_complex",
+      "structureTheme": "wda_industrial_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "industrial_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:mining_system",
+      "structureTheme": "wda_industrial_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "industrial_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:monastery",
+      "structureTheme": "wda_old_sanctuary",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "old_sanctuary",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:mushroom_house",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:mushroom_mines",
+      "structureTheme": "wda_large_dungeon",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "great_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:mushroom_village",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:plague_asylum",
+      "structureTheme": "wda_plague_asylum",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "plague_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:scorched_mines",
+      "structureTheme": "wda_industrial_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "industrial_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:shiraz_palace",
+      "structureTheme": "wda_legendary_keep",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "legendary_keep",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:small_blimp",
+      "structureTheme": "wda_large_dungeon",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "great_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:thornborn_towers",
+      "structureTheme": "wda_large_dungeon",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "great_dungeon",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:typhon",
+      "structureTheme": "wda_legendary_keep",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "legendary_keep",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:undead_pirate_ship",
+      "structureTheme": "wda_raider_ship",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "undead_ship",
+        "when_dungeons_arise"
+      ]
+    },
+    {
+      "structure": "dungeons_arise:wishing_well",
+      "structureTheme": "wda_roadside_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "roadside_refuge",
+        "when_dungeons_arise"
+      ]
+    }
+  ]
+}

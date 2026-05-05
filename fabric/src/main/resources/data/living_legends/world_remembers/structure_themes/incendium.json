@@ -1,0 +1,121 @@
+{
+  "entries": [
+    {
+      "structure": "incendium:abandoned_tower",
+      "structureTheme": "incendium_abandoned_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_ruin",
+        "incendium"
+      ]
+    },
+    {
+      "structure": "incendium:forbidden_castle",
+      "structureTheme": "incendium_forbidden_castle",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_fortress",
+        "incendium"
+      ]
+    },
+    {
+      "structure": "incendium:infernal_altar",
+      "structureTheme": "incendium_infernal_altar",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_ritual",
+        "incendium"
+      ]
+    },
+    {
+      "structure": "incendium:nether_reactor",
+      "structureTheme": "incendium_nether_reactor",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_ritual",
+        "incendium"
+      ]
+    },
+    {
+      "structure": "incendium:piglin_village",
+      "structureTheme": "incendium_piglin_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_city",
+        "incendium"
+      ]
+    },
+    {
+      "structure": "incendium:pipeline",
+      "structureTheme": "incendium_pipeline",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_ruin",
+        "incendium"
+      ]
+    },
+    {
+      "structure": "incendium:quartz_kitchen",
+      "structureTheme": "incendium_quartz_kitchen",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_ruin",
+        "incendium"
+      ]
+    },
+    {
+      "structure": "incendium:ruined_lab",
+      "structureTheme": "incendium_ruined_lab",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_ruin",
+        "incendium"
+      ]
+    },
+    {
+      "structure": "incendium:sanctum",
+      "structureTheme": "incendium_sanctum",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_ritual",
+        "incendium"
+      ]
+    }
+  ]
+}

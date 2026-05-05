@@ -1,0 +1,32 @@
+{
+  "entries": [
+    {
+      "biome": "aether:skyroot_forest",
+      "biomeTheme": "aether_skyroot",
+      "biomeGroup": "aether_sky",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "aether:skyroot_grove",
+      "biomeTheme": "aether_skyroot",
+      "biomeGroup": "aether_sky",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "aether:skyroot_meadow",
+      "biomeTheme": "aether_sky",
+      "biomeGroup": "aether_sky",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "aether:skyroot_woodland",
+      "biomeTheme": "aether_skyroot",
+      "biomeGroup": "aether_sky",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

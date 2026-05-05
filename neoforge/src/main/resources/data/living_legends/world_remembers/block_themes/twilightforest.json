@@ -1,0 +1,49 @@
+{
+  "entries": [
+    {
+      "block": "twilightforest:ironwood_block",
+      "blockTheme": "tf_ironwood",
+      "miningTheme": "tf_ironwood",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:twilightforest:ironwood_block",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "twilightforest:steeleaf_block",
+      "blockTheme": "tf_steeleaf",
+      "miningTheme": "tf_steeleaf",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:twilightforest:steeleaf_block",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "twilightforest:knightmetal_block",
+      "blockTheme": "tf_knightmetal",
+      "miningTheme": "tf_knightmetal",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:twilightforest:knightmetal_block",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "twilightforest:fiery_block",
+      "blockTheme": "tf_fiery",
+      "miningTheme": "tf_fiery",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:twilightforest:fiery_block",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "twilightforest:carminite_block",
+      "blockTheme": "tf_carminite",
+      "miningTheme": "tf_carminite",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:twilightforest:carminite_block",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

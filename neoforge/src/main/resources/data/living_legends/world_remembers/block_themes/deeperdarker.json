@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "block": "deeperdarker:gloomslate_diamond_ore",
+      "blockTheme": "deep_diamond",
+      "miningTheme": "deep_diamond",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:deeperdarker:gloomslate_diamond_ore",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "deeperdarker:sculk_stone_diamond_ore",
+      "blockTheme": "deep_diamond",
+      "miningTheme": "deep_diamond",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:deeperdarker:sculk_stone_diamond_ore",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "deeperdarker:gloomslate_emerald_ore",
+      "blockTheme": "deep_emerald",
+      "miningTheme": "deep_emerald",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:deeperdarker:gloomslate_emerald_ore",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "deeperdarker:sculk_stone_emerald_ore",
+      "blockTheme": "deep_emerald",
+      "miningTheme": "deep_emerald",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:deeperdarker:sculk_stone_emerald_ore",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

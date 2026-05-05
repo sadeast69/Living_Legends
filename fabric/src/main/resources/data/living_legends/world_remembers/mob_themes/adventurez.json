@@ -1,0 +1,94 @@
+{
+  "entries": [
+    {
+      "entity": "adventurez:piglin_beast",
+      "mobTheme": "adventurez_piglin_beast",
+      "mobGroup": "deep_battle",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "adventurez:necromancer",
+      "mobTheme": "adventurez_necromancer",
+      "mobGroup": "ritual_boss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "adventurez:wither_puppet",
+      "mobTheme": "adventurez_wither_puppet",
+      "mobGroup": "ritual_boss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "adventurez:skeleton_vanguard",
+      "mobTheme": "adventurez_skeleton_vanguard",
+      "mobGroup": "deep_battle",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "adventurez:summoner",
+      "mobTheme": "adventurez_summoner",
+      "mobGroup": "ritual_boss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "adventurez:orc",
+      "mobTheme": "adventurez_orc",
+      "mobGroup": "deep_battle",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "adventurez:void_fragment",
+      "mobTheme": "adventurez_void_fragment",
+      "mobGroup": "void_shadow",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "adventurez:void_shade",
+      "mobTheme": "adventurez_void_shade",
+      "mobGroup": "void_shadow",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "adventurez:desert_rhino",
+      "mobTheme": "adventurez_desert_rhino",
+      "mobGroup": "deep_battle",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "adventurez:shaman",
+      "mobTheme": "adventurez_shaman",
+      "mobGroup": "ritual_boss",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

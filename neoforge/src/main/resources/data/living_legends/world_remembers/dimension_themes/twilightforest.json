@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "dimension": "twilightforest:twilight_forest",
+      "dimensionTheme": "twilight_forest",
+      "portalTheme": "twilight_gate",
+      "firstDiscoveryKey": "compat:first_dimension:twilightforest:twilight_forest",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

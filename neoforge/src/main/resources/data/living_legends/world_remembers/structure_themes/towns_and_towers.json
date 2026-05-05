@@ -1,0 +1,784 @@
+{
+  "entries": [
+    {
+      "structure": "towns_and_towers:exclusives/pillager_outpost_classic",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/pillager_outpost_iberian",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/pillager_outpost_mediterranean",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/pillager_outpost_nilotic",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/pillager_outpost_oriental",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/pillager_outpost_rustic",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/pillager_outpost_swedish",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/pillager_outpost_tudor",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/village_classic",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/village_iberian",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/village_mediterranean",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/village_nilotic",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/village_piglin",
+      "structureTheme": "towns_towers_piglin_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_settlement",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/village_rustic",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/village_swedish",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/village_tudor",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:exclusives/village_wandering_trader_camp",
+      "structureTheme": "towns_towers_trader_camp",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "trader_camp",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:mimic_desert",
+      "structureTheme": "towns_towers_desert_mimic",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "desert_trap",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_badlands",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_beach",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_birch_forest",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_desert",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_flower_forest",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_forest",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_grove",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_jungle",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_meadow",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_mushroom_fields",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_ocean",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_old_growth_taiga",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_savanna",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_savanna_plateau",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_snowy_beach",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_snowy_plains",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_snowy_slopes",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_snowy_taiga",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_sparse_jungle",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_sunflower_plains",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_swamp",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_taiga",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:pillager_outpost_wooded_badlands",
+      "structureTheme": "towns_towers_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_outpost",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_badlands",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_beach",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_birch_forest",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_flower_forest",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_forest",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_grove",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_jungle",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_meadow",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_mushroom_fields",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_ocean",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_old_growth_taiga",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_savanna_plateau",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_snowy_slopes",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_snowy_taiga",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_sparse_jungle",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_sunflower_plains",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_swamp",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:village_wooded_badlands",
+      "structureTheme": "towns_towers_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_village",
+        "towns_and_towers"
+      ]
+    },
+    {
+      "structure": "towns_and_towers:wreckage_ocean",
+      "structureTheme": "towns_towers_wreckage",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ocean_wreck",
+        "towns_and_towers"
+      ]
+    }
+  ]
+}

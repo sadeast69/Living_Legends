@@ -1,0 +1,58 @@
+{
+  "entries": [
+    {
+      "block": "cataclysm:ancient_metal_block",
+      "blockTheme": "cataclysm_relic_metal",
+      "miningTheme": "cataclysm_relic_metal",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:cataclysm:ancient_metal_block",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "cataclysm:ignitium_block",
+      "blockTheme": "cataclysm_ignitium",
+      "miningTheme": "cataclysm_ignitium",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:cataclysm:ignitium_block",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "cataclysm:cursium_block",
+      "blockTheme": "cataclysm_cursium",
+      "miningTheme": "cataclysm_cursium",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:cataclysm:cursium_block",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "cataclysm:witherite_block",
+      "blockTheme": "cataclysm_witherite",
+      "miningTheme": "cataclysm_witherite",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:cataclysm:witherite_block",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "cataclysm:enderite_block",
+      "blockTheme": "cataclysm_enderite",
+      "miningTheme": "cataclysm_enderite",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:cataclysm:enderite_block",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "cataclysm:void_crystal",
+      "blockTheme": "cataclysm_void_crystal",
+      "miningTheme": "cataclysm_void_crystal",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:cataclysm:void_crystal",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

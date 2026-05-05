@@ -1,0 +1,164 @@
+{
+  "entries": [
+    {
+      "structure": "twilightforest:naga_courtyard",
+      "structureTheme": "tf_naga",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "naga", "boss"]
+    },
+    {
+      "structure": "twilightforest:lich_tower",
+      "structureTheme": "tf_lich",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "tower", "boss"]
+    },
+    {
+      "structure": "twilightforest:hedge_maze",
+      "structureTheme": "tf_hedge_maze",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "maze", "forest"]
+    },
+    {
+      "structure": "twilightforest:labyrinth",
+      "structureTheme": "tf_labyrinth",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "maze", "boss"]
+    },
+    {
+      "structure": "twilightforest:hydra_lair",
+      "structureTheme": "tf_hydra",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "swamp", "boss"]
+    },
+    {
+      "structure": "twilightforest:knight_stronghold",
+      "structureTheme": "tf_knight_stronghold",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "knight", "stronghold"]
+    },
+    {
+      "structure": "twilightforest:dark_tower",
+      "structureTheme": "tf_dark_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "dark_forest", "tower"]
+    },
+    {
+      "structure": "twilightforest:yeti_cave",
+      "structureTheme": "tf_yeti",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "snow", "cave"]
+    },
+    {
+      "structure": "twilightforest:aurora_palace",
+      "structureTheme": "tf_aurora_palace",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "aurora", "snow"]
+    },
+    {
+      "structure": "twilightforest:troll_cave",
+      "structureTheme": "tf_troll_cave",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "troll", "cave"]
+    },
+    {
+      "structure": "twilightforest:giant_house",
+      "structureTheme": "tf_giants",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "giant", "highlands"]
+    },
+    {
+      "structure": "twilightforest:final_castle",
+      "structureTheme": "tf_final_castle",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "castle", "final"]
+    },
+    {
+      "structure": "twilightforest:quest_grove",
+      "structureTheme": "tf_quest_grove",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "quest", "forest"]
+    },
+    {
+      "structure": "twilightforest:small_hollow_hill",
+      "structureTheme": "tf_hollow_hill",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "hollow_hill", "cave"]
+    },
+    {
+      "structure": "twilightforest:medium_hollow_hill",
+      "structureTheme": "tf_hollow_hill",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "hollow_hill", "cave"]
+    },
+    {
+      "structure": "twilightforest:large_hollow_hill",
+      "structureTheme": "tf_hollow_hill",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["twilightforest", "hollow_hill", "cave"]
+    }
+  ]
+}

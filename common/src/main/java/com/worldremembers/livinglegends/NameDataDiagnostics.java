@@ -3,6 +3,7 @@ package com.worldremembers.livinglegends;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public final class NameDataDiagnostics {
@@ -54,6 +55,36 @@ public final class NameDataDiagnostics {
             }
         }
 
+        return List.copyOf(warnings);
+    }
+
+    public static List<String> validateTranslationValues(NameDataPack nameData, Map<String, String> availableTranslations) {
+        NameDataPack data = nameData == null ? BuiltInNameData.defaultPack() : nameData;
+        Map<String, String> translations = availableTranslations == null ? Map.of() : availableTranslations;
+        if (translations.isEmpty()) {
+            return List.of();
+        }
+
+        List<String> warnings = new ArrayList<>();
+        for (NamePattern pattern : data.patterns()) {
+            String value = translations.get(pattern.translationKey());
+            if (value != null && NameTextSafety.looksBrokenOrTechnical(value)) {
+                warnings.add("Unsafe translation value for name pattern " + pattern.id() + ": " + pattern.translationKey());
+            }
+        }
+        for (NameToken token : data.tokens()) {
+            for (NameTokenForm form : NameTokenForm.values()) {
+                String translationKey = token.localizedForms().get(form);
+                if (translationKey == null || translationKey.isBlank()) {
+                    continue;
+                }
+                String value = translations.get(translationKey);
+                if (value != null && NameTextSafety.looksBrokenOrTechnical(value)) {
+                    warnings.add("Unsafe translation value for token " + token.id()
+                            + " form " + form.idString() + ": " + translationKey);
+                }
+            }
+        }
         return List.copyOf(warnings);
     }
 

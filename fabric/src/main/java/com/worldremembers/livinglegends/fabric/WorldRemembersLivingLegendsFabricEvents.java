@@ -11,6 +11,10 @@ import com.worldremembers.livinglegends.WorldRemembersCompatRegistries;
 import com.worldremembers.livinglegends.WorldMemoryEvent;
 import com.worldremembers.livinglegends.WorldPos;
 import com.worldremembers.livinglegends.WorldRemembersLivingLegends;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
 import org.slf4j.Logger;
 
 import java.lang.reflect.Field;
@@ -18,6 +22,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +33,8 @@ import java.util.regex.Pattern;
 final class WorldRemembersLivingLegendsFabricEvents {
     private static final int DEFAULT_VISIT_SAMPLE_INTERVAL_TICKS = 20 * 20;
     private static final int DEFAULT_STRUCTURE_DISCOVERY_CHECK_INTERVAL_TICKS = 20 * 10;
+    private static final long SOURCE_ANCHOR_MAX_AGE_TICKS = 200L;
+    private static final long PERF_LOG_THRESHOLD_NANOS = 10_000_000L;
 
     private static final String SERVER_PLAYER_CLASS = "net.minecraft.class_3222";
     private static final String BLOCK_CLASS = "net.minecraft.class_2248";
@@ -117,6 +124,7 @@ final class WorldRemembersLivingLegendsFabricEvents {
     private static long visitSampleTickCounter;
     private static long structureDiscoveryTickCounter;
     private static final Map<String, Long> STRUCTURE_DISCOVERY_CHECK_CACHE = new LinkedHashMap<>();
+    private static final Map<String, SourceAnchor> PLAYER_SOURCE_ANCHORS = new LinkedHashMap<>();
     private static boolean valuableBlockTagResolved;
     private static Object valuableBlockTag;
 
@@ -314,34 +322,74 @@ final class WorldRemembersLivingLegendsFabricEvents {
                     Object destination = arg(args, 2);
                     String originDimension = dimensionId(origin);
                     String destinationDimension = dimensionId(destination);
+                    SourceAnchor sourceAnchor = resolveSourceAnchor(player, originDimension);
+                    boolean fallback = sourceAnchor == null;
+                    Object destinationPos = blockPos(player);
+                    debug(logger, "portal_travel_source_anchor"
+                            + " player=" + entityName(player)
+                            + " from=" + originDimension
+                            + " to=" + destinationDimension
+                            + " sourcePos=" + sourcePositionLog(sourceAnchor, destinationDimension, destinationPos)
+                            + " destinationPos=" + positionLog(destinationDimension, destinationPos)
+                            + " fallback=" + fallback);
                     if (isServerPlayer(player) && !destinationDimension.isBlank() && !destinationDimension.equals(originDimension)) {
-                        collect(
-                                player,
-                                EventType.PLAYER_ENTERED_DIMENSION,
-                                blockPos(player),
-                                playerId(player),
-                                destinationDimension,
-                                1.0,
-                                "player_entered_dimension player_name=" + entityName(player)
-                                        + " from=" + originDimension
-                                        + " to=" + destinationDimension,
-                                logger
-                        );
+                        String note = "player_entered_dimension player_name=" + entityName(player)
+                                + " from=" + originDimension
+                                + " to=" + destinationDimension;
+                        if (fallback) {
+                            collect(
+                                    player,
+                                    EventType.PLAYER_ENTERED_DIMENSION,
+                                    destinationPos,
+                                    playerId(player),
+                                    destinationDimension,
+                                    1.0,
+                                    note,
+                                    logger
+                            );
+                        } else {
+                            collectAtSource(
+                                    origin,
+                                    player,
+                                    EventType.PLAYER_ENTERED_DIMENSION,
+                                    sourceAnchor,
+                                    playerId(player),
+                                    destinationDimension,
+                                    1.0,
+                                    note,
+                                    logger
+                            );
+                        }
 
                     }
 
                     EventType portalEvent = portalEventType(originDimension, destinationDimension);
                     if (isServerPlayer(player) && portalEvent != null) {
-                        collect(
-                                player,
-                                portalEvent,
-                                blockPos(player),
-                                playerId(player),
-                                destinationDimension,
-                                portalEvent == EventType.END_PORTAL_USED ? 8.0 : 3.0,
-                                "portal_travel from=" + originDimension + " to=" + destinationDimension,
-                                logger
-                        );
+                        String note = "portal_travel from=" + originDimension + " to=" + destinationDimension;
+                        if (fallback) {
+                            collect(
+                                    player,
+                                    portalEvent,
+                                    destinationPos,
+                                    playerId(player),
+                                    destinationDimension,
+                                    portalEvent == EventType.END_PORTAL_USED ? 8.0 : 3.0,
+                                    note,
+                                    logger
+                            );
+                        } else {
+                            collectAtSource(
+                                    origin,
+                                    player,
+                                    portalEvent,
+                                    sourceAnchor,
+                                    playerId(player),
+                                    destinationDimension,
+                                    portalEvent == EventType.END_PORTAL_USED ? 8.0 : 3.0,
+                                    note,
+                                    logger
+                            );
+                        }
                     }
                     return defaultReturn(method);
                 },
@@ -417,6 +465,7 @@ final class WorldRemembersLivingLegendsFabricEvents {
                     visitSampleTickCounter++;
                     structureDiscoveryTickCounter++;
                     Object server = arg(args, 0);
+                    cachePlayerSourceAnchors(server, logger);
                     EventCollector.expireTemporaryWindows();
                     WorldRemembersLivingLegendsFabricStorage.processDirtyScoreQueue(server, logger);
                     WorldRemembersLivingLegendsFabricStorage.processCandidateDecay(server, logger);
@@ -434,6 +483,83 @@ final class WorldRemembersLivingLegendsFabricEvents {
                 },
                 logger
         );
+    }
+
+    private static void cachePlayerSourceAnchors(Object server, Logger logger) {
+        long startNanos = System.nanoTime();
+        if (server instanceof MinecraftServer minecraftServer) {
+            cacheTypedPlayerSourceAnchors(minecraftServer);
+            logPerf(logger, "portal_source_cache", minecraftServer.getPlayerManager().getPlayerList().size(), startNanos, "server_tick");
+            return;
+        }
+        Object playerManager = invokeNoArg(server, "method_3760");
+        Object players = invokeNoArg(playerManager, "method_14571");
+        if (!(players instanceof Collection<?> playerCollection)) {
+            PLAYER_SOURCE_ANCHORS.clear();
+            logPerf(logger, "portal_source_cache", 0, startNanos, "server_tick_fallback_empty");
+            return;
+        }
+
+        Set<String> onlinePlayerIds = new HashSet<>();
+        for (Object player : playerCollection) {
+            if (!isServerPlayer(player)) {
+                continue;
+            }
+            String playerId = playerId(player);
+            Object world = serverWorld(player);
+            Object pos = blockPos(player);
+            if (playerId.isBlank() || world == null || pos == null) {
+                continue;
+            }
+            onlinePlayerIds.add(playerId);
+            PLAYER_SOURCE_ANCHORS.put(playerId, new SourceAnchor(
+                    dimensionId(world),
+                    coordinate(pos, "method_10263"),
+                    coordinate(pos, "method_10264"),
+                    coordinate(pos, "method_10260"),
+                    gameTime(world),
+                    visitSampleTickCounter
+            ));
+        }
+        PLAYER_SOURCE_ANCHORS.keySet().removeIf(playerId -> !onlinePlayerIds.contains(playerId));
+        logPerf(logger, "portal_source_cache", onlinePlayerIds.size(), startNanos, "server_tick_fallback");
+    }
+
+    private static void cacheTypedPlayerSourceAnchors(MinecraftServer server) {
+        Set<String> onlinePlayerIds = new HashSet<>();
+        for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+            if (player == null) {
+                continue;
+            }
+            String playerId = player.getUuidAsString();
+            ServerWorld world = player.getServerWorld();
+            BlockPos pos = player.getBlockPos();
+            if (playerId.isBlank() || world == null || pos == null) {
+                continue;
+            }
+            onlinePlayerIds.add(playerId);
+            PLAYER_SOURCE_ANCHORS.put(playerId, new SourceAnchor(
+                    dimensionId(world),
+                    pos.getX(),
+                    pos.getY(),
+                    pos.getZ(),
+                    world.getTime(),
+                    visitSampleTickCounter
+            ));
+        }
+        PLAYER_SOURCE_ANCHORS.keySet().removeIf(playerId -> !onlinePlayerIds.contains(playerId));
+    }
+
+    private static SourceAnchor resolveSourceAnchor(Object player, String originDimension) {
+        if (!isServerPlayer(player)) {
+            return null;
+        }
+        SourceAnchor anchor = PLAYER_SOURCE_ANCHORS.get(playerId(player));
+        if (anchor == null || !anchor.dimensionId().equals(originDimension)) {
+            return null;
+        }
+        long ageTicks = Math.max(0L, visitSampleTickCounter - anchor.capturedAtTick());
+        return ageTicks <= SOURCE_ANCHOR_MAX_AGE_TICKS ? anchor : null;
     }
 
     private static void registerEvent(
@@ -916,14 +1042,65 @@ final class WorldRemembersLivingLegendsFabricEvents {
         WorldRemembersLivingLegendsFabricStorage.recordEvent(world, event, logger);
     }
 
+    private static void collectAtSource(
+            Object sourceWorld,
+            Object player,
+            EventType eventType,
+            SourceAnchor sourceAnchor,
+            String actorId,
+            String subjectId,
+            double importance,
+            String note,
+            Logger logger
+    ) {
+        if (sourceAnchor == null) {
+            collect(player, eventType, blockPos(player), actorId, subjectId, importance, note, logger);
+            return;
+        }
+        Object storageWorld = sourceWorld == null ? serverWorld(player) : sourceWorld;
+        long time = sourceAnchor.gameTime() > 0L ? sourceAnchor.gameTime() : gameTime(storageWorld);
+        WorldMemoryEvent event = new WorldMemoryEvent(
+                eventId(eventType, player, sourceAnchor.dimensionId(), sourceAnchor.x(), sourceAnchor.y(), sourceAnchor.z(), time),
+                eventType,
+                new WorldPos(sourceAnchor.dimensionId(), sourceAnchor.x(), sourceAnchor.y(), sourceAnchor.z()),
+                actorId,
+                subjectId,
+                time,
+                System.currentTimeMillis(),
+                importance,
+                note
+        );
+        WorldRemembersLivingLegendsFabricStorage.recordEvent(storageWorld, event, logger);
+    }
+
     private static String eventId(EventType eventType, Object player, Object world, Object pos) {
+        return eventId(
+                eventType,
+                player,
+                dimensionId(world),
+                coordinate(pos, "method_10263"),
+                coordinate(pos, "method_10264"),
+                coordinate(pos, "method_10260"),
+                gameTime(world)
+        );
+    }
+
+    private static String eventId(
+            EventType eventType,
+            Object player,
+            String dimensionId,
+            int x,
+            int y,
+            int z,
+            long gameTime
+    ) {
         return eventType.idString()
                 + ":" + playerId(player)
-                + ":" + dimensionId(world)
-                + ":" + coordinate(pos, "method_10263")
-                + "," + coordinate(pos, "method_10264")
-                + "," + coordinate(pos, "method_10260")
-                + ":" + gameTime(world);
+                + ":" + (dimensionId == null || dimensionId.isBlank() ? "minecraft:overworld" : dimensionId)
+                + ":" + x
+                + "," + y
+                + "," + z
+                + ":" + gameTime;
     }
 
     private static WorldPos worldPos(Object world, Object pos) {
@@ -968,6 +1145,27 @@ final class WorldRemembersLivingLegendsFabricEvents {
                 + "," + coordinate(pos, "method_10260");
     }
 
+    private static String sourcePositionLog(SourceAnchor sourceAnchor, String fallbackEventDimension, Object fallbackPos) {
+        if (sourceAnchor != null) {
+            return positionLog(sourceAnchor.dimensionId(), sourceAnchor.x(), sourceAnchor.y(), sourceAnchor.z());
+        }
+        return positionLog(fallbackEventDimension, fallbackPos);
+    }
+
+    private static String positionLog(String dimensionId, Object pos) {
+        return positionLog(
+                dimensionId,
+                coordinate(pos, "method_10263"),
+                coordinate(pos, "method_10264"),
+                coordinate(pos, "method_10260")
+        );
+    }
+
+    private static String positionLog(String dimensionId, int x, int y, int z) {
+        String resolvedDimension = dimensionId == null || dimensionId.isBlank() ? "minecraft:overworld" : dimensionId;
+        return resolvedDimension + "@" + x + "," + y + "," + z;
+    }
+
     private static Object serverWorld(Object player) {
         Object world = invokeNoArg(player, "method_51469");
         if (world != null) {
@@ -1009,6 +1207,10 @@ final class WorldRemembersLivingLegendsFabricEvents {
         Object registryKey = invokeNoArg(world, "method_27983");
         Object identifier = invokeNoArg(registryKey, "method_29177");
         return cleanId(identifier == null ? String.valueOf(registryKey) : String.valueOf(identifier));
+    }
+
+    private static String dimensionId(ServerWorld world) {
+        return world == null ? "" : world.getRegistryKey().getValue().toString();
     }
 
     private static String playerId(Object player) {
@@ -1242,6 +1444,20 @@ final class WorldRemembersLivingLegendsFabricEvents {
         }
     }
 
+    private static void logPerf(Logger logger, String phase, int players, long startNanos, String reason) {
+        if (logger == null || !debugEnabled()) {
+            return;
+        }
+        long elapsed = System.nanoTime() - startNanos;
+        if (elapsed < PERF_LOG_THRESHOLD_NANOS) {
+            return;
+        }
+        logger.info("living_legends_perf phase=" + phase
+                + " players=" + players
+                + " ms=" + String.format(java.util.Locale.ROOT, "%.2f", elapsed / 1_000_000.0)
+                + " reason=" + (reason == null || reason.isBlank() ? "unknown" : reason));
+    }
+
     private static String cleanId(String value) {
         if (value == null || value.isBlank()) {
             return "";
@@ -1333,6 +1549,12 @@ final class WorldRemembersLivingLegendsFabricEvents {
     private record StructureDetection(boolean found, PlaceBounds bounds) {
         private static StructureDetection missing() {
             return new StructureDetection(false, null);
+        }
+    }
+
+    private record SourceAnchor(String dimensionId, int x, int y, int z, long gameTime, long capturedAtTick) {
+        private SourceAnchor {
+            dimensionId = dimensionId == null || dimensionId.isBlank() ? "minecraft:overworld" : dimensionId;
         }
     }
 }

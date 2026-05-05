@@ -1,0 +1,94 @@
+{
+  "entries": [
+    {
+      "entity": "aether:cockatrice",
+      "mobTheme": "aether_cockatrice",
+      "mobGroup": "aether_sky",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "aether:zephyr",
+      "mobTheme": "aether_zephyr",
+      "mobGroup": "aether_sky",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "aether:aechor_plant",
+      "mobTheme": "aether_aechor",
+      "mobGroup": "aether_sky",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "aether:blue_swet",
+      "mobTheme": "aether_swet",
+      "mobGroup": "aether_sky",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "aether:golden_swet",
+      "mobTheme": "aether_swet",
+      "mobGroup": "aether_sky",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "aether:evil_whirlwind",
+      "mobTheme": "aether_whirlwind",
+      "mobGroup": "aether_sky",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "aether:mimic",
+      "mobTheme": "aether_mimic",
+      "mobGroup": "aether_dungeon",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "aether:sentry",
+      "mobTheme": "aether_sentry",
+      "mobGroup": "aether_dungeon",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "aether:valkyrie",
+      "mobTheme": "aether_valkyrie",
+      "mobGroup": "aether_dungeon",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "aether:fire_minion",
+      "mobTheme": "aether_fire_minion",
+      "mobGroup": "aether_dungeon",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

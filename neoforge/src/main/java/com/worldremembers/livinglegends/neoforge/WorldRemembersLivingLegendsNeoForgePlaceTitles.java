@@ -8,6 +8,7 @@ import com.worldremembers.livinglegends.WorldPos;
 import com.worldremembers.livinglegends.WorldRemembersLivingLegends;
 import com.worldremembers.livinglegends.config.LivingLegendsConfig;
 import com.worldremembers.livinglegends.neoforge.network.PlaceTitleS2CPayload;
+import com.worldremembers.livinglegends.visual.PlaceVisualThemeResolver;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -28,6 +29,7 @@ import java.util.UUID;
 
 public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
     private static final int CELL_SIZE = 128;
+    private static final long PERF_LOG_THRESHOLD_NANOS = 10_000_000L;
     private static final Map<UUID, PlayerTitleState> PLAYER_STATES = new HashMap<>();
     private static final SpatialIndex INDEX = new SpatialIndex();
     private static long tickCounter;
@@ -41,11 +43,17 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
             return;
         }
         LivingLegendsConfig.TitleOverlay config = titleConfig();
-        if (config == null || !config.enabled || !config.showOnEnter) {
+        if (config == null) {
+            return;
+        }
+        boolean shouldSendTitles = config.enabled && config.showOnEnter;
+        boolean shouldTrackDiscovery = shouldTrackNaturalDiscovery();
+        if (!shouldSendTitles && !shouldTrackDiscovery) {
             return;
         }
 
         tickCounter++;
+        long startNanos = System.nanoTime();
         int interval = Math.max(1, config.checkIntervalTicks);
         List<ServerPlayer> players = server.getPlayerList().getPlayers();
         if (players.isEmpty()) {
@@ -58,8 +66,9 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
             if (Math.floorMod(tickCounter + offset, interval) != 0) {
                 continue;
             }
-            checkPlayer(player, config, logger);
+            checkPlayer(player, config, shouldSendTitles, shouldTrackDiscovery, logger);
         }
+        logPerf(logger, "title_natural_discovery_tick", players.size(), startNanos, "server_tick");
     }
 
     public static void invalidateIndex() {
@@ -122,7 +131,8 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
                 place.center().y(),
                 place.center().z(),
                 place.radius(),
-                reason == null ? PlaceTitleS2CPayload.Reason.DEBUG : reason
+                reason == null ? PlaceTitleS2CPayload.Reason.DEBUG : reason,
+                PlaceVisualThemeResolver.fromPlace(place)
         );
         boolean sent = sendPayload(player, payload, "place title", logger);
         if (sent && markCooldown) {
@@ -273,12 +283,19 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
                 pos.getY(),
                 pos.getZ(),
                 0,
-                PlaceTitleS2CPayload.Reason.DEBUG
+                PlaceTitleS2CPayload.Reason.DEBUG,
+                PlaceVisualThemeResolver.resolve(placeType == null ? PlaceType.CUSTOM : placeType, dimensionId(player.serverLevel()), "", "")
         );
         return sendPayload(player, payload, "literal title test", logger);
     }
 
-    private static void checkPlayer(ServerPlayer player, LivingLegendsConfig.TitleOverlay config, Logger logger) {
+    private static void checkPlayer(
+            ServerPlayer player,
+            LivingLegendsConfig.TitleOverlay config,
+            boolean shouldSendTitles,
+            boolean shouldTrackDiscovery,
+            Logger logger
+    ) {
         ServerLevel world = player.serverLevel();
         long now = world.getGameTime();
         String dimensionId = dimensionId(world);
@@ -295,6 +312,7 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
                 NamedPlace current = findPlace(nearby, state.currentInsidePlaceId);
                 if (current == null || !insideExit(current, pos.getX(), pos.getY(), pos.getZ(), config)) {
                     state.currentInsidePlaceId = null;
+                    state.currentInsideDiscoverySynced = false;
                 }
             }
             return;
@@ -302,9 +320,22 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
 
         String selectedId = selected.place().placeIdString();
         if (selectedId.equals(state.currentInsidePlaceId)) {
+            if (shouldTrackDiscovery && !state.currentInsideDiscoverySynced) {
+                markDiscovered(player, selected.place(), logger);
+                state.currentInsideDiscoverySynced = true;
+            }
             return;
         }
         state.currentInsidePlaceId = selectedId;
+        state.currentInsideDiscoverySynced = false;
+
+        if (shouldTrackDiscovery) {
+            markDiscovered(player, selected.place(), logger);
+            state.currentInsideDiscoverySynced = true;
+        }
+        if (!shouldSendTitles) {
+            return;
+        }
 
         if (now - state.lastTeleportOrDimensionChangeGameTime < config.teleportDelayTicks) {
             return;
@@ -327,6 +358,7 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
         if (state.dimensionId == null || !state.dimensionId.equals(dimensionId)) {
             state.dimensionId = dimensionId;
             state.currentInsidePlaceId = null;
+            state.currentInsideDiscoverySynced = false;
             state.lastTeleportOrDimensionChangeGameTime = now;
         } else if (state.hasLastPosition) {
             long dx = (long) pos.getX() - state.lastX;
@@ -334,6 +366,7 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
             long dz = (long) pos.getZ() - state.lastZ;
             if (dx * dx + dy * dy + dz * dz > 128L * 128L) {
                 state.currentInsidePlaceId = null;
+                state.currentInsideDiscoverySynced = false;
                 state.lastTeleportOrDimensionChangeGameTime = now;
             }
         }
@@ -367,6 +400,35 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
                 place.placeIdString(),
                 logger
         );
+    }
+
+    private static void markDiscovered(ServerPlayer player, NamedPlace place, Logger logger) {
+        if (player == null || place == null) {
+            return;
+        }
+        WorldRemembersLivingLegendsNeoForgeStorage.recordJournalDiscovery(
+                player.serverLevel(),
+                player.getUUID().toString(),
+                place.placeIdString(),
+                logger
+        );
+    }
+
+    private static boolean shouldTrackNaturalDiscovery() {
+        LivingLegendsConfig config = WorldRemembersLivingLegends.config();
+        if (config == null) {
+            return false;
+        }
+        boolean journalVisited = config.journal != null
+                && config.journal.enabled
+                && config.journal.visibilityMode() == LivingLegendsConfig.Journal.VisibilityMode.VISITED_BY_PLAYER;
+        boolean mapLabels = config.mapIntegration != null
+                && config.mapIntegration.enabled
+                && config.mapIntegration.journeyMap != null
+                && config.mapIntegration.journeyMap.enabled
+                && config.mapIntegration.placeLabels != null
+                && config.mapIntegration.placeLabels.enabled;
+        return journalVisited || mapLabels;
     }
 
     private static void rebuildIndexIfNeeded(MinecraftServer server, Logger logger) {
@@ -572,6 +634,20 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
         return resolved == null ? "" : resolved;
     }
 
+    private static void logPerf(Logger logger, String phase, int players, long startNanos, String reason) {
+        if (logger == null || !WorldRemembersLivingLegends.config().debug.enabled) {
+            return;
+        }
+        long elapsed = System.nanoTime() - startNanos;
+        if (elapsed < PERF_LOG_THRESHOLD_NANOS) {
+            return;
+        }
+        logger.info("living_legends_perf phase=" + phase
+                + " players=" + players
+                + " ms=" + String.format(Locale.ROOT, "%.2f", elapsed / 1_000_000.0)
+                + " reason=" + (reason == null || reason.isBlank() ? "unknown" : reason));
+    }
+
     private static LivingLegendsConfig.TitleOverlay titleConfig() {
         LivingLegendsConfig config = WorldRemembersLivingLegends.config();
         return config == null ? null : config.titleOverlay;
@@ -587,6 +663,7 @@ public final class WorldRemembersLivingLegendsNeoForgePlaceTitles {
 
     private static final class PlayerTitleState {
         private String currentInsidePlaceId;
+        private boolean currentInsideDiscoverySynced;
         private String lastShownPlaceId;
         private String dimensionId;
         private long lastGlobalTitleGameTime = Long.MIN_VALUE / 4;

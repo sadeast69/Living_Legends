@@ -1,0 +1,172 @@
+{
+  "entries": [
+    {
+      "biome": "terralith:alpha_islands",
+      "biomeTheme": "terralith_alpha_islands",
+      "biomeGroup": "sky_islands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:amethyst_canyon",
+      "biomeTheme": "terralith_amethyst_canyon",
+      "biomeGroup": "crystal_canyon",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:amethyst_rainforest",
+      "biomeTheme": "terralith_amethyst_rainforest",
+      "biomeGroup": "crystal_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:ancient_sands",
+      "biomeTheme": "terralith_ancient_sands",
+      "biomeGroup": "ancient_desert",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:ashen_savanna",
+      "biomeTheme": "terralith_ashen_savanna",
+      "biomeGroup": "ashen_savanna",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:basalt_cliffs",
+      "biomeTheme": "terralith_basalt_cliffs",
+      "biomeGroup": "basalt_cliffs",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:blooming_valley",
+      "biomeTheme": "terralith_blooming_valley",
+      "biomeGroup": "flower_valley",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:bryce_canyon",
+      "biomeTheme": "terralith_bryce_canyon",
+      "biomeGroup": "canyon",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:caldera",
+      "biomeTheme": "terralith_caldera",
+      "biomeGroup": "volcanic_crater",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:cloud_forest",
+      "biomeTheme": "terralith_cloud_forest",
+      "biomeGroup": "cloud_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:desert_oasis",
+      "biomeTheme": "terralith_desert_oasis",
+      "biomeGroup": "oasis",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:emerald_peaks",
+      "biomeTheme": "terralith_emerald_peaks",
+      "biomeGroup": "emerald_highlands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:glacial_chasm",
+      "biomeTheme": "terralith_glacial_chasm",
+      "biomeGroup": "glacial_chasm",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:haze_mountain",
+      "biomeTheme": "terralith_haze_mountain",
+      "biomeGroup": "misty_highlands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:lavender_valley",
+      "biomeTheme": "terralith_lavender_valley",
+      "biomeGroup": "flower_valley",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:moonlight_grove",
+      "biomeTheme": "terralith_moonlight_grove",
+      "biomeGroup": "moonlit_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:orchid_swamp",
+      "biomeTheme": "terralith_orchid_swamp",
+      "biomeGroup": "flower_wetland",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:painted_mountains",
+      "biomeTheme": "terralith_painted_mountains",
+      "biomeGroup": "painted_highlands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:sakura_grove",
+      "biomeTheme": "terralith_sakura_grove",
+      "biomeGroup": "blossom_grove",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:scarlet_mountains",
+      "biomeTheme": "terralith_scarlet_mountains",
+      "biomeGroup": "red_highlands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:skylands_autumn",
+      "biomeTheme": "terralith_skylands_autumn",
+      "biomeGroup": "sky_islands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:volcanic_crater",
+      "biomeTheme": "terralith_volcanic_crater",
+      "biomeGroup": "volcanic_crater",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:white_cliffs",
+      "biomeTheme": "terralith_white_cliffs",
+      "biomeGroup": "white_cliffs",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "terralith:yellowstone",
+      "biomeTheme": "terralith_yellowstone",
+      "biomeGroup": "hot_springs",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

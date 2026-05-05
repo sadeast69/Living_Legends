@@ -1,0 +1,103 @@
+{
+  "entries": [
+    {
+      "entity": "illagerinvasion:alchemist",
+      "mobTheme": "illager_alchemist",
+      "mobGroup": "illager_mob",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:archivist",
+      "mobTheme": "illager_archivist",
+      "mobGroup": "illager_mob",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:basher",
+      "mobTheme": "illager_basher",
+      "mobGroup": "illager_raid",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:firecaller",
+      "mobTheme": "illager_firecaller",
+      "mobGroup": "illager_mob",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:inquisitor",
+      "mobTheme": "illager_inquisitor",
+      "mobGroup": "illager_raid",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:invoker",
+      "mobTheme": "illager_invoker",
+      "mobGroup": "illager_mob",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:marauder",
+      "mobTheme": "illager_marauder",
+      "mobGroup": "illager_raid",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:necromancer",
+      "mobTheme": "illager_necromancer",
+      "mobGroup": "illager_mob",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:provoker",
+      "mobTheme": "illager_provoker",
+      "mobGroup": "illager_raid",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:sorcerer",
+      "mobTheme": "illager_sorcerer",
+      "mobGroup": "illager_mob",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "illagerinvasion:surrendered",
+      "mobTheme": "illager_surrendered",
+      "mobGroup": "illager_mob",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

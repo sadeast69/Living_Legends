@@ -1,0 +1,60 @@
+{
+  "entries": [
+    {
+      "biome": "incendium:ash_barrens",
+      "biomeTheme": "incendium_ash_barrens",
+      "biomeGroup": "nether_ash",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "incendium:infernal_dunes",
+      "biomeTheme": "incendium_infernal_dunes",
+      "biomeGroup": "nether_dunes",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "incendium:inverted_forest",
+      "biomeTheme": "incendium_inverted_forest",
+      "biomeGroup": "nether_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "incendium:quartz_flats",
+      "biomeTheme": "incendium_quartz_flats",
+      "biomeGroup": "nether_quartz",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "incendium:toxic_heap",
+      "biomeTheme": "incendium_toxic_heap",
+      "biomeGroup": "nether_toxic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "incendium:volcanic_deltas",
+      "biomeTheme": "incendium_volcanic_deltas",
+      "biomeGroup": "nether_volcanic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "incendium:weeping_valley",
+      "biomeTheme": "incendium_weeping_valley",
+      "biomeGroup": "nether_soul",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "incendium:withered_forest",
+      "biomeTheme": "incendium_withered_forest",
+      "biomeGroup": "nether_withered",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

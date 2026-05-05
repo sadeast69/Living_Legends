@@ -1,0 +1,200 @@
+{
+  "entries": [
+    {
+      "biome": "regions_unexplored:alpha_grove",
+      "biomeTheme": "regions_alpha_grove",
+      "biomeGroup": "forest_grove",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:ancient_delta",
+      "biomeTheme": "regions_ancient_delta",
+      "biomeGroup": "wetland_delta",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:arid_mountains",
+      "biomeTheme": "regions_arid_mountains",
+      "biomeGroup": "dry_highlands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:ashen_woodland",
+      "biomeTheme": "regions_ashen_woodland",
+      "biomeGroup": "ashen_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:autumnal_maple_forest",
+      "biomeTheme": "regions_autumnal_maple_forest",
+      "biomeGroup": "autumn_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:baobab_savanna",
+      "biomeTheme": "regions_baobab_savanna",
+      "biomeGroup": "savanna",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:bayou",
+      "biomeTheme": "regions_bayou",
+      "biomeGroup": "wetland_bayou",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:bioshroom_caves",
+      "biomeTheme": "regions_bioshroom_caves",
+      "biomeGroup": "cave_mushroom",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:blackstone_basin",
+      "biomeTheme": "regions_blackstone_basin",
+      "biomeGroup": "nether_basin",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:chalk_cliffs",
+      "biomeTheme": "regions_chalk_cliffs",
+      "biomeGroup": "white_cliffs",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:eucalyptus_forest",
+      "biomeTheme": "regions_eucalyptus_forest",
+      "biomeGroup": "forest_grove",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:flower_fields",
+      "biomeTheme": "regions_flower_fields",
+      "biomeGroup": "flower_field",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:frozen_tundra",
+      "biomeTheme": "regions_frozen_tundra",
+      "biomeGroup": "frozen_wilds",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:glistering_meadow",
+      "biomeTheme": "regions_glistering_meadow",
+      "biomeGroup": "bright_meadow",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:hyacinth_deeps",
+      "biomeTheme": "regions_hyacinth_deeps",
+      "biomeGroup": "cave_bloom",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:infernal_holt",
+      "biomeTheme": "regions_infernal_holt",
+      "biomeGroup": "nether_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:joshua_desert",
+      "biomeTheme": "regions_joshua_desert",
+      "biomeGroup": "desert",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:maple_forest",
+      "biomeTheme": "regions_maple_forest",
+      "biomeGroup": "maple_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:mycotoxic_undergrowth",
+      "biomeTheme": "regions_mycotoxic_undergrowth",
+      "biomeGroup": "cave_toxic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:old_growth_bayou",
+      "biomeTheme": "regions_old_growth_bayou",
+      "biomeGroup": "wetland_bayou",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:prismachasm",
+      "biomeTheme": "regions_prismachasm",
+      "biomeGroup": "cave_crystal",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:redstone_abyss",
+      "biomeTheme": "regions_redstone_abyss",
+      "biomeGroup": "nether_abyss",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:redwoods",
+      "biomeTheme": "regions_redwoods",
+      "biomeGroup": "redwood_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:saguaro_desert",
+      "biomeTheme": "regions_saguaro_desert",
+      "biomeGroup": "desert",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:silver_birch_forest",
+      "biomeTheme": "regions_silver_birch_forest",
+      "biomeGroup": "birch_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:spires",
+      "biomeTheme": "regions_spires",
+      "biomeGroup": "stone_spires",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:towering_cliffs",
+      "biomeTheme": "regions_towering_cliffs",
+      "biomeGroup": "high_cliffs",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "regions_unexplored:willow_forest",
+      "biomeTheme": "regions_willow_forest",
+      "biomeGroup": "willow_forest",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

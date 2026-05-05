@@ -1,0 +1,1252 @@
+{
+  "entries": [
+    {
+      "structure": "nova_structures:badlands_miner_outpost",
+      "structureTheme": "dnt_roadside_camp",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "camp_site",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:bunker",
+      "structureTheme": "dnt_roadside_camp",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "camp_site",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:conduit_ruin",
+      "structureTheme": "dnt_sea_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ocean_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:creeping_crypt",
+      "structureTheme": "dnt_crypt",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "crypt_dungeon",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:deepslate_camp",
+      "structureTheme": "dnt_roadside_camp",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "camp_site",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:desert_ruins",
+      "structureTheme": "dnt_adventure_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:end_castle",
+      "structureTheme": "dnt_end_ruins",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "end_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:end_lighthouse",
+      "structureTheme": "dnt_end_ruins",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "end_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:end_ship",
+      "structureTheme": "dnt_end_ruins",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "end_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:firewatch_tower_birch",
+      "structureTheme": "dnt_firewatch_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_tower",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:firewatch_tower_cherry",
+      "structureTheme": "dnt_firewatch_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_tower",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:firewatch_tower_dark_oak",
+      "structureTheme": "dnt_firewatch_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_tower",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:firewatch_tower_forest",
+      "structureTheme": "dnt_firewatch_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_tower",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:firewatch_tower_jungle",
+      "structureTheme": "dnt_firewatch_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_tower",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:firewatch_tower_mangrove",
+      "structureTheme": "dnt_firewatch_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_tower",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:firewatch_tower_savanna",
+      "structureTheme": "dnt_firewatch_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_tower",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:firewatch_tower_swamp",
+      "structureTheme": "dnt_firewatch_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_tower",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:firewatch_tower_taiga",
+      "structureTheme": "dnt_firewatch_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frontier_tower",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:hamlet",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:illager_camp",
+      "structureTheme": "dnt_illager_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_raid",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:illager_hideout",
+      "structureTheme": "dnt_illager_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_raid",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:illager_manor",
+      "structureTheme": "dnt_illager_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "illager_raid",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:jungle_ruins",
+      "structureTheme": "dnt_adventure_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:lone_citadel",
+      "structureTheme": "dnt_adventure_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:mangrove_witch_hut",
+      "structureTheme": "dnt_adventure_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:nether_keep",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:nether_port",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:nether_skeleton_tower_crimson",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:nether_skeleton_tower_soul",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:nether_skeleton_tower_warped",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:nether_skeleton_tower_waste",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:piglin_camp",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:piglin_donjon",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:piglin_outstation",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_bee_keeper",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_big_remnant",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_big_remnant_2",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_big_remnant_3",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_birch_graveyard",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_bridge_remnant",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_bunny_base",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_classic_village",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_desert_remnant",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_forest_smith",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_frog_ranch",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_graveyard",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_medium_remnant",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_medium_remnant_2",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_miner_hut",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_mud_brick_constructor",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_ominous_shop",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_ruin_farmer",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_ruin_smith",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_sawmill",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_school_remnant",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_taiga_castle",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_woodland_hud",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:remnant_zombie_horse_ranch",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:ruin_town",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_1",
+      "structureTheme": "dnt_trial_shrine",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "trial_shrine",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_2",
+      "structureTheme": "dnt_trial_shrine",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "trial_shrine",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_3",
+      "structureTheme": "dnt_trial_shrine",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "trial_shrine",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_4",
+      "structureTheme": "dnt_trial_shrine",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "trial_shrine",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:shrine_combat_tier_5",
+      "structureTheme": "dnt_trial_shrine",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "trial_shrine",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:shrine_tower",
+      "structureTheme": "dnt_trial_shrine",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "trial_shrine",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:skeleton_camp_crimson",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:skeleton_camp_soul",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:skeleton_camp_warped",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:skeleton_camp_waste",
+      "structureTheme": "dnt_nether_site",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "nether_outpost",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:stray_fort",
+      "structureTheme": "dnt_adventure_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_acacia",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_birch",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_cherry",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_dark_oak",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_desert",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_jungle",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_mangrove",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_oak",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_snowy",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_spruce",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:tavern_swamp",
+      "structureTheme": "dnt_tavern",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "tavern_roadside",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:toxic_lair",
+      "structureTheme": "dnt_crypt",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "crypt_dungeon",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:trident_trial_monument",
+      "structureTheme": "dnt_trial_shrine",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "trial_shrine",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:undead_crypt",
+      "structureTheme": "dnt_crypt",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "crypt_dungeon",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:underground_house",
+      "structureTheme": "dnt_adventure_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:village_birch",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:village_jungle",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:village_swamp",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:well_birch",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:well_dark_oak",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:well_jungle",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:well_oak",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:well_savana",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:well_spruce",
+      "structureTheme": "dnt_settlement_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "settlement_ruin",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:wild_ruin",
+      "structureTheme": "dnt_adventure_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "dungeons_and_taverns"
+      ]
+    },
+    {
+      "structure": "nova_structures:witch_villa",
+      "structureTheme": "dnt_adventure_ruin",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "dungeons_and_taverns"
+      ]
+    }
+  ]
+}

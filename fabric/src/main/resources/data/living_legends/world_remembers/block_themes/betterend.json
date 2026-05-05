@@ -1,0 +1,94 @@
+{
+  "entries": [
+    {
+      "block": "betterend:amber_ore",
+      "blockTheme": "betterend_amber_ore",
+      "miningTheme": "betterend_amber_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:amber_ore"
+    },
+    {
+      "block": "betterend:thallasium_ore",
+      "blockTheme": "betterend_thallasium_ore",
+      "miningTheme": "betterend_thallasium_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:thallasium_ore"
+    },
+    {
+      "block": "betterend:ender_ore",
+      "blockTheme": "betterend_ender_ore",
+      "miningTheme": "betterend_ender_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:ender_ore"
+    },
+    {
+      "block": "betterend:aurora_crystal",
+      "blockTheme": "betterend_aurora_crystal",
+      "miningTheme": "betterend_aurora_crystal",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:aurora_crystal"
+    },
+    {
+      "block": "betterend:budding_smaragdant_crystal",
+      "blockTheme": "betterend_budding_smaragdant_crystal",
+      "miningTheme": "betterend_budding_smaragdant_crystal",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:budding_smaragdant_crystal"
+    },
+    {
+      "block": "betterend:smaragdant_crystal",
+      "blockTheme": "betterend_smaragdant_crystal",
+      "miningTheme": "betterend_smaragdant_crystal",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:smaragdant_crystal"
+    },
+    {
+      "block": "betterend:aeternium_block",
+      "blockTheme": "betterend_aeternium_block",
+      "miningTheme": "betterend_aeternium_block",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:aeternium_block"
+    },
+    {
+      "block": "betterend:terminite_block",
+      "blockTheme": "betterend_terminite_block",
+      "miningTheme": "betterend_terminite_block",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:terminite_block"
+    },
+    {
+      "block": "betterend:thallasium_block",
+      "blockTheme": "betterend_thallasium_block",
+      "miningTheme": "betterend_thallasium_block",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:thallasium_block"
+    },
+    {
+      "block": "betterend:ender_block",
+      "blockTheme": "betterend_ender_block",
+      "miningTheme": "betterend_ender_block",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:betterend:ender_block"
+    }
+  ]
+}

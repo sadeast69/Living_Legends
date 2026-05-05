@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "block": "adventurez:chiseled_polished_blackstone_holder",
+      "blockTheme": "adventurez_chiseled_polished_blackstone_holder",
+      "miningTheme": "adventurez_chiseled_polished_blackstone_holder",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:adventurez:chiseled_polished_blackstone_holder"
+    },
+    {
+      "block": "adventurez:piglin_flag",
+      "blockTheme": "adventurez_piglin_flag",
+      "miningTheme": "adventurez_piglin_flag",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:adventurez:piglin_flag"
+    },
+    {
+      "block": "adventurez:shadow_chest",
+      "blockTheme": "adventurez_shadow_chest",
+      "miningTheme": "adventurez_shadow_chest",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:adventurez:shadow_chest"
+    }
+  ]
+}

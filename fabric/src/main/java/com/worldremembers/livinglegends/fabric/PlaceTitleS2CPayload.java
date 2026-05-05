@@ -2,7 +2,10 @@ package com.worldremembers.livinglegends.fabric;
 
 import com.worldremembers.livinglegends.NameRecipe;
 import com.worldremembers.livinglegends.NameTokenForm;
+import com.worldremembers.livinglegends.PlaceType;
 import com.worldremembers.livinglegends.WorldRemembersLivingLegends;
+import com.worldremembers.livinglegends.visual.PlaceVisualTheme;
+import com.worldremembers.livinglegends.visual.PlaceVisualThemeResolver;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
@@ -24,7 +27,8 @@ public record PlaceTitleS2CPayload(
         int centerY,
         int centerZ,
         int radius,
-        Reason reason
+        Reason reason,
+        PlaceVisualTheme visualTheme
 ) implements CustomPayload {
     public static final Id<PlaceTitleS2CPayload> ID =
             new Id<>(Identifier.of(WorldRemembersLivingLegends.MOD_ID, "place_title"));
@@ -41,6 +45,40 @@ public record PlaceTitleS2CPayload(
         nameRecipe = nameRecipe == null ? NameRecipe.empty() : nameRecipe;
         serverResolvedFallbackName = serverResolvedFallbackName == null ? "" : serverResolvedFallbackName;
         reason = reason == null ? Reason.DEBUG : reason;
+        visualTheme = visualTheme == null
+                ? PlaceVisualThemeResolver.resolve(PlaceType.fromId(placeType), "", "", "")
+                : visualTheme;
+    }
+
+    public PlaceTitleS2CPayload(
+            String placeId,
+            String placeType,
+            String nameStyle,
+            boolean manualName,
+            String manualNameText,
+            NameRecipe nameRecipe,
+            String serverResolvedFallbackName,
+            int centerX,
+            int centerY,
+            int centerZ,
+            int radius,
+            Reason reason
+    ) {
+        this(
+                placeId,
+                placeType,
+                nameStyle,
+                manualName,
+                manualNameText,
+                nameRecipe,
+                serverResolvedFallbackName,
+                centerX,
+                centerY,
+                centerZ,
+                radius,
+                reason,
+                PlaceVisualThemeResolver.resolve(PlaceType.fromId(placeType), "", "", "")
+        );
     }
 
     public PlaceTitleS2CPayload(RegistryByteBuf buf) {
@@ -56,7 +94,8 @@ public record PlaceTitleS2CPayload(
                 buf.readInt(),
                 buf.readInt(),
                 buf.readInt(),
-                buf.readEnumConstant(Reason.class)
+                buf.readEnumConstant(Reason.class),
+                readTheme(buf)
         );
     }
 
@@ -81,7 +120,8 @@ public record PlaceTitleS2CPayload(
                 0,
                 0,
                 0,
-                Reason.CLEAR
+                Reason.CLEAR,
+                PlaceVisualTheme.DEFAULT
         );
     }
 
@@ -103,6 +143,50 @@ public record PlaceTitleS2CPayload(
         buf.writeInt(centerZ);
         buf.writeInt(radius);
         buf.writeEnumConstant(reason);
+        writeTheme(buf, visualTheme);
+    }
+
+    private static void writeTheme(RegistryByteBuf buf, PlaceVisualTheme theme) {
+        PlaceVisualTheme resolved = theme == null ? PlaceVisualTheme.DEFAULT : theme;
+        buf.writeString(resolved.toneKey());
+        buf.writeString(resolved.mapLabelStyleKey());
+        buf.writeString(resolved.titleOverlayStyleKey());
+        buf.writeInt(resolved.mainColor());
+        buf.writeInt(resolved.secondaryColor());
+        buf.writeInt(resolved.accentColor());
+        buf.writeInt(resolved.lineColor());
+        buf.writeInt(resolved.outlineColor());
+        buf.writeInt(resolved.shadowColor());
+        buf.writeInt(resolved.tooltipAccentColor());
+        buf.writeString(resolved.glyph());
+        buf.writeString(resolved.glyphPlacement());
+        buf.writeString(resolved.lineStyle());
+        buf.writeString(resolved.labelWeight());
+        buf.writeString(resolved.curveStyle());
+        buf.writeString(resolved.shadowStyle());
+        buf.writeVarInt(resolved.emphasis());
+    }
+
+    private static PlaceVisualTheme readTheme(RegistryByteBuf buf) {
+        return new PlaceVisualTheme(
+                buf.readString(),
+                buf.readString(),
+                buf.readString(),
+                buf.readInt(),
+                buf.readInt(),
+                buf.readInt(),
+                buf.readInt(),
+                buf.readInt(),
+                buf.readInt(),
+                buf.readInt(),
+                buf.readString(),
+                buf.readString(),
+                buf.readString(),
+                buf.readString(),
+                buf.readString(),
+                buf.readString(),
+                buf.readVarInt()
+        );
     }
 
     private static void writeRecipe(RegistryByteBuf buf, NameRecipe recipe) {

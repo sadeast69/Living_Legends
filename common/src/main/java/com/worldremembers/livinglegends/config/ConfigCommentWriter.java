@@ -279,6 +279,27 @@ final class ConfigCommentWriter {
         values.put("titleOverlay.generalLandmarkOnlyIfNoHigherPriority", "If true, GENERAL_LANDMARK titles are suppressed when a more specific place also contains the player.");
         values.put("titleOverlay.verticalToleranceBlocks", "Y-distance tolerance for horizontal title checks. Cave/mining/portal-like places still use 3D distance.");
 
+        values.put("mapIntegration", "Optional client map integrations. These settings are server-controlled and safe when a map mod is missing.");
+        values.put("mapIntegration.enabled", "Master switch for all optional map integration output.");
+        values.put("mapIntegration.journeyMap", "JourneyMap-specific settings. JourneyMap remains optional and client-side.");
+        values.put("mapIntegration.journeyMap.enabled", "If true, clients with JourneyMap may receive Living Legends map labels and destinations.");
+        values.put("mapIntegration.xaero", "Xaero-specific settings. Xaero's Minimap remains optional and client-side.");
+        values.put("mapIntegration.xaero.enabled", "If true, clients with Xaero's Minimap can set one manual destination waypoint from the journal.");
+        values.put("mapIntegration.ftbChunks", "FTB Chunks-specific settings. FTB Chunks remains optional and client-side.");
+        values.put("mapIntegration.ftbChunks.enabled", "If true, clients with FTB Chunks can set one manual destination waypoint from the journal.");
+        values.put("mapIntegration.placeLabels", "Persistent per-player map labels for places the player has discovered. Xaero and FTB Chunks do not use these labels.");
+        values.put("mapIntegration.placeLabels.enabled", "If true, discovered places can appear as map labels in providers that support labels, currently JourneyMap.");
+        values.put("mapIntegration.placeLabels.showGeneralLandmarks", "If true, GENERAL_LANDMARK labels can appear on the map. False keeps background landmarks hidden by default.");
+        values.put("mapIntegration.placeLabels.showTooltips", "If true, supported map labels include hover text.");
+        values.put("mapIntegration.placeLabels.showCoordinatesInTooltip", "Reserved for map providers that support technical hover fields. JourneyMap labels keep hover text player-facing.");
+        values.put("mapIntegration.placeLabels.showDimensionInTooltip", "Reserved for map providers that support technical hover fields. JourneyMap labels keep hover text player-facing.");
+        values.put("mapIntegration.placeLabels.showPlaceTypeInTooltip", "If true, supported label hover text may include the place type.");
+        values.put("mapIntegration.destinations", "Temporary destinations players set manually from the World Journal.");
+        values.put("mapIntegration.destinations.enabled", "If true, supported map mods can create temporary personal destinations from the journal.");
+        values.put("mapIntegration.destinations.onlyOneActiveDestination", "If true, setting a new Living Legends destination clears previous Living Legends destinations.");
+        values.put("mapIntegration.destinations.clearWhenEnteringPlaceRadius", "If true, destinations clear once the player enters the saved place radius.");
+        values.put("mapIntegration.destinations.fallbackClearDistanceBlocks", "Fallback distance for clearing a destination, in blocks. Values outside 1 to 1024 reset to 16.");
+
         values.put("decay", "Future decay settings for old importance.");
         values.put("decay.*", "Decay setting. Existing places are kept unless future decay logic says otherwise.");
         values.put("candidateDecay", "Candidate decay affects only activity that has not yet become a NamedPlace. Existing named places are never reduced, renamed, or removed by candidate decay.");

@@ -24,7 +24,11 @@ public final class WorldRemembersLivingLegendsNeoForgeClientNetworking {
         WorldRemembersLivingLegendsNeoForgeClientConfig.load(logger);
         WorldRemembersLivingLegendsNeoForgeClientBridge.setPlaceTitleHandler(WorldRemembersLivingLegendsNeoForgeClientState::handlePlaceTitle);
         WorldRemembersLivingLegendsNeoForgeClientBridge.setWorldJournalHandler(WorldRemembersLivingLegendsNeoForgeClientState::handleWorldJournal);
+        WorldRemembersLivingLegendsNeoForgeClientBridge.setMapIntegrationHandler(NeoForgeMapIntegrationClient::handle);
+        WorldRemembersLivingLegendsNeoForgeClientBridge.setMapDestinationHandler(NeoForgeMapIntegrationClient::handle);
+        NeoForgeMapIntegrationClient.registerBuiltInIntegrations(logger);
         NeoForge.EVENT_BUS.addListener((ClientTickEvent.Post event) -> PlaceTitleOverlayRenderer.tick(Minecraft.getInstance()));
+        NeoForge.EVENT_BUS.addListener((ClientTickEvent.Post event) -> NeoForgeMapIntegrationClient.tick(Minecraft.getInstance()));
         NeoForge.EVENT_BUS.addListener((RenderGuiEvent.Post event) -> PlaceTitleOverlayRenderer.render(
                 event.getGuiGraphics(),
                 event.getPartialTick().getGameTimeDeltaPartialTick(false)

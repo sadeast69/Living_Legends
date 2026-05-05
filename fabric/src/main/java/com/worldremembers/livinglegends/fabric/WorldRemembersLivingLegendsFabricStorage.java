@@ -15,6 +15,7 @@ import com.worldremembers.livinglegends.NameDataDiagnostics;
 import com.worldremembers.livinglegends.NameGenerationDiagnostics;
 import com.worldremembers.livinglegends.NameGenerator;
 import com.worldremembers.livinglegends.NameRecipe;
+import com.worldremembers.livinglegends.NameTextSafety;
 import com.worldremembers.livinglegends.NamePatternSource;
 import com.worldremembers.livinglegends.NameTokenForm;
 import com.worldremembers.livinglegends.NamedPlace;
@@ -129,6 +130,7 @@ final class WorldRemembersLivingLegendsFabricStorage {
         );
         if (result.namedPlaceChanges() > 0) {
             WorldRemembersLivingLegendsFabricPlaceTitles.invalidateIndex();
+            FabricMapIntegrationManager.syncAllFromWorld(server, logger);
             markDirty(state, "place_generation", logger);
         }
     }
@@ -384,6 +386,7 @@ final class WorldRemembersLivingLegendsFabricStorage {
         boolean changed = delegate.data().recordDiscoveredPlace(playerId, placeId);
         if (changed) {
             markDirty(state, "journal_discovery " + placeId, logger);
+            FabricMapIntegrationManager.syncPlayerById(world, playerId, logger);
         }
         return changed;
     }
@@ -404,6 +407,8 @@ final class WorldRemembersLivingLegendsFabricStorage {
         if (changed) {
             delegate.data().removeDiscoveredPlaceFromAllPlayers(placeId);
             WorldRemembersLivingLegendsFabricPlaceTitles.invalidateIndex();
+            FabricMapIntegrationManager.syncAllFromWorld(world, logger);
+            FabricMapIntegrationManager.removeDestinationFromWorld(world, placeId, logger);
             markDirty(state, "delete_place " + placeId, logger);
         }
         return changed;
@@ -458,6 +463,7 @@ final class WorldRemembersLivingLegendsFabricStorage {
         boolean changed = delegate.data().upsertNamedPlace(place);
         if (changed) {
             WorldRemembersLivingLegendsFabricPlaceTitles.invalidateIndex();
+            FabricMapIntegrationManager.syncAllFromWorld(world, logger);
             markDirty(state, reason == null || reason.isBlank() ? "upsert_place" : reason, logger);
         }
         return changed;
@@ -495,6 +501,7 @@ final class WorldRemembersLivingLegendsFabricStorage {
         RegenerateResult result = regenerateOne(delegate.data(), place, force, gameTime(world));
         if (result.changed()) {
             WorldRemembersLivingLegendsFabricPlaceTitles.invalidateIndex();
+            FabricMapIntegrationManager.syncAllFromWorld(world, logger);
             markDirty(state, "regenerate_place " + placeId, logger);
         }
         return result.message();
@@ -520,6 +527,7 @@ final class WorldRemembersLivingLegendsFabricStorage {
         }
         if (changed > 0) {
             WorldRemembersLivingLegendsFabricPlaceTitles.invalidateIndex();
+            FabricMapIntegrationManager.syncAllFromWorld(world, logger);
             markDirty(state, "regenerate_all", logger);
         }
         message.insert("World Remembers regenerate all".length(), " changed=" + changed + " skipped=" + skipped);
@@ -626,6 +634,7 @@ final class WorldRemembersLivingLegendsFabricStorage {
             }
             if (imported > 0) {
                 WorldRemembersLivingLegendsFabricPlaceTitles.invalidateIndex();
+                FabricMapIntegrationManager.syncAllFromWorld(world, logger);
                 markDirty(state, "import_places", logger);
             }
             return "World Remembers imported " + imported
@@ -917,6 +926,9 @@ final class WorldRemembersLivingLegendsFabricStorage {
     }
 
     private static boolean looksTechnical(String resolved) {
+        if (NameTextSafety.looksBrokenOrTechnical(resolved)) {
+            return true;
+        }
         String value = resolved == null ? "" : resolved.trim().toLowerCase(Locale.ROOT);
         return value.isBlank()
                 || value.contains("living_legends.")

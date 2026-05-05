@@ -229,6 +229,899 @@ public final class BuiltInNameData {
         );
     }
 
+    private static NameDataPack withHighFrequencyCauseVariants(NameDataPack pack) {
+        if (pack == null) {
+            return null;
+        }
+
+        List<NamePattern> patterns = new ArrayList<>(pack.patterns());
+        addHighFrequencyCauseVariants(patterns, pack.styleId());
+        return new NameDataPack(pack.styleId(), patterns, pack.tokens());
+    }
+
+    private static void addHighFrequencyCauseVariants(List<NamePattern> patterns, String styleId) {
+        String resolvedStyleId = builtInStyleId(styleId);
+        switch (NameStyle.fromId(resolvedStyleId)) {
+            case DARK_FANTASY -> {
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.SURFACE, "fall", 1.15,
+                        "df_death_cause_fall_broken_ledge",
+                        "df_death_cause_fall_hollow_drop",
+                        "df_death_cause_fall_last_step",
+                        "df_death_cause_fall_pale_edge",
+                        "df_death_cause_fall_silent_plunge");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.MOUNTAIN, "fall", 1.15,
+                        "df_death_cause_fall_black_cliff",
+                        "df_death_cause_fall_cold_descent",
+                        "df_death_cause_fall_crownless_height",
+                        "df_death_cause_fall_stone_below");
+            }
+            case COZY_SURVIVAL -> {
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.SURFACE, "fall", 1.15,
+                        "cs_death_cause_fall_last_step",
+                        "cs_death_cause_fall_soft_marker",
+                        "cs_death_cause_fall_little_drop",
+                        "cs_death_cause_fall_warning_spot",
+                        "cs_death_cause_fall_quiet_edge");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.MOUNTAIN, "fall", 1.15,
+                        "cs_death_cause_fall_high_step",
+                        "cs_death_cause_fall_cold_marker",
+                        "cs_death_cause_fall_snowy_drop",
+                        "cs_death_cause_fall_mountain_warning");
+            }
+            case EPIC_MYTHOLOGY -> {
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.SURFACE, "fall", 1.15,
+                        "em_death_cause_fall_last_ledge",
+                        "em_death_cause_fall_fallen_step",
+                        "em_death_cause_fall_oath_below",
+                        "em_death_cause_fall_edge_of_fate",
+                        "em_death_cause_fall_highfall_mark");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.MOUNTAIN, "fall", 1.15,
+                        "em_death_cause_fall_cliff_of_fate",
+                        "em_death_cause_fall_summit_oath",
+                        "em_death_cause_fall_stone_descent",
+                        "em_death_cause_fall_height_of_omens");
+            }
+            case NEUTRAL_SERVER -> {
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.SURFACE, "fall", 1.15,
+                        "ns_death_cause_fall_site",
+                        "ns_death_cause_fall_drop_point",
+                        "ns_death_cause_fall_ledge_marker",
+                        "ns_death_cause_fall_highfall_site",
+                        "ns_death_cause_fall_edge_record");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.MOUNTAIN, "fall", 1.15,
+                        "ns_death_cause_fall_cliff_site",
+                        "ns_death_cause_fall_mountain_drop",
+                        "ns_death_cause_fall_high_marker",
+                        "ns_death_cause_fall_summit_record");
+            }
+            case FUNNY_COMMUNITY -> {
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.SURFACE, "fall", 1.15,
+                        "fc_death_cause_fall_gravity_claim",
+                        "fc_death_cause_fall_floor_late",
+                        "fc_death_cause_fall_edge_review",
+                        "fc_death_cause_fall_ankle_report",
+                        "fc_death_cause_fall_short_flight");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.MOUNTAIN, "fall", 1.15,
+                        "fc_death_cause_fall_mountain_disagreement",
+                        "fc_death_cause_fall_summit_oops",
+                        "fc_death_cause_fall_cliff_notes",
+                        "fc_death_cause_fall_long_way_down");
+            }
+            default -> {
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.SURFACE, "fall", 1.15,
+                        "va_death_cause_fall_step",
+                        "va_death_cause_fall_broken_drop",
+                        "va_death_cause_fall_highfall_mark",
+                        "va_death_cause_fall_edge");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.MOUNTAIN, "fall", 1.15,
+                        "va_death_cause_fall_high_cliff",
+                        "va_death_cause_fall_stone_descent",
+                        "va_death_cause_fall_cold_drop");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.NETHER, "lava", 1.15,
+                        "va_death_cause_lava_pool",
+                        "va_death_cause_lava_marker",
+                        "va_death_cause_lava_last_light",
+                        "va_death_cause_lava_blackstone_edge");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.NETHER, "fire", 1.15,
+                        "va_death_cause_fire_mark",
+                        "va_death_cause_fire_threshold",
+                        "va_death_cause_fire_last_spark",
+                        "va_death_cause_fire_ashen_trace");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.WATER, "drowning", 1.15,
+                        "va_death_cause_drowning_marker",
+                        "va_death_cause_drowning_deep_water",
+                        "va_death_cause_drowning_last_breath",
+                        "va_death_cause_drowning_quiet_current");
+                addDeathCausePatterns(patterns, resolvedStyleId, DeathSiteEnvironment.END, "void", 1.15,
+                        "va_death_cause_void_edge",
+                        "va_death_cause_void_threshold",
+                        "va_death_cause_void_last_step",
+                        "va_death_cause_void_pale_drop");
+            }
+        }
+    }
+
+    private static void addDeathCausePatterns(
+            List<NamePattern> patterns,
+            String styleId,
+            DeathSiteEnvironment environment,
+            String deathCause,
+            double weight,
+            String... ids
+    ) {
+        for (String id : ids) {
+            patterns.add(deathCausePattern(id, environment, deathCause, weight, styleId));
+        }
+    }
+
+    private static NameDataPack withContentCompatPatterns(NameDataPack pack) {
+        if (pack == null) {
+            return null;
+        }
+
+        List<NamePattern> patterns = new ArrayList<>(pack.patterns());
+        addContentCompatPatterns(patterns, pack.styleId());
+        return new NameDataPack(pack.styleId(), patterns, pack.tokens());
+    }
+
+    private static void addContentCompatPatterns(List<NamePattern> patterns, String styleId) {
+        String resolvedStyleId = builtInStyleId(styleId);
+        String prefix = contentCompatStylePrefix(resolvedStyleId);
+        for (ContentCompatPatternDefinition definition : CONTENT_COMPAT_PATTERNS) {
+            String patternId = prefix + definition.suffix();
+            patterns.add(new NamePattern(
+                    patternId,
+                    "living_legends.name.pattern." + patternId,
+                    Set.of(definition.placeType()),
+                    Set.of(),
+                    12.0,
+                    List.of(),
+                    contentCompatTags(resolvedStyleId, definition.tags()),
+                    NameSemanticRoots.inferPatternRoot(patternId),
+                    definition.constraints(),
+                    Set.of()
+            ));
+        }
+    }
+
+    private static String contentCompatStylePrefix(String styleId) {
+        return switch (NameStyle.fromId(styleId)) {
+            case DARK_FANTASY -> "compat_df_";
+            case COZY_SURVIVAL -> "compat_cs_";
+            case EPIC_MYTHOLOGY -> "compat_em_";
+            case NEUTRAL_SERVER -> "compat_ns_";
+            case FUNNY_COMMUNITY -> "compat_fc_";
+            default -> "compat_va_";
+        };
+    }
+
+    private static Set<String> contentCompatTags(String styleId, Set<String> tags) {
+        Set<String> result = new LinkedHashSet<>();
+        result.add(styleId);
+        result.add("compat");
+        result.add("content_compat");
+        if (tags != null) {
+            result.addAll(tags);
+        }
+        return Set.copyOf(result);
+    }
+
+    private static ContentCompatPatternDefinition firstCompat(String suffix, String firstDiscoveryKey, String... tags) {
+        return new ContentCompatPatternDefinition(
+                suffix,
+                PlaceType.FIRST_DISCOVERY,
+                NameCauseConstraints.builder()
+                        .requiredFirstDiscoveryKey(firstDiscoveryKey)
+                        .build(),
+                compatDefinitionTags("exact_cause", tags)
+        );
+    }
+
+    private static ContentCompatPatternDefinition bossCompat(String suffix, String bossId, String... tags) {
+        return new ContentCompatPatternDefinition(
+                suffix,
+                PlaceType.BOSS_SITE,
+                bossConstraints(bossId),
+                compatDefinitionTags("dominant_target", tags)
+        );
+    }
+
+    private static ContentCompatPatternDefinition mobGroupCompat(String suffix, String mobGroup, String... tags) {
+        return new ContentCompatPatternDefinition(
+                suffix,
+                PlaceType.BATTLEFIELD,
+                mobConstraints("group:" + mobGroup),
+                compatDefinitionTags("dominant_target", tags)
+        );
+    }
+
+    private static ContentCompatPatternDefinition mobThemeCompat(String suffix, String mobTheme, String... tags) {
+        return new ContentCompatPatternDefinition(
+                suffix,
+                PlaceType.BATTLEFIELD,
+                mobConstraints("theme:" + mobTheme),
+                compatDefinitionTags("dominant_target", tags)
+        );
+    }
+
+    private static ContentCompatPatternDefinition biomeGroupCompat(String suffix, String biomeGroup, String... tags) {
+        return new ContentCompatPatternDefinition(
+                suffix,
+                PlaceType.GENERAL_LANDMARK,
+                NameCauseConstraints.builder()
+                        .requiredCauseType(PlaceCauseType.VISITS)
+                        .requiredBiomeGroups(biomeGroup)
+                        .build(),
+                compatDefinitionTags("biome", tags)
+        );
+    }
+
+    private static ContentCompatPatternDefinition biomeThemeCompat(String suffix, String biomeTheme, String... tags) {
+        return new ContentCompatPatternDefinition(
+                suffix,
+                PlaceType.GENERAL_LANDMARK,
+                NameCauseConstraints.builder()
+                        .requiredCauseType(PlaceCauseType.VISITS)
+                        .requiredBiomeThemes(biomeTheme)
+                        .build(),
+                compatDefinitionTags("biome", tags)
+        );
+    }
+
+    private static ContentCompatPatternDefinition miningCompat(String suffix, String[] blockIds, String... tags) {
+        return new ContentCompatPatternDefinition(
+                suffix,
+                PlaceType.MINING_SITE,
+                blockConstraints(blockIds),
+                compatDefinitionTags("dominant_target", tags)
+        );
+    }
+
+    private static Set<String> compatDefinitionTags(String baseTag, String... tags) {
+        Set<String> result = new LinkedHashSet<>();
+        String normalizedBase = WorldPos.optionalId(baseTag);
+        if (!normalizedBase.isBlank()) {
+            result.add(normalizedBase);
+        }
+        if (tags != null) {
+            for (String tag : tags) {
+                String normalized = WorldPos.optionalId(tag);
+                if (!normalized.isBlank()) {
+                    result.add(normalized);
+                }
+            }
+        }
+        return Set.copyOf(result);
+    }
+
+    private record ContentCompatPatternDefinition(
+            String suffix,
+            PlaceType placeType,
+            NameCauseConstraints constraints,
+            Set<String> tags
+    ) {
+    }
+
+    private static final List<ContentCompatPatternDefinition> CONTENT_COMPAT_PATTERNS = List.of(
+            firstCompat("first_aether_gate", "compat:first_dimension:aether:the_aether", "aether"),
+            firstCompat("first_aether_bronze_dungeon", "compat:first_structure:aether:bronze_dungeon", "aether", "dungeon"),
+            firstCompat("first_aether_silver_dungeon", "compat:first_structure:aether:silver_dungeon", "aether", "dungeon"),
+            firstCompat("first_aether_gold_dungeon", "compat:first_structure:aether:gold_dungeon", "aether", "dungeon"),
+            firstCompat("first_aether_ambrosium", "compat:first_block:aether:ambrosium_ore", "aether", "mining"),
+            firstCompat("first_aether_zanite", "compat:first_block:aether:zanite_ore", "aether", "mining"),
+            firstCompat("first_aether_gravitite", "compat:first_block:aether:gravitite_ore", "aether", "mining"),
+            firstCompat("first_aether_slider", "compat:first_boss:aether:slider", "aether", "boss"),
+            firstCompat("first_aether_valkyrie", "compat:first_boss:aether:valkyrie_queen", "aether", "boss"),
+            firstCompat("first_aether_sun_spirit", "compat:first_boss:aether:sun_spirit", "aether", "boss"),
+            bossCompat("boss_aether_slider", "aether:slider", "aether", "boss"),
+            bossCompat("boss_aether_valkyrie", "aether:valkyrie_queen", "aether", "boss"),
+            bossCompat("boss_aether_sun_spirit", "aether:sun_spirit", "aether", "boss"),
+            biomeGroupCompat("general_aether_sky", "aether_sky", "aether", "sky"),
+            mobGroupCompat("battle_aether_sky", "aether_sky", "aether", "sky"),
+            mobGroupCompat("battle_aether_dungeon", "aether_dungeon", "aether", "dungeon"),
+            miningCompat("mining_aether_gold", new String[] {"aether:ambrosium_ore"}, "aether", "mining"),
+            miningCompat("mining_aether_zanite", new String[] {"aether:zanite_ore"}, "aether", "mining"),
+            miningCompat("mining_aether_gravitite", new String[] {"aether:gravitite_ore"}, "aether", "mining"),
+
+            firstCompat("first_otherside", "compat:first_dimension:deeperdarker:otherside", "otherside"),
+            firstCompat("first_ancient_temple", "compat:first_structure:deeperdarker:ancient_temple", "otherside", "temple"),
+            firstCompat("first_deep_gloomslate_diamond", "compat:first_block:deeperdarker:gloomslate_diamond_ore", "otherside", "mining"),
+            firstCompat("first_deep_sculk_diamond", "compat:first_block:deeperdarker:sculk_stone_diamond_ore", "otherside", "mining"),
+            firstCompat("first_deep_gloomslate_emerald", "compat:first_block:deeperdarker:gloomslate_emerald_ore", "otherside", "mining"),
+            firstCompat("first_deep_sculk_emerald", "compat:first_block:deeperdarker:sculk_stone_emerald_ore", "otherside", "mining"),
+            firstCompat("first_stalker", "compat:first_boss:deeperdarker:stalker", "otherside", "boss"),
+            bossCompat("boss_stalker", "deeperdarker:stalker", "otherside", "boss"),
+            biomeGroupCompat("general_otherside", "otherside", "otherside"),
+            biomeGroupCompat("general_sculk_echo", "sculk_echo", "otherside", "sculk"),
+            mobGroupCompat("battle_sculk_echo", "sculk_echo", "otherside", "sculk"),
+            mobGroupCompat("battle_otherside", "otherside", "otherside"),
+            miningCompat(
+                    "mining_deep_diamond",
+                    new String[] {"deeperdarker:gloomslate_diamond_ore", "deeperdarker:sculk_stone_diamond_ore"},
+                    "otherside",
+                    "mining"
+            ),
+            miningCompat(
+                    "mining_deep_emerald",
+                    new String[] {"deeperdarker:gloomslate_emerald_ore", "deeperdarker:sculk_stone_emerald_ore"},
+                    "otherside",
+                    "mining"
+            ),
+
+            firstCompat("first_bomd_lich_tower", "compat:first_structure:bosses_of_mass_destruction:lich_tower", "bomd", "boss"),
+            firstCompat("first_bomd_gauntlet_arena", "compat:first_structure:bosses_of_mass_destruction:gauntlet_arena", "bomd", "boss"),
+            firstCompat("first_bomd_obsidilith_arena", "compat:first_structure:bosses_of_mass_destruction:obsidilith_arena", "bomd", "boss"),
+            firstCompat("first_bomd_void_blossom_structure", "compat:first_structure:bosses_of_mass_destruction:void_blossom", "bomd", "boss"),
+            firstCompat("first_bomd_lich", "compat:first_boss:bosses_of_mass_destruction:lich", "bomd", "boss"),
+            firstCompat("first_bomd_gauntlet", "compat:first_boss:bosses_of_mass_destruction:gauntlet", "bomd", "boss"),
+            firstCompat("first_bomd_obsidilith", "compat:first_boss:bosses_of_mass_destruction:obsidilith", "bomd", "boss"),
+            firstCompat("first_bomd_void_blossom_boss", "compat:first_boss:bosses_of_mass_destruction:void_blossom", "bomd", "boss"),
+            bossCompat("boss_bomd_lich", "bosses_of_mass_destruction:lich", "bomd", "boss"),
+            bossCompat("boss_bomd_gauntlet", "bosses_of_mass_destruction:gauntlet", "bomd", "boss"),
+            bossCompat("boss_bomd_obsidilith", "bosses_of_mass_destruction:obsidilith", "bomd", "boss"),
+            bossCompat("boss_bomd_void_blossom", "bosses_of_mass_destruction:void_blossom", "bomd", "boss"),
+
+            firstCompat("first_cataclysm_soul_black_smith", "compat:first_structure:cataclysm:soul_black_smith", "cataclysm", "forge"),
+            firstCompat("first_cataclysm_burning_arena", "compat:first_structure:cataclysm:burning_arena", "cataclysm", "arena"),
+            firstCompat("first_cataclysm_ruined_citadel", "compat:first_structure:cataclysm:ruined_citadel", "cataclysm", "citadel"),
+            firstCompat("first_cataclysm_cursed_pyramid", "compat:first_structure:cataclysm:cursed_pyramid", "cataclysm", "curse"),
+            firstCompat("first_cataclysm_ancient_factory", "compat:first_structure:cataclysm:ancient_factory", "cataclysm", "factory"),
+            firstCompat("first_cataclysm_sunken_city", "compat:first_structure:cataclysm:sunken_city", "cataclysm", "abyss"),
+            firstCompat("first_cataclysm_frosted_prison", "compat:first_structure:cataclysm:frosted_prison", "cataclysm", "prison"),
+            firstCompat("first_cataclysm_acropolis", "compat:first_structure:cataclysm:acropolis", "cataclysm", "acropolis"),
+            firstCompat("first_cataclysm_amethyst_nest", "compat:first_structure:cataclysm:amethyst_nest", "cataclysm", "amethyst"),
+            firstCompat("first_cataclysm_ancient_metal", "compat:first_block:cataclysm:ancient_metal_block", "cataclysm", "mining"),
+            firstCompat("first_cataclysm_ignitium", "compat:first_block:cataclysm:ignitium_block", "cataclysm", "mining"),
+            firstCompat("first_cataclysm_cursium", "compat:first_block:cataclysm:cursium_block", "cataclysm", "mining"),
+            firstCompat("first_cataclysm_witherite", "compat:first_block:cataclysm:witherite_block", "cataclysm", "mining"),
+            firstCompat("first_cataclysm_enderite", "compat:first_block:cataclysm:enderite_block", "cataclysm", "mining"),
+            firstCompat("first_cataclysm_void_crystal", "compat:first_block:cataclysm:void_crystal", "cataclysm", "mining"),
+            firstCompat("first_cataclysm_monstrosity", "compat:first_boss:cataclysm:netherite_monstrosity", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_ignis", "compat:first_boss:cataclysm:ignis", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_harbinger", "compat:first_boss:cataclysm:the_harbinger", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_leviathan", "compat:first_boss:cataclysm:the_leviathan", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_ender_guardian", "compat:first_boss:cataclysm:ender_guardian", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_maledictus", "compat:first_boss:cataclysm:maledictus", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_remnant", "compat:first_boss:cataclysm:ancient_remnant", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_scylla", "compat:first_boss:cataclysm:scylla", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_clawdian", "compat:first_boss:cataclysm:clawdian", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_revenant", "compat:first_boss:cataclysm:ignited_revenant", "cataclysm", "boss"),
+            firstCompat("first_cataclysm_ender_golem", "compat:first_boss:cataclysm:ender_golem", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_monstrosity", "cataclysm:netherite_monstrosity", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_ignis", "cataclysm:ignis", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_harbinger", "cataclysm:the_harbinger", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_leviathan", "cataclysm:the_leviathan", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_ender_guardian", "cataclysm:ender_guardian", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_maledictus", "cataclysm:maledictus", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_remnant", "cataclysm:ancient_remnant", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_scylla", "cataclysm:scylla", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_clawdian", "cataclysm:clawdian", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_revenant", "cataclysm:ignited_revenant", "cataclysm", "boss"),
+            bossCompat("boss_cataclysm_ender_golem", "cataclysm:ender_golem", "cataclysm", "boss"),
+            mobGroupCompat("battle_cataclysm_abyss", "cataclysm_abyss", "cataclysm", "abyss"),
+            mobGroupCompat("battle_cataclysm_frost", "cataclysm_frost", "cataclysm", "frost"),
+            mobGroupCompat("battle_cataclysm_desert", "cataclysm_desert", "cataclysm", "desert"),
+            mobGroupCompat("battle_cataclysm_infernal", "cataclysm_infernal", "cataclysm", "fire"),
+            mobGroupCompat("battle_cataclysm_void", "cataclysm_void", "cataclysm", "void"),
+            mobGroupCompat("battle_cataclysm_acropolis", "cataclysm_acropolis", "cataclysm", "acropolis"),
+            miningCompat(
+                    "mining_cataclysm_relic",
+                    new String[] {"cataclysm:ancient_metal_block", "cataclysm:cursium_block"},
+                    "cataclysm",
+                    "mining"
+            ),
+            miningCompat("mining_cataclysm_ignitium", new String[] {"cataclysm:ignitium_block"}, "cataclysm", "mining"),
+            miningCompat("mining_cataclysm_witherite", new String[] {"cataclysm:witherite_block"}, "cataclysm", "mining"),
+            miningCompat("mining_cataclysm_enderite", new String[] {"cataclysm:enderite_block"}, "cataclysm", "mining"),
+            miningCompat("mining_cataclysm_void_crystal", new String[] {"cataclysm:void_crystal"}, "cataclysm", "mining"),
+
+            firstCompat("first_twilight_forest", "compat:first_dimension:twilightforest:twilight_forest", "twilightforest"),
+            firstCompat("first_tf_naga_courtyard", "compat:first_structure:twilightforest:naga_courtyard", "twilightforest", "boss"),
+            firstCompat("first_tf_lich_tower", "compat:first_structure:twilightforest:lich_tower", "twilightforest", "tower"),
+            firstCompat("first_tf_hedge_maze", "compat:first_structure:twilightforest:hedge_maze", "twilightforest", "maze"),
+            firstCompat("first_tf_labyrinth", "compat:first_structure:twilightforest:labyrinth", "twilightforest", "maze"),
+            firstCompat("first_tf_hydra_lair", "compat:first_structure:twilightforest:hydra_lair", "twilightforest", "swamp"),
+            firstCompat("first_tf_knight_stronghold", "compat:first_structure:twilightforest:knight_stronghold", "twilightforest", "knight"),
+            firstCompat("first_tf_dark_tower", "compat:first_structure:twilightforest:dark_tower", "twilightforest", "tower"),
+            firstCompat("first_tf_yeti_cave", "compat:first_structure:twilightforest:yeti_cave", "twilightforest", "snow"),
+            firstCompat("first_tf_aurora_palace", "compat:first_structure:twilightforest:aurora_palace", "twilightforest", "snow"),
+            firstCompat("first_tf_troll_cave", "compat:first_structure:twilightforest:troll_cave", "twilightforest", "troll"),
+            firstCompat("first_tf_giant_house", "compat:first_structure:twilightforest:giant_house", "twilightforest", "giant"),
+            firstCompat("first_tf_final_castle", "compat:first_structure:twilightforest:final_castle", "twilightforest", "castle"),
+            firstCompat("first_tf_quest_grove", "compat:first_structure:twilightforest:quest_grove", "twilightforest", "quest"),
+            firstCompat("first_tf_small_hollow_hill", "compat:first_structure:twilightforest:small_hollow_hill", "twilightforest", "cave"),
+            firstCompat("first_tf_medium_hollow_hill", "compat:first_structure:twilightforest:medium_hollow_hill", "twilightforest", "cave"),
+            firstCompat("first_tf_large_hollow_hill", "compat:first_structure:twilightforest:large_hollow_hill", "twilightforest", "cave"),
+            firstCompat("first_tf_ironwood", "compat:first_block:twilightforest:ironwood_block", "twilightforest", "mining"),
+            firstCompat("first_tf_steeleaf", "compat:first_block:twilightforest:steeleaf_block", "twilightforest", "mining"),
+            firstCompat("first_tf_knightmetal", "compat:first_block:twilightforest:knightmetal_block", "twilightforest", "mining"),
+            firstCompat("first_tf_fiery", "compat:first_block:twilightforest:fiery_block", "twilightforest", "mining"),
+            firstCompat("first_tf_carminite", "compat:first_block:twilightforest:carminite_block", "twilightforest", "mining"),
+            firstCompat("first_tf_naga", "compat:first_boss:twilightforest:naga", "twilightforest", "boss"),
+            firstCompat("first_tf_lich", "compat:first_boss:twilightforest:lich", "twilightforest", "boss"),
+            firstCompat("first_tf_minoshroom", "compat:first_boss:twilightforest:minoshroom", "twilightforest", "boss"),
+            firstCompat("first_tf_hydra", "compat:first_boss:twilightforest:hydra", "twilightforest", "boss"),
+            firstCompat("first_tf_knight_phantom", "compat:first_boss:twilightforest:knight_phantom", "twilightforest", "boss"),
+            firstCompat("first_tf_ur_ghast", "compat:first_boss:twilightforest:ur_ghast", "twilightforest", "boss"),
+            firstCompat("first_tf_alpha_yeti", "compat:first_boss:twilightforest:alpha_yeti", "twilightforest", "boss"),
+            firstCompat("first_tf_snow_queen", "compat:first_boss:twilightforest:snow_queen", "twilightforest", "boss"),
+            bossCompat("boss_tf_naga", "twilightforest:naga", "twilightforest", "boss"),
+            bossCompat("boss_tf_lich", "twilightforest:lich", "twilightforest", "boss"),
+            bossCompat("boss_tf_minoshroom", "twilightforest:minoshroom", "twilightforest", "boss"),
+            bossCompat("boss_tf_hydra", "twilightforest:hydra", "twilightforest", "boss"),
+            bossCompat("boss_tf_knight_phantom", "twilightforest:knight_phantom", "twilightforest", "boss"),
+            bossCompat("boss_tf_ur_ghast", "twilightforest:ur_ghast", "twilightforest", "boss"),
+            bossCompat("boss_tf_alpha_yeti", "twilightforest:alpha_yeti", "twilightforest", "boss"),
+            bossCompat("boss_tf_snow_queen", "twilightforest:snow_queen", "twilightforest", "boss"),
+            biomeGroupCompat("general_tf_twilight", "tf_twilight", "twilightforest", "forest"),
+            biomeGroupCompat("general_tf_enchanted", "tf_enchanted", "twilightforest", "forest"),
+            biomeGroupCompat("general_tf_mushroom", "tf_mushroom", "twilightforest", "mushroom"),
+            biomeGroupCompat("general_tf_dark", "tf_dark", "twilightforest", "dark_forest"),
+            biomeGroupCompat("general_tf_swamp", "tf_swamp", "twilightforest", "swamp"),
+            biomeGroupCompat("general_tf_snow", "tf_snow", "twilightforest", "snow"),
+            biomeGroupCompat("general_tf_highlands", "tf_highlands", "twilightforest", "highlands"),
+            mobGroupCompat("battle_tf_forest", "tf_forest", "twilightforest", "forest"),
+            mobGroupCompat("battle_tf_labyrinth", "tf_labyrinth", "twilightforest", "maze"),
+            mobGroupCompat("battle_tf_dark_tower", "tf_dark_tower", "twilightforest", "tower"),
+            mobGroupCompat("battle_tf_knights", "tf_knights", "twilightforest", "knight"),
+            mobGroupCompat("battle_tf_snow", "tf_snow", "twilightforest", "snow"),
+            mobGroupCompat("battle_tf_troll", "tf_troll", "twilightforest", "troll"),
+            miningCompat("mining_tf_ironwood", new String[] {"twilightforest:ironwood_block"}, "twilightforest", "mining"),
+            miningCompat("mining_tf_steeleaf", new String[] {"twilightforest:steeleaf_block"}, "twilightforest", "mining"),
+            miningCompat("mining_tf_knightmetal", new String[] {"twilightforest:knightmetal_block"}, "twilightforest", "mining"),
+            miningCompat("mining_tf_fiery", new String[] {"twilightforest:fiery_block"}, "twilightforest", "mining"),
+            miningCompat("mining_tf_carminite", new String[] {"twilightforest:carminite_block"}, "twilightforest", "mining"),
+
+            // Fabric-only content compat v2 start
+            firstCompat("first_voidz_void", "compat:first_dimension:voidz:void", "voidz", "void_dimension"),
+            firstCompat("first_betterend_end_village", "compat:first_structure:betterend:end_village", "betterend", "end_mystic"),
+            firstCompat("first_betterend_eternal_portal", "compat:first_structure:betterend:eternal_portal", "betterend", "ritual_structure"),
+            firstCompat("first_betterend_giant_ice_star", "compat:first_structure:betterend:giant_ice_star", "betterend", "end_crystal"),
+            firstCompat("first_betterend_giant_mossy_glowshroom", "compat:first_structure:betterend:giant_mossy_glowshroom", "betterend", "strange_forest"),
+            firstCompat("first_betterend_megalake", "compat:first_structure:betterend:megalake", "betterend", "end_mystic"),
+            firstCompat("first_betterend_megalake_small", "compat:first_structure:betterend:megalake_small", "betterend", "end_mystic"),
+            firstCompat("first_betterend_mountain", "compat:first_structure:betterend:mountain", "betterend", "end_mystic"),
+            firstCompat("first_betterend_painted_mountain", "compat:first_structure:betterend:painted_mountain", "betterend", "end_mystic"),
+            firstCompat("first_betternether_altars", "compat:first_structure:betternether:altars", "betternether", "ritual_structure"),
+            firstCompat("first_betternether_gardens", "compat:first_structure:betternether:gardens", "betternether", "nether_wild"),
+            firstCompat("first_betternether_ghast_hive", "compat:first_structure:betternether:ghast_hive", "betternether", "nether_wild"),
+            firstCompat("first_betternether_jungle_temples", "compat:first_structure:betternether:jungle_temples", "betternether", "ritual_structure"),
+            firstCompat("first_betternether_nether_city", "compat:first_structure:betternether:nether_city", "betternether", "nether_city"),
+            firstCompat("first_betternether_pillars", "compat:first_structure:betternether:pillars", "betternether", "nether_wild"),
+            firstCompat("first_betternether_portals", "compat:first_structure:betternether:portals", "betternether", "ritual_structure"),
+            firstCompat("first_betternether_pyramid", "compat:first_structure:betternether:pyramid", "betternether", "ritual_structure"),
+            firstCompat("first_betternether_respawn_points", "compat:first_structure:betternether:respawn_points", "betternether", "ritual_structure"),
+            firstCompat("first_betternether_spawn_altar_ladder", "compat:first_structure:betternether:spawn_altar_ladder", "betternether", "ritual_structure"),
+            firstCompat("first_adventurez_chiseled_polished_blackstone_holder", "compat:first_block:adventurez:chiseled_polished_blackstone_holder", "adventurez", "ritual_structure", "mining"),
+            miningCompat("mining_adventurez_chiseled_polished_blackstone_holder", new String[] {"adventurez:chiseled_polished_blackstone_holder"}, "adventurez", "ritual_structure", "mining"),
+            firstCompat("first_adventurez_piglin_flag", "compat:first_block:adventurez:piglin_flag", "adventurez", "ritual_structure", "mining"),
+            miningCompat("mining_adventurez_piglin_flag", new String[] {"adventurez:piglin_flag"}, "adventurez", "ritual_structure", "mining"),
+            firstCompat("first_adventurez_shadow_chest", "compat:first_block:adventurez:shadow_chest", "adventurez", "void_shadow", "mining"),
+            miningCompat("mining_adventurez_shadow_chest", new String[] {"adventurez:shadow_chest"}, "adventurez", "void_shadow", "mining"),
+            firstCompat("first_betterend_amber_ore", "compat:first_block:betterend:amber_ore", "betterend", "ancient_ore", "mining"),
+            miningCompat("mining_betterend_amber_ore", new String[] {"betterend:amber_ore"}, "betterend", "ancient_ore", "mining"),
+            firstCompat("first_betterend_thallasium_ore", "compat:first_block:betterend:thallasium_ore", "betterend", "ancient_ore", "mining"),
+            miningCompat("mining_betterend_thallasium_ore", new String[] {"betterend:thallasium_ore"}, "betterend", "ancient_ore", "mining"),
+            firstCompat("first_betterend_ender_ore", "compat:first_block:betterend:ender_ore", "betterend", "ancient_ore", "mining"),
+            miningCompat("mining_betterend_ender_ore", new String[] {"betterend:ender_ore"}, "betterend", "ancient_ore", "mining"),
+            firstCompat("first_betterend_aurora_crystal", "compat:first_block:betterend:aurora_crystal", "betterend", "end_crystal", "mining"),
+            miningCompat("mining_betterend_aurora_crystal", new String[] {"betterend:aurora_crystal"}, "betterend", "end_crystal", "mining"),
+            firstCompat("first_betterend_budding_smaragdant_crystal", "compat:first_block:betterend:budding_smaragdant_crystal", "betterend", "end_crystal", "mining"),
+            miningCompat("mining_betterend_budding_smaragdant_crystal", new String[] {"betterend:budding_smaragdant_crystal"}, "betterend", "end_crystal", "mining"),
+            firstCompat("first_betterend_smaragdant_crystal", "compat:first_block:betterend:smaragdant_crystal", "betterend", "end_crystal", "mining"),
+            miningCompat("mining_betterend_smaragdant_crystal", new String[] {"betterend:smaragdant_crystal"}, "betterend", "end_crystal", "mining"),
+            firstCompat("first_betterend_aeternium_block", "compat:first_block:betterend:aeternium_block", "betterend", "metal_discovery", "mining"),
+            miningCompat("mining_betterend_aeternium_block", new String[] {"betterend:aeternium_block"}, "betterend", "metal_discovery", "mining"),
+            firstCompat("first_betterend_terminite_block", "compat:first_block:betterend:terminite_block", "betterend", "metal_discovery", "mining"),
+            miningCompat("mining_betterend_terminite_block", new String[] {"betterend:terminite_block"}, "betterend", "metal_discovery", "mining"),
+            firstCompat("first_betterend_thallasium_block", "compat:first_block:betterend:thallasium_block", "betterend", "metal_discovery", "mining"),
+            miningCompat("mining_betterend_thallasium_block", new String[] {"betterend:thallasium_block"}, "betterend", "metal_discovery", "mining"),
+            firstCompat("first_betterend_ender_block", "compat:first_block:betterend:ender_block", "betterend", "metal_discovery", "mining"),
+            miningCompat("mining_betterend_ender_block", new String[] {"betterend:ender_block"}, "betterend", "metal_discovery", "mining"),
+            firstCompat("first_betternether_cincinnasite_ore", "compat:first_block:betternether:cincinnasite_ore", "betternether", "ancient_ore", "mining"),
+            miningCompat("mining_betternether_cincinnasite_ore", new String[] {"betternether:cincinnasite_ore"}, "betternether", "ancient_ore", "mining"),
+            firstCompat("first_betternether_nether_ruby_ore", "compat:first_block:betternether:nether_ruby_ore", "betternether", "nether_fire", "mining"),
+            miningCompat("mining_betternether_nether_ruby_ore", new String[] {"betternether:nether_ruby_ore"}, "betternether", "nether_fire", "mining"),
+            firstCompat("first_betternether_nether_lapis_ore", "compat:first_block:betternether:nether_lapis_ore", "betternether", "nether_wild", "mining"),
+            miningCompat("mining_betternether_nether_lapis_ore", new String[] {"betternether:nether_lapis_ore"}, "betternether", "nether_wild", "mining"),
+            firstCompat("first_betternether_nether_redstone_ore", "compat:first_block:betternether:nether_redstone_ore", "betternether", "nether_fire", "mining"),
+            miningCompat("mining_betternether_nether_redstone_ore", new String[] {"betternether:nether_redstone_ore"}, "betternether", "nether_fire", "mining"),
+            firstCompat("first_mythicmetals_adamantite_ore", "compat:first_block:mythicmetals:adamantite_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_adamantite_ore", new String[] {"mythicmetals:adamantite_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_deepslate_adamantite_ore", "compat:first_block:mythicmetals:deepslate_adamantite_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_deepslate_adamantite_ore", new String[] {"mythicmetals:deepslate_adamantite_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_mythril_ore", "compat:first_block:mythicmetals:mythril_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_mythril_ore", new String[] {"mythicmetals:mythril_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_deepslate_mythril_ore", "compat:first_block:mythicmetals:deepslate_mythril_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_deepslate_mythril_ore", new String[] {"mythicmetals:deepslate_mythril_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_orichalcum_ore", "compat:first_block:mythicmetals:orichalcum_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_orichalcum_ore", new String[] {"mythicmetals:orichalcum_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_deepslate_orichalcum_ore", "compat:first_block:mythicmetals:deepslate_orichalcum_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_deepslate_orichalcum_ore", new String[] {"mythicmetals:deepslate_orichalcum_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_prometheum_ore", "compat:first_block:mythicmetals:prometheum_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_prometheum_ore", new String[] {"mythicmetals:prometheum_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_deepslate_prometheum_ore", "compat:first_block:mythicmetals:deepslate_prometheum_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_deepslate_prometheum_ore", new String[] {"mythicmetals:deepslate_prometheum_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_runite_ore", "compat:first_block:mythicmetals:runite_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_runite_ore", new String[] {"mythicmetals:runite_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_deepslate_runite_ore", "compat:first_block:mythicmetals:deepslate_runite_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_deepslate_runite_ore", new String[] {"mythicmetals:deepslate_runite_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_unobtainium_ore", "compat:first_block:mythicmetals:unobtainium_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_unobtainium_ore", new String[] {"mythicmetals:unobtainium_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_mythicmetals_deepslate_unobtainium_ore", "compat:first_block:mythicmetals:deepslate_unobtainium_ore", "mythicmetals", "metal_discovery", "mining"),
+            miningCompat("mining_mythicmetals_deepslate_unobtainium_ore", new String[] {"mythicmetals:deepslate_unobtainium_ore"}, "mythicmetals", "metal_discovery", "mining"),
+            firstCompat("first_voidz_void_stone", "compat:first_block:voidz:void_stone", "voidz", "void_shadow", "mining"),
+            miningCompat("mining_voidz_void_stone", new String[] {"voidz:void_stone"}, "voidz", "void_shadow", "mining"),
+            firstCompat("first_voidz_infested_void_stone", "compat:first_block:voidz:infested_void_stone", "voidz", "void_shadow", "mining"),
+            miningCompat("mining_voidz_infested_void_stone", new String[] {"voidz:infested_void_stone"}, "voidz", "void_shadow", "mining"),
+            firstCompat("first_adventurez_blackstone_golem", "compat:first_boss:adventurez:blackstone_golem", "adventurez", "ritual_boss", "boss"),
+            bossCompat("boss_adventurez_blackstone_golem", "adventurez:blackstone_golem", "adventurez", "ritual_boss", "boss"),
+            firstCompat("first_adventurez_nightmare", "compat:first_boss:adventurez:nightmare", "adventurez", "ritual_boss", "boss"),
+            bossCompat("boss_adventurez_nightmare", "adventurez:nightmare", "adventurez", "ritual_boss", "boss"),
+            firstCompat("first_adventurez_soul_reaper", "compat:first_boss:adventurez:soul_reaper", "adventurez", "ritual_boss", "boss"),
+            bossCompat("boss_adventurez_soul_reaper", "adventurez:soul_reaper", "adventurez", "ritual_boss", "boss"),
+            firstCompat("first_adventurez_blaze_guardian", "compat:first_boss:adventurez:blaze_guardian", "adventurez", "deep_battle", "boss"),
+            bossCompat("boss_adventurez_blaze_guardian", "adventurez:blaze_guardian", "adventurez", "deep_battle", "boss"),
+            firstCompat("first_adventurez_the_eye", "compat:first_boss:adventurez:the_eye", "adventurez", "ritual_boss", "boss"),
+            bossCompat("boss_adventurez_the_eye", "adventurez:the_eye", "adventurez", "ritual_boss", "boss"),
+            firstCompat("first_adventurez_void_shadow", "compat:first_boss:adventurez:void_shadow", "adventurez", "void_shadow", "boss"),
+            bossCompat("boss_adventurez_void_shadow", "adventurez:void_shadow", "adventurez", "void_shadow", "boss"),
+            firstCompat("first_adventurez_dragon", "compat:first_boss:adventurez:dragon", "adventurez", "deep_battle", "boss"),
+            bossCompat("boss_adventurez_dragon", "adventurez:dragon", "adventurez", "deep_battle", "boss"),
+            firstCompat("first_adventurez_amethyst_golem", "compat:first_boss:adventurez:amethyst_golem", "adventurez", "deep_battle", "boss"),
+            bossCompat("boss_adventurez_amethyst_golem", "adventurez:amethyst_golem", "adventurez", "deep_battle", "boss"),
+            biomeGroupCompat("general_end_crystal", "end_crystal", "betterend", "end_crystal"),
+            biomeGroupCompat("general_end_mystic", "end_mystic", "betterend", "end_mystic"),
+            biomeGroupCompat("general_end_shadow", "end_shadow", "betterend", "end_shadow"),
+            biomeGroupCompat("general_nether_ash", "nether_ash", "betternether", "nether_ash"),
+            biomeGroupCompat("general_nether_fire", "nether_fire", "betternether", "nether_fire"),
+            biomeGroupCompat("general_nether_soul", "nether_soul", "betternether", "nether_soul"),
+            biomeGroupCompat("general_nether_wild", "nether_wild", "betternether", "nether_wild"),
+            biomeGroupCompat("general_strange_forest", "strange_forest", "betterend", "strange_forest"),
+            mobGroupCompat("battle_deep_battle", "deep_battle", "adventurez", "deep_battle"),
+            mobGroupCompat("battle_end_mystic", "end_mystic", "betterend", "end_mystic"),
+            mobGroupCompat("battle_end_shadow", "end_shadow", "betterend", "end_shadow"),
+            mobGroupCompat("battle_nether_ash", "nether_ash", "betternether", "nether_ash"),
+            mobGroupCompat("battle_nether_wild", "nether_wild", "betternether", "nether_wild"),
+            mobGroupCompat("battle_ritual_boss", "ritual_boss", "adventurez", "ritual_boss"),
+            mobGroupCompat("battle_void_shadow", "void_shadow", "adventurez", "void_shadow"),
+            // Cross-loader worldgen content compat start
+            firstCompat("first_nova_structures_badlands_miner_outpost", "compat:first_structure:nova_structures:badlands_miner_outpost", "dungeons_and_taverns", "dnt_roadside_camp", "camp_site"),
+            firstCompat("first_nova_structures_bunker", "compat:first_structure:nova_structures:bunker", "dungeons_and_taverns", "dnt_roadside_camp", "camp_site"),
+            firstCompat("first_nova_structures_conduit_ruin", "compat:first_structure:nova_structures:conduit_ruin", "dungeons_and_taverns", "dnt_sea_ruin", "ocean_ruin"),
+            firstCompat("first_nova_structures_creeping_crypt", "compat:first_structure:nova_structures:creeping_crypt", "dungeons_and_taverns", "dnt_crypt", "crypt_dungeon"),
+            firstCompat("first_nova_structures_deepslate_camp", "compat:first_structure:nova_structures:deepslate_camp", "dungeons_and_taverns", "dnt_roadside_camp", "camp_site"),
+            firstCompat("first_nova_structures_desert_ruins", "compat:first_structure:nova_structures:desert_ruins", "dungeons_and_taverns", "dnt_adventure_ruin", "ancient_ruins"),
+            firstCompat("first_nova_structures_end_castle", "compat:first_structure:nova_structures:end_castle", "dungeons_and_taverns", "dnt_end_ruins", "end_ruins"),
+            firstCompat("first_nova_structures_end_lighthouse", "compat:first_structure:nova_structures:end_lighthouse", "dungeons_and_taverns", "dnt_end_ruins", "end_ruins"),
+            firstCompat("first_nova_structures_end_ship", "compat:first_structure:nova_structures:end_ship", "dungeons_and_taverns", "dnt_end_ruins", "end_ruins"),
+            firstCompat("first_nova_structures_firewatch_tower_birch", "compat:first_structure:nova_structures:firewatch_tower_birch", "dungeons_and_taverns", "dnt_firewatch_tower", "frontier_tower"),
+            firstCompat("first_nova_structures_firewatch_tower_cherry", "compat:first_structure:nova_structures:firewatch_tower_cherry", "dungeons_and_taverns", "dnt_firewatch_tower", "frontier_tower"),
+            firstCompat("first_nova_structures_firewatch_tower_dark_oak", "compat:first_structure:nova_structures:firewatch_tower_dark_oak", "dungeons_and_taverns", "dnt_firewatch_tower", "frontier_tower"),
+            firstCompat("first_nova_structures_firewatch_tower_forest", "compat:first_structure:nova_structures:firewatch_tower_forest", "dungeons_and_taverns", "dnt_firewatch_tower", "frontier_tower"),
+            firstCompat("first_nova_structures_firewatch_tower_jungle", "compat:first_structure:nova_structures:firewatch_tower_jungle", "dungeons_and_taverns", "dnt_firewatch_tower", "frontier_tower"),
+            firstCompat("first_nova_structures_firewatch_tower_mangrove", "compat:first_structure:nova_structures:firewatch_tower_mangrove", "dungeons_and_taverns", "dnt_firewatch_tower", "frontier_tower"),
+            firstCompat("first_nova_structures_firewatch_tower_savanna", "compat:first_structure:nova_structures:firewatch_tower_savanna", "dungeons_and_taverns", "dnt_firewatch_tower", "frontier_tower"),
+            firstCompat("first_nova_structures_firewatch_tower_swamp", "compat:first_structure:nova_structures:firewatch_tower_swamp", "dungeons_and_taverns", "dnt_firewatch_tower", "frontier_tower"),
+            firstCompat("first_nova_structures_firewatch_tower_taiga", "compat:first_structure:nova_structures:firewatch_tower_taiga", "dungeons_and_taverns", "dnt_firewatch_tower", "frontier_tower"),
+            firstCompat("first_nova_structures_hamlet", "compat:first_structure:nova_structures:hamlet", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_illager_camp", "compat:first_structure:nova_structures:illager_camp", "dungeons_and_taverns", "dnt_illager_site", "illager_raid"),
+            firstCompat("first_nova_structures_illager_hideout", "compat:first_structure:nova_structures:illager_hideout", "dungeons_and_taverns", "dnt_illager_site", "illager_raid"),
+            firstCompat("first_nova_structures_illager_manor", "compat:first_structure:nova_structures:illager_manor", "dungeons_and_taverns", "dnt_illager_site", "illager_raid"),
+            firstCompat("first_nova_structures_jungle_ruins", "compat:first_structure:nova_structures:jungle_ruins", "dungeons_and_taverns", "dnt_adventure_ruin", "ancient_ruins"),
+            firstCompat("first_nova_structures_lone_citadel", "compat:first_structure:nova_structures:lone_citadel", "dungeons_and_taverns", "dnt_adventure_ruin", "ancient_ruins"),
+            firstCompat("first_nova_structures_mangrove_witch_hut", "compat:first_structure:nova_structures:mangrove_witch_hut", "dungeons_and_taverns", "dnt_adventure_ruin", "ancient_ruins"),
+            firstCompat("first_nova_structures_nether_keep", "compat:first_structure:nova_structures:nether_keep", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_nether_port", "compat:first_structure:nova_structures:nether_port", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_nether_skeleton_tower_crimson", "compat:first_structure:nova_structures:nether_skeleton_tower_crimson", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_nether_skeleton_tower_soul", "compat:first_structure:nova_structures:nether_skeleton_tower_soul", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_nether_skeleton_tower_warped", "compat:first_structure:nova_structures:nether_skeleton_tower_warped", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_nether_skeleton_tower_waste", "compat:first_structure:nova_structures:nether_skeleton_tower_waste", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_piglin_camp", "compat:first_structure:nova_structures:piglin_camp", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_piglin_donjon", "compat:first_structure:nova_structures:piglin_donjon", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_piglin_outstation", "compat:first_structure:nova_structures:piglin_outstation", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_remnant_bee_keeper", "compat:first_structure:nova_structures:remnant_bee_keeper", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_big_remnant", "compat:first_structure:nova_structures:remnant_big_remnant", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_big_remnant_2", "compat:first_structure:nova_structures:remnant_big_remnant_2", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_big_remnant_3", "compat:first_structure:nova_structures:remnant_big_remnant_3", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_birch_graveyard", "compat:first_structure:nova_structures:remnant_birch_graveyard", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_bridge_remnant", "compat:first_structure:nova_structures:remnant_bridge_remnant", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_bunny_base", "compat:first_structure:nova_structures:remnant_bunny_base", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_classic_village", "compat:first_structure:nova_structures:remnant_classic_village", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_desert_remnant", "compat:first_structure:nova_structures:remnant_desert_remnant", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_forest_smith", "compat:first_structure:nova_structures:remnant_forest_smith", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_frog_ranch", "compat:first_structure:nova_structures:remnant_frog_ranch", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_graveyard", "compat:first_structure:nova_structures:remnant_graveyard", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_medium_remnant", "compat:first_structure:nova_structures:remnant_medium_remnant", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_medium_remnant_2", "compat:first_structure:nova_structures:remnant_medium_remnant_2", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_miner_hut", "compat:first_structure:nova_structures:remnant_miner_hut", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_mud_brick_constructor", "compat:first_structure:nova_structures:remnant_mud_brick_constructor", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_ominous_shop", "compat:first_structure:nova_structures:remnant_ominous_shop", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_ruin_farmer", "compat:first_structure:nova_structures:remnant_ruin_farmer", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_ruin_smith", "compat:first_structure:nova_structures:remnant_ruin_smith", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_sawmill", "compat:first_structure:nova_structures:remnant_sawmill", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_school_remnant", "compat:first_structure:nova_structures:remnant_school_remnant", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_taiga_castle", "compat:first_structure:nova_structures:remnant_taiga_castle", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_woodland_hud", "compat:first_structure:nova_structures:remnant_woodland_hud", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_remnant_zombie_horse_ranch", "compat:first_structure:nova_structures:remnant_zombie_horse_ranch", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_ruin_town", "compat:first_structure:nova_structures:ruin_town", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_shrine_combat_tier_1", "compat:first_structure:nova_structures:shrine_combat_tier_1", "dungeons_and_taverns", "dnt_trial_shrine", "trial_shrine"),
+            firstCompat("first_nova_structures_shrine_combat_tier_2", "compat:first_structure:nova_structures:shrine_combat_tier_2", "dungeons_and_taverns", "dnt_trial_shrine", "trial_shrine"),
+            firstCompat("first_nova_structures_shrine_combat_tier_3", "compat:first_structure:nova_structures:shrine_combat_tier_3", "dungeons_and_taverns", "dnt_trial_shrine", "trial_shrine"),
+            firstCompat("first_nova_structures_shrine_combat_tier_4", "compat:first_structure:nova_structures:shrine_combat_tier_4", "dungeons_and_taverns", "dnt_trial_shrine", "trial_shrine"),
+            firstCompat("first_nova_structures_shrine_combat_tier_5", "compat:first_structure:nova_structures:shrine_combat_tier_5", "dungeons_and_taverns", "dnt_trial_shrine", "trial_shrine"),
+            firstCompat("first_nova_structures_shrine_tower", "compat:first_structure:nova_structures:shrine_tower", "dungeons_and_taverns", "dnt_trial_shrine", "trial_shrine"),
+            firstCompat("first_nova_structures_skeleton_camp_crimson", "compat:first_structure:nova_structures:skeleton_camp_crimson", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_skeleton_camp_soul", "compat:first_structure:nova_structures:skeleton_camp_soul", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_skeleton_camp_warped", "compat:first_structure:nova_structures:skeleton_camp_warped", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_skeleton_camp_waste", "compat:first_structure:nova_structures:skeleton_camp_waste", "dungeons_and_taverns", "dnt_nether_site", "nether_outpost"),
+            firstCompat("first_nova_structures_stray_fort", "compat:first_structure:nova_structures:stray_fort", "dungeons_and_taverns", "dnt_adventure_ruin", "ancient_ruins"),
+            firstCompat("first_nova_structures_tavern_acacia", "compat:first_structure:nova_structures:tavern_acacia", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_birch", "compat:first_structure:nova_structures:tavern_birch", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_cherry", "compat:first_structure:nova_structures:tavern_cherry", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_dark_oak", "compat:first_structure:nova_structures:tavern_dark_oak", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_desert", "compat:first_structure:nova_structures:tavern_desert", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_jungle", "compat:first_structure:nova_structures:tavern_jungle", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_mangrove", "compat:first_structure:nova_structures:tavern_mangrove", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_oak", "compat:first_structure:nova_structures:tavern_oak", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_snowy", "compat:first_structure:nova_structures:tavern_snowy", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_spruce", "compat:first_structure:nova_structures:tavern_spruce", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_tavern_swamp", "compat:first_structure:nova_structures:tavern_swamp", "dungeons_and_taverns", "dnt_tavern", "tavern_roadside"),
+            firstCompat("first_nova_structures_toxic_lair", "compat:first_structure:nova_structures:toxic_lair", "dungeons_and_taverns", "dnt_crypt", "crypt_dungeon"),
+            firstCompat("first_nova_structures_trident_trial_monument", "compat:first_structure:nova_structures:trident_trial_monument", "dungeons_and_taverns", "dnt_trial_shrine", "trial_shrine"),
+            firstCompat("first_nova_structures_undead_crypt", "compat:first_structure:nova_structures:undead_crypt", "dungeons_and_taverns", "dnt_crypt", "crypt_dungeon"),
+            firstCompat("first_nova_structures_underground_house", "compat:first_structure:nova_structures:underground_house", "dungeons_and_taverns", "dnt_adventure_ruin", "ancient_ruins"),
+            firstCompat("first_nova_structures_village_birch", "compat:first_structure:nova_structures:village_birch", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_village_jungle", "compat:first_structure:nova_structures:village_jungle", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_village_swamp", "compat:first_structure:nova_structures:village_swamp", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_well_birch", "compat:first_structure:nova_structures:well_birch", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_well_dark_oak", "compat:first_structure:nova_structures:well_dark_oak", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_well_jungle", "compat:first_structure:nova_structures:well_jungle", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_well_oak", "compat:first_structure:nova_structures:well_oak", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_well_savana", "compat:first_structure:nova_structures:well_savana", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_well_spruce", "compat:first_structure:nova_structures:well_spruce", "dungeons_and_taverns", "dnt_settlement_ruin", "settlement_ruin"),
+            firstCompat("first_nova_structures_wild_ruin", "compat:first_structure:nova_structures:wild_ruin", "dungeons_and_taverns", "dnt_adventure_ruin", "ancient_ruins"),
+            firstCompat("first_nova_structures_witch_villa", "compat:first_structure:nova_structures:witch_villa", "dungeons_and_taverns", "dnt_adventure_ruin", "ancient_ruins"),
+            firstCompat("first_explorify_badlands_pyramid", "compat:first_structure:explorify:badlands_pyramid", "explorify", "explorify_old_ruin", "ancient_ruins"),
+            firstCompat("first_explorify_black_spiral", "compat:first_structure:explorify:black_spiral", "explorify", "explorify_old_ruin", "ancient_ruins"),
+            firstCompat("first_explorify_campsite", "compat:first_structure:explorify:campsite", "explorify", "explorify_roadside_site", "roadside_stop"),
+            firstCompat("first_explorify_dark_forest_settlement", "compat:first_structure:explorify:dark_forest_settlement", "explorify", "explorify_small_settlement", "small_settlement"),
+            firstCompat("first_explorify_desert_shrine", "compat:first_structure:explorify:desert_shrine", "explorify", "explorify_old_ruin", "ancient_ruins"),
+            firstCompat("first_explorify_end_shipwreck", "compat:first_structure:explorify:end_shipwreck", "explorify", "explorify_shipwreck", "end_wreck"),
+            firstCompat("first_explorify_farmstead", "compat:first_structure:explorify:farmstead", "explorify", "explorify_roadside_site", "roadside_stop"),
+            firstCompat("first_explorify_guide_post_cold", "compat:first_structure:explorify:guide_post_cold", "explorify", "explorify_waypoint", "waypoint_tower"),
+            firstCompat("first_explorify_guide_post_warm", "compat:first_structure:explorify:guide_post_warm", "explorify", "explorify_waypoint", "waypoint_tower"),
+            firstCompat("first_explorify_mangrove_hut", "compat:first_structure:explorify:mangrove_hut", "explorify", "explorify_small_settlement", "small_settlement"),
+            firstCompat("first_explorify_mausoleum", "compat:first_structure:explorify:mausoleum", "explorify", "explorify_old_ruin", "ancient_ruins"),
+            firstCompat("first_explorify_ruins", "compat:first_structure:explorify:ruins", "explorify", "explorify_ruins", "ancient_ruins"),
+            firstCompat("first_explorify_supply_cache_birch", "compat:first_structure:explorify:supply_cache/birch", "explorify", "explorify_supply_cache", "supply_cache"),
+            firstCompat("first_explorify_supply_cache_dark", "compat:first_structure:explorify:supply_cache/dark", "explorify", "explorify_supply_cache", "supply_cache"),
+            firstCompat("first_explorify_supply_cache_desert", "compat:first_structure:explorify:supply_cache/desert", "explorify", "explorify_supply_cache", "supply_cache"),
+            firstCompat("first_explorify_supply_cache_forest", "compat:first_structure:explorify:supply_cache/forest", "explorify", "explorify_supply_cache", "supply_cache"),
+            firstCompat("first_explorify_supply_cache_jungle", "compat:first_structure:explorify:supply_cache/jungle", "explorify", "explorify_supply_cache", "supply_cache"),
+            firstCompat("first_explorify_supply_cache_mangrove", "compat:first_structure:explorify:supply_cache/mangrove", "explorify", "explorify_supply_cache", "supply_cache"),
+            firstCompat("first_explorify_supply_cache_taiga", "compat:first_structure:explorify:supply_cache/taiga", "explorify", "explorify_supply_cache", "supply_cache"),
+            firstCompat("first_explorify_tavern", "compat:first_structure:explorify:tavern", "explorify", "explorify_roadside_site", "roadside_stop"),
+            firstCompat("first_explorify_watchtower_plains", "compat:first_structure:explorify:watchtower/plains", "explorify", "explorify_waypoint", "waypoint_tower"),
+            firstCompat("first_explorify_watchtower_savanna", "compat:first_structure:explorify:watchtower/savanna", "explorify", "explorify_waypoint", "waypoint_tower"),
+            firstCompat("first_explorify_watchtower_taiga", "compat:first_structure:explorify:watchtower/taiga", "explorify", "explorify_waypoint", "waypoint_tower"),
+            firstCompat("first_illagerinvasion_firecaller_hut", "compat:first_structure:illagerinvasion:firecaller_hut", "illagerinvasion", "illager_invasion_hut", "illager_hut"),
+            firstCompat("first_illagerinvasion_illager_fort", "compat:first_structure:illagerinvasion:illager_fort", "illagerinvasion", "illager_invasion_stronghold", "illager_stronghold"),
+            firstCompat("first_illagerinvasion_illusioner_tower", "compat:first_structure:illagerinvasion:illusioner_tower", "illagerinvasion", "illager_invasion_stronghold", "illager_stronghold"),
+            firstCompat("first_illagerinvasion_labyrinth", "compat:first_structure:illagerinvasion:labyrinth", "illagerinvasion", "illager_invasion_stronghold", "illager_stronghold"),
+            firstCompat("first_illagerinvasion_sorcerer_hut", "compat:first_structure:illagerinvasion:sorcerer_hut", "illagerinvasion", "illager_invasion_hut", "illager_hut"),
+            firstCompat("first_incendium_abandoned_tower", "compat:first_structure:incendium:abandoned_tower", "incendium", "incendium_abandoned_tower", "nether_ruin"),
+            firstCompat("first_incendium_forbidden_castle", "compat:first_structure:incendium:forbidden_castle", "incendium", "incendium_forbidden_castle", "nether_fortress"),
+            firstCompat("first_incendium_infernal_altar", "compat:first_structure:incendium:infernal_altar", "incendium", "incendium_infernal_altar", "nether_ritual"),
+            firstCompat("first_incendium_nether_reactor", "compat:first_structure:incendium:nether_reactor", "incendium", "incendium_nether_reactor", "nether_ritual"),
+            firstCompat("first_incendium_piglin_village", "compat:first_structure:incendium:piglin_village", "incendium", "incendium_piglin_village", "nether_city"),
+            firstCompat("first_incendium_pipeline", "compat:first_structure:incendium:pipeline", "incendium", "incendium_pipeline", "nether_ruin"),
+            firstCompat("first_incendium_quartz_kitchen", "compat:first_structure:incendium:quartz_kitchen", "incendium", "incendium_quartz_kitchen", "nether_ruin"),
+            firstCompat("first_incendium_ruined_lab", "compat:first_structure:incendium:ruined_lab", "incendium", "incendium_ruined_lab", "nether_ruin"),
+            firstCompat("first_incendium_sanctum", "compat:first_structure:incendium:sanctum", "incendium", "incendium_sanctum", "nether_ritual"),
+            firstCompat("first_terralith_desert_outpost", "compat:first_structure:terralith:desert_outpost", "terralith", "terralith_desert_outpost", "desert_outpost"),
+            firstCompat("first_terralith_fortified_desert_village", "compat:first_structure:terralith:fortified_desert_village", "terralith", "terralith_fortified_village", "fortified_settlement"),
+            firstCompat("first_terralith_fortified_village", "compat:first_structure:terralith:fortified_village", "terralith", "terralith_fortified_village", "fortified_settlement"),
+            firstCompat("first_terralith_glacial_hut", "compat:first_structure:terralith:glacial_hut", "terralith", "terralith_glacial_shelter", "glacial_shelter"),
+            firstCompat("first_terralith_igloo", "compat:first_structure:terralith:igloo", "terralith", "terralith_glacial_shelter", "glacial_shelter"),
+            firstCompat("first_terralith_mage_complex", "compat:first_structure:terralith:mage_complex", "terralith", "terralith_mage_complex", "mage_ruin"),
+            firstCompat("first_terralith_mage_tower", "compat:first_structure:terralith:mage_tower", "terralith", "terralith_mage_tower", "mage_tower"),
+            firstCompat("first_terralith_mage_tower_autumn", "compat:first_structure:terralith:mage_tower_autumn", "terralith", "terralith_mage_tower", "mage_tower"),
+            firstCompat("first_terralith_mage_tower_spring", "compat:first_structure:terralith:mage_tower_spring", "terralith", "terralith_mage_tower", "mage_tower"),
+            firstCompat("first_terralith_mage_tower_summer", "compat:first_structure:terralith:mage_tower_summer", "terralith", "terralith_mage_tower", "mage_tower"),
+            firstCompat("first_terralith_mage_tower_winter", "compat:first_structure:terralith:mage_tower_winter", "terralith", "terralith_mage_tower", "mage_tower"),
+            firstCompat("first_terralith_rubble_desert", "compat:first_structure:terralith:rubble_desert", "terralith", "terralith_old_rubble", "ancient_ruins"),
+            firstCompat("first_terralith_rubble_forest", "compat:first_structure:terralith:rubble_forest", "terralith", "terralith_old_rubble", "ancient_ruins"),
+            firstCompat("first_terralith_rubble_jungle", "compat:first_structure:terralith:rubble_jungle", "terralith", "terralith_old_rubble", "ancient_ruins"),
+            firstCompat("first_terralith_rubble_mesa", "compat:first_structure:terralith:rubble_mesa", "terralith", "terralith_old_rubble", "ancient_ruins"),
+            firstCompat("first_terralith_rubble_mountain", "compat:first_structure:terralith:rubble_mountain", "terralith", "terralith_old_rubble", "ancient_ruins"),
+            firstCompat("first_terralith_rubble_taiga", "compat:first_structure:terralith:rubble_taiga", "terralith", "terralith_old_rubble", "ancient_ruins"),
+            firstCompat("first_terralith_spire", "compat:first_structure:terralith:spire", "terralith", "terralith_spire", "stone_spire"),
+            firstCompat("first_terralith_underground_frosted_dungeon", "compat:first_structure:terralith:underground/frosted_dungeon", "terralith", "terralith_frosted_dungeon", "frost_dungeon"),
+            firstCompat("first_terralith_underground_giant_bee_hive", "compat:first_structure:terralith:underground/giant_bee_hive", "terralith", "terralith_giant_hive", "hive_cavern"),
+            firstCompat("first_terralith_underground_mining_outpost", "compat:first_structure:terralith:underground/mining_outpost", "terralith", "terralith_mining_outpost", "mining_outpost"),
+            firstCompat("first_terralith_underground_oak_cabin", "compat:first_structure:terralith:underground/oak_cabin", "terralith", "terralith_valley_lodge", "valley_lodge"),
+            firstCompat("first_terralith_underground_old_refinery", "compat:first_structure:terralith:underground/old_refinery", "terralith", "terralith_old_refinery", "industrial_ruin"),
+            firstCompat("first_terralith_underground_sunken_tower", "compat:first_structure:terralith:underground/sunken_tower", "terralith", "terralith_sunken_tower", "sunken_ruin"),
+            firstCompat("first_terralith_underground_witch_hut", "compat:first_structure:terralith:underground/witch_hut", "terralith", "terralith_witch_hut", "witch_site"),
+            firstCompat("first_terralith_underground_cabin", "compat:first_structure:terralith:underground_cabin", "terralith", "terralith_valley_lodge", "valley_lodge"),
+            firstCompat("first_terralith_valley_lodge", "compat:first_structure:terralith:valley_lodge", "terralith", "terralith_valley_lodge", "valley_lodge"),
+            firstCompat("first_terralith_witch_hut", "compat:first_structure:terralith:witch_hut", "terralith", "terralith_witch_hut", "witch_site"),
+            firstCompat("first_towns_and_towers_exclusives_pillager_outpost_classic", "compat:first_structure:towns_and_towers:exclusives/pillager_outpost_classic", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_exclusives_pillager_outpost_iberian", "compat:first_structure:towns_and_towers:exclusives/pillager_outpost_iberian", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_exclusives_pillager_outpost_mediterranean", "compat:first_structure:towns_and_towers:exclusives/pillager_outpost_mediterranean", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_exclusives_pillager_outpost_nilotic", "compat:first_structure:towns_and_towers:exclusives/pillager_outpost_nilotic", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_exclusives_pillager_outpost_oriental", "compat:first_structure:towns_and_towers:exclusives/pillager_outpost_oriental", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_exclusives_pillager_outpost_rustic", "compat:first_structure:towns_and_towers:exclusives/pillager_outpost_rustic", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_exclusives_pillager_outpost_swedish", "compat:first_structure:towns_and_towers:exclusives/pillager_outpost_swedish", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_exclusives_pillager_outpost_tudor", "compat:first_structure:towns_and_towers:exclusives/pillager_outpost_tudor", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_exclusives_village_classic", "compat:first_structure:towns_and_towers:exclusives/village_classic", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_exclusives_village_iberian", "compat:first_structure:towns_and_towers:exclusives/village_iberian", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_exclusives_village_mediterranean", "compat:first_structure:towns_and_towers:exclusives/village_mediterranean", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_exclusives_village_nilotic", "compat:first_structure:towns_and_towers:exclusives/village_nilotic", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_exclusives_village_piglin", "compat:first_structure:towns_and_towers:exclusives/village_piglin", "towns_and_towers", "towns_towers_piglin_village", "nether_settlement"),
+            firstCompat("first_towns_and_towers_exclusives_village_rustic", "compat:first_structure:towns_and_towers:exclusives/village_rustic", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_exclusives_village_swedish", "compat:first_structure:towns_and_towers:exclusives/village_swedish", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_exclusives_village_tudor", "compat:first_structure:towns_and_towers:exclusives/village_tudor", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_exclusives_village_wandering_trader_camp", "compat:first_structure:towns_and_towers:exclusives/village_wandering_trader_camp", "towns_and_towers", "towns_towers_trader_camp", "trader_camp"),
+            firstCompat("first_towns_and_towers_mimic_desert", "compat:first_structure:towns_and_towers:mimic_desert", "towns_and_towers", "towns_towers_desert_mimic", "desert_trap"),
+            firstCompat("first_towns_and_towers_pillager_outpost_badlands", "compat:first_structure:towns_and_towers:pillager_outpost_badlands", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_beach", "compat:first_structure:towns_and_towers:pillager_outpost_beach", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_birch_forest", "compat:first_structure:towns_and_towers:pillager_outpost_birch_forest", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_desert", "compat:first_structure:towns_and_towers:pillager_outpost_desert", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_flower_forest", "compat:first_structure:towns_and_towers:pillager_outpost_flower_forest", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_forest", "compat:first_structure:towns_and_towers:pillager_outpost_forest", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_grove", "compat:first_structure:towns_and_towers:pillager_outpost_grove", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_jungle", "compat:first_structure:towns_and_towers:pillager_outpost_jungle", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_meadow", "compat:first_structure:towns_and_towers:pillager_outpost_meadow", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_mushroom_fields", "compat:first_structure:towns_and_towers:pillager_outpost_mushroom_fields", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_ocean", "compat:first_structure:towns_and_towers:pillager_outpost_ocean", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_old_growth_taiga", "compat:first_structure:towns_and_towers:pillager_outpost_old_growth_taiga", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_savanna", "compat:first_structure:towns_and_towers:pillager_outpost_savanna", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_savanna_plateau", "compat:first_structure:towns_and_towers:pillager_outpost_savanna_plateau", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_snowy_beach", "compat:first_structure:towns_and_towers:pillager_outpost_snowy_beach", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_snowy_plains", "compat:first_structure:towns_and_towers:pillager_outpost_snowy_plains", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_snowy_slopes", "compat:first_structure:towns_and_towers:pillager_outpost_snowy_slopes", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_snowy_taiga", "compat:first_structure:towns_and_towers:pillager_outpost_snowy_taiga", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_sparse_jungle", "compat:first_structure:towns_and_towers:pillager_outpost_sparse_jungle", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_sunflower_plains", "compat:first_structure:towns_and_towers:pillager_outpost_sunflower_plains", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_swamp", "compat:first_structure:towns_and_towers:pillager_outpost_swamp", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_taiga", "compat:first_structure:towns_and_towers:pillager_outpost_taiga", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_pillager_outpost_wooded_badlands", "compat:first_structure:towns_and_towers:pillager_outpost_wooded_badlands", "towns_and_towers", "towns_towers_outpost", "illager_outpost"),
+            firstCompat("first_towns_and_towers_village_badlands", "compat:first_structure:towns_and_towers:village_badlands", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_beach", "compat:first_structure:towns_and_towers:village_beach", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_birch_forest", "compat:first_structure:towns_and_towers:village_birch_forest", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_flower_forest", "compat:first_structure:towns_and_towers:village_flower_forest", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_forest", "compat:first_structure:towns_and_towers:village_forest", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_grove", "compat:first_structure:towns_and_towers:village_grove", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_jungle", "compat:first_structure:towns_and_towers:village_jungle", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_meadow", "compat:first_structure:towns_and_towers:village_meadow", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_mushroom_fields", "compat:first_structure:towns_and_towers:village_mushroom_fields", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_ocean", "compat:first_structure:towns_and_towers:village_ocean", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_old_growth_taiga", "compat:first_structure:towns_and_towers:village_old_growth_taiga", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_savanna_plateau", "compat:first_structure:towns_and_towers:village_savanna_plateau", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_snowy_slopes", "compat:first_structure:towns_and_towers:village_snowy_slopes", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_snowy_taiga", "compat:first_structure:towns_and_towers:village_snowy_taiga", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_sparse_jungle", "compat:first_structure:towns_and_towers:village_sparse_jungle", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_sunflower_plains", "compat:first_structure:towns_and_towers:village_sunflower_plains", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_swamp", "compat:first_structure:towns_and_towers:village_swamp", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_village_wooded_badlands", "compat:first_structure:towns_and_towers:village_wooded_badlands", "towns_and_towers", "towns_towers_village", "frontier_village"),
+            firstCompat("first_towns_and_towers_wreckage_ocean", "compat:first_structure:towns_and_towers:wreckage_ocean", "towns_and_towers", "towns_towers_wreckage", "ocean_wreck"),
+            firstCompat("first_dungeons_arise_abandoned_temple", "compat:first_structure:dungeons_arise:abandoned_temple", "when_dungeons_arise", "wda_old_sanctuary", "old_sanctuary"),
+            firstCompat("first_dungeons_arise_aviary", "compat:first_structure:dungeons_arise:aviary", "when_dungeons_arise", "wda_large_dungeon", "great_dungeon"),
+            firstCompat("first_dungeons_arise_bandit_towers", "compat:first_structure:dungeons_arise:bandit_towers", "when_dungeons_arise", "wda_large_dungeon", "great_dungeon"),
+            firstCompat("first_dungeons_arise_bandit_village", "compat:first_structure:dungeons_arise:bandit_village", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            firstCompat("first_dungeons_arise_bathhouse", "compat:first_structure:dungeons_arise:bathhouse", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            firstCompat("first_dungeons_arise_ceryneian_hind", "compat:first_structure:dungeons_arise:ceryneian_hind", "when_dungeons_arise", "wda_legendary_keep", "legendary_keep"),
+            firstCompat("first_dungeons_arise_coliseum", "compat:first_structure:dungeons_arise:coliseum", "when_dungeons_arise", "wda_coliseum", "arena_dungeon"),
+            firstCompat("first_dungeons_arise_fishing_hut", "compat:first_structure:dungeons_arise:fishing_hut", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            firstCompat("first_dungeons_arise_foundry", "compat:first_structure:dungeons_arise:foundry", "when_dungeons_arise", "wda_industrial_ruin", "industrial_dungeon"),
+            firstCompat("first_dungeons_arise_giant_mushroom", "compat:first_structure:dungeons_arise:giant_mushroom", "when_dungeons_arise", "wda_large_dungeon", "great_dungeon"),
+            firstCompat("first_dungeons_arise_greenwood_pub", "compat:first_structure:dungeons_arise:greenwood_pub", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            firstCompat("first_dungeons_arise_heavenly_challenger", "compat:first_structure:dungeons_arise:heavenly_challenger", "when_dungeons_arise", "wda_heavenly_fortress", "sky_fortress"),
+            firstCompat("first_dungeons_arise_heavenly_conqueror", "compat:first_structure:dungeons_arise:heavenly_conqueror", "when_dungeons_arise", "wda_heavenly_fortress", "sky_fortress"),
+            firstCompat("first_dungeons_arise_heavenly_rider", "compat:first_structure:dungeons_arise:heavenly_rider", "when_dungeons_arise", "wda_heavenly_fortress", "sky_fortress"),
+            firstCompat("first_dungeons_arise_illager_campsite", "compat:first_structure:dungeons_arise:illager_campsite", "when_dungeons_arise", "wda_illager_stronghold", "illager_fortress"),
+            firstCompat("first_dungeons_arise_illager_corsair", "compat:first_structure:dungeons_arise:illager_corsair", "when_dungeons_arise", "wda_illager_stronghold", "illager_fortress"),
+            firstCompat("first_dungeons_arise_illager_fort", "compat:first_structure:dungeons_arise:illager_fort", "when_dungeons_arise", "wda_illager_stronghold", "illager_fortress"),
+            firstCompat("first_dungeons_arise_illager_galley", "compat:first_structure:dungeons_arise:illager_galley", "when_dungeons_arise", "wda_illager_stronghold", "illager_fortress"),
+            firstCompat("first_dungeons_arise_illager_windmill", "compat:first_structure:dungeons_arise:illager_windmill", "when_dungeons_arise", "wda_illager_stronghold", "illager_fortress"),
+            firstCompat("first_dungeons_arise_infested_temple", "compat:first_structure:dungeons_arise:infested_temple", "when_dungeons_arise", "wda_old_sanctuary", "old_sanctuary"),
+            firstCompat("first_dungeons_arise_jungle_tree_house", "compat:first_structure:dungeons_arise:jungle_tree_house", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            firstCompat("first_dungeons_arise_keep_kayra", "compat:first_structure:dungeons_arise:keep_kayra", "when_dungeons_arise", "wda_legendary_keep", "legendary_keep"),
+            firstCompat("first_dungeons_arise_kisegi_sanctuary", "compat:first_structure:dungeons_arise:kisegi_sanctuary", "when_dungeons_arise", "wda_old_sanctuary", "old_sanctuary"),
+            firstCompat("first_dungeons_arise_lighthouse", "compat:first_structure:dungeons_arise:lighthouse", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            firstCompat("first_dungeons_arise_mechanical_nest", "compat:first_structure:dungeons_arise:mechanical_nest", "when_dungeons_arise", "wda_large_dungeon", "great_dungeon"),
+            firstCompat("first_dungeons_arise_merchant_campsite", "compat:first_structure:dungeons_arise:merchant_campsite", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            firstCompat("first_dungeons_arise_mining_complex", "compat:first_structure:dungeons_arise:mining_complex", "when_dungeons_arise", "wda_industrial_ruin", "industrial_dungeon"),
+            firstCompat("first_dungeons_arise_mining_system", "compat:first_structure:dungeons_arise:mining_system", "when_dungeons_arise", "wda_industrial_ruin", "industrial_dungeon"),
+            firstCompat("first_dungeons_arise_monastery", "compat:first_structure:dungeons_arise:monastery", "when_dungeons_arise", "wda_old_sanctuary", "old_sanctuary"),
+            firstCompat("first_dungeons_arise_mushroom_house", "compat:first_structure:dungeons_arise:mushroom_house", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            firstCompat("first_dungeons_arise_mushroom_mines", "compat:first_structure:dungeons_arise:mushroom_mines", "when_dungeons_arise", "wda_large_dungeon", "great_dungeon"),
+            firstCompat("first_dungeons_arise_mushroom_village", "compat:first_structure:dungeons_arise:mushroom_village", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            firstCompat("first_dungeons_arise_plague_asylum", "compat:first_structure:dungeons_arise:plague_asylum", "when_dungeons_arise", "wda_plague_asylum", "plague_dungeon"),
+            firstCompat("first_dungeons_arise_scorched_mines", "compat:first_structure:dungeons_arise:scorched_mines", "when_dungeons_arise", "wda_industrial_ruin", "industrial_dungeon"),
+            firstCompat("first_dungeons_arise_shiraz_palace", "compat:first_structure:dungeons_arise:shiraz_palace", "when_dungeons_arise", "wda_legendary_keep", "legendary_keep"),
+            firstCompat("first_dungeons_arise_small_blimp", "compat:first_structure:dungeons_arise:small_blimp", "when_dungeons_arise", "wda_large_dungeon", "great_dungeon"),
+            firstCompat("first_dungeons_arise_thornborn_towers", "compat:first_structure:dungeons_arise:thornborn_towers", "when_dungeons_arise", "wda_large_dungeon", "great_dungeon"),
+            firstCompat("first_dungeons_arise_typhon", "compat:first_structure:dungeons_arise:typhon", "when_dungeons_arise", "wda_legendary_keep", "legendary_keep"),
+            firstCompat("first_dungeons_arise_undead_pirate_ship", "compat:first_structure:dungeons_arise:undead_pirate_ship", "when_dungeons_arise", "wda_raider_ship", "undead_ship"),
+            firstCompat("first_dungeons_arise_wishing_well", "compat:first_structure:dungeons_arise:wishing_well", "when_dungeons_arise", "wda_roadside_site", "roadside_refuge"),
+            biomeThemeCompat("general_incendium_ash_barrens", "incendium_ash_barrens", "incendium", "nether_ash"),
+            biomeThemeCompat("general_incendium_infernal_dunes", "incendium_infernal_dunes", "incendium", "nether_dunes"),
+            biomeThemeCompat("general_incendium_inverted_forest", "incendium_inverted_forest", "incendium", "nether_forest"),
+            biomeThemeCompat("general_incendium_quartz_flats", "incendium_quartz_flats", "incendium", "nether_quartz"),
+            biomeThemeCompat("general_incendium_toxic_heap", "incendium_toxic_heap", "incendium", "nether_toxic"),
+            biomeThemeCompat("general_incendium_volcanic_deltas", "incendium_volcanic_deltas", "incendium", "nether_volcanic"),
+            biomeThemeCompat("general_incendium_weeping_valley", "incendium_weeping_valley", "incendium", "nether_soul"),
+            biomeThemeCompat("general_incendium_withered_forest", "incendium_withered_forest", "incendium", "nether_withered"),
+            biomeThemeCompat("general_regions_alpha_grove", "regions_alpha_grove", "regions_unexplored", "forest_grove"),
+            biomeThemeCompat("general_regions_ancient_delta", "regions_ancient_delta", "regions_unexplored", "wetland_delta"),
+            biomeThemeCompat("general_regions_arid_mountains", "regions_arid_mountains", "regions_unexplored", "dry_highlands"),
+            biomeThemeCompat("general_regions_ashen_woodland", "regions_ashen_woodland", "regions_unexplored", "ashen_forest"),
+            biomeThemeCompat("general_regions_autumnal_maple_forest", "regions_autumnal_maple_forest", "regions_unexplored", "autumn_forest"),
+            biomeThemeCompat("general_regions_baobab_savanna", "regions_baobab_savanna", "regions_unexplored", "savanna"),
+            biomeThemeCompat("general_regions_bayou", "regions_bayou", "regions_unexplored", "wetland_bayou"),
+            biomeThemeCompat("general_regions_bioshroom_caves", "regions_bioshroom_caves", "regions_unexplored", "cave_mushroom"),
+            biomeThemeCompat("general_regions_blackstone_basin", "regions_blackstone_basin", "regions_unexplored", "nether_basin"),
+            biomeThemeCompat("general_regions_chalk_cliffs", "regions_chalk_cliffs", "regions_unexplored", "white_cliffs"),
+            biomeThemeCompat("general_regions_eucalyptus_forest", "regions_eucalyptus_forest", "regions_unexplored", "forest_grove"),
+            biomeThemeCompat("general_regions_flower_fields", "regions_flower_fields", "regions_unexplored", "flower_field"),
+            biomeThemeCompat("general_regions_frozen_tundra", "regions_frozen_tundra", "regions_unexplored", "frozen_wilds"),
+            biomeThemeCompat("general_regions_glistering_meadow", "regions_glistering_meadow", "regions_unexplored", "bright_meadow"),
+            biomeThemeCompat("general_regions_hyacinth_deeps", "regions_hyacinth_deeps", "regions_unexplored", "cave_bloom"),
+            biomeThemeCompat("general_regions_infernal_holt", "regions_infernal_holt", "regions_unexplored", "nether_forest"),
+            biomeThemeCompat("general_regions_joshua_desert", "regions_joshua_desert", "regions_unexplored", "desert"),
+            biomeThemeCompat("general_regions_maple_forest", "regions_maple_forest", "regions_unexplored", "maple_forest"),
+            biomeThemeCompat("general_regions_mycotoxic_undergrowth", "regions_mycotoxic_undergrowth", "regions_unexplored", "cave_toxic"),
+            biomeThemeCompat("general_regions_old_growth_bayou", "regions_old_growth_bayou", "regions_unexplored", "wetland_bayou"),
+            biomeThemeCompat("general_regions_prismachasm", "regions_prismachasm", "regions_unexplored", "cave_crystal"),
+            biomeThemeCompat("general_regions_redstone_abyss", "regions_redstone_abyss", "regions_unexplored", "nether_abyss"),
+            biomeThemeCompat("general_regions_redwoods", "regions_redwoods", "regions_unexplored", "redwood_forest"),
+            biomeThemeCompat("general_regions_saguaro_desert", "regions_saguaro_desert", "regions_unexplored", "desert"),
+            biomeThemeCompat("general_regions_silver_birch_forest", "regions_silver_birch_forest", "regions_unexplored", "birch_forest"),
+            biomeThemeCompat("general_regions_spires", "regions_spires", "regions_unexplored", "stone_spires"),
+            biomeThemeCompat("general_regions_towering_cliffs", "regions_towering_cliffs", "regions_unexplored", "high_cliffs"),
+            biomeThemeCompat("general_regions_willow_forest", "regions_willow_forest", "regions_unexplored", "willow_forest"),
+            biomeThemeCompat("general_terralith_alpha_islands", "terralith_alpha_islands", "terralith", "sky_islands"),
+            biomeThemeCompat("general_terralith_amethyst_canyon", "terralith_amethyst_canyon", "terralith", "crystal_canyon"),
+            biomeThemeCompat("general_terralith_amethyst_rainforest", "terralith_amethyst_rainforest", "terralith", "crystal_forest"),
+            biomeThemeCompat("general_terralith_ancient_sands", "terralith_ancient_sands", "terralith", "ancient_desert"),
+            biomeThemeCompat("general_terralith_ashen_savanna", "terralith_ashen_savanna", "terralith", "ashen_savanna"),
+            biomeThemeCompat("general_terralith_basalt_cliffs", "terralith_basalt_cliffs", "terralith", "basalt_cliffs"),
+            biomeThemeCompat("general_terralith_blooming_valley", "terralith_blooming_valley", "terralith", "flower_valley"),
+            biomeThemeCompat("general_terralith_bryce_canyon", "terralith_bryce_canyon", "terralith", "canyon"),
+            biomeThemeCompat("general_terralith_caldera", "terralith_caldera", "terralith", "volcanic_crater"),
+            biomeThemeCompat("general_terralith_cloud_forest", "terralith_cloud_forest", "terralith", "cloud_forest"),
+            biomeThemeCompat("general_terralith_desert_oasis", "terralith_desert_oasis", "terralith", "oasis"),
+            biomeThemeCompat("general_terralith_emerald_peaks", "terralith_emerald_peaks", "terralith", "emerald_highlands"),
+            biomeThemeCompat("general_terralith_glacial_chasm", "terralith_glacial_chasm", "terralith", "glacial_chasm"),
+            biomeThemeCompat("general_terralith_haze_mountain", "terralith_haze_mountain", "terralith", "misty_highlands"),
+            biomeThemeCompat("general_terralith_lavender_valley", "terralith_lavender_valley", "terralith", "flower_valley"),
+            biomeThemeCompat("general_terralith_moonlight_grove", "terralith_moonlight_grove", "terralith", "moonlit_forest"),
+            biomeThemeCompat("general_terralith_orchid_swamp", "terralith_orchid_swamp", "terralith", "flower_wetland"),
+            biomeThemeCompat("general_terralith_painted_mountains", "terralith_painted_mountains", "terralith", "painted_highlands"),
+            biomeThemeCompat("general_terralith_sakura_grove", "terralith_sakura_grove", "terralith", "blossom_grove"),
+            biomeThemeCompat("general_terralith_scarlet_mountains", "terralith_scarlet_mountains", "terralith", "red_highlands"),
+            biomeThemeCompat("general_terralith_skylands_autumn", "terralith_skylands_autumn", "terralith", "sky_islands"),
+            biomeThemeCompat("general_terralith_volcanic_crater", "terralith_volcanic_crater", "terralith", "volcanic_crater"),
+            biomeThemeCompat("general_terralith_white_cliffs", "terralith_white_cliffs", "terralith", "white_cliffs"),
+            biomeThemeCompat("general_terralith_yellowstone", "terralith_yellowstone", "terralith", "hot_springs"),
+            mobThemeCompat("battle_illager_alchemist", "illager_alchemist", "illagerinvasion", "illager_mob"),
+            mobThemeCompat("battle_illager_archivist", "illager_archivist", "illagerinvasion", "illager_mob"),
+            mobThemeCompat("battle_illager_basher", "illager_basher", "illagerinvasion", "illager_raid"),
+            mobThemeCompat("battle_illager_firecaller", "illager_firecaller", "illagerinvasion", "illager_mob"),
+            mobThemeCompat("battle_illager_inquisitor", "illager_inquisitor", "illagerinvasion", "illager_raid"),
+            mobThemeCompat("battle_illager_invoker", "illager_invoker", "illagerinvasion", "illager_mob"),
+            mobThemeCompat("battle_illager_marauder", "illager_marauder", "illagerinvasion", "illager_raid"),
+            mobThemeCompat("battle_illager_necromancer", "illager_necromancer", "illagerinvasion", "illager_mob"),
+            mobThemeCompat("battle_illager_provoker", "illager_provoker", "illagerinvasion", "illager_raid"),
+            mobThemeCompat("battle_illager_sorcerer", "illager_sorcerer", "illagerinvasion", "illager_mob"),
+            mobThemeCompat("battle_illager_surrendered", "illager_surrendered", "illagerinvasion", "illager_mob")
+            // Cross-loader worldgen content compat end
+            // Fabric-only content compat v2 end
+    );
+
     private static NamePattern styledPattern(String styleId, String id, PlaceType placeType, double weight, String... slotTags) {
         return new NamePattern(
                 id,
@@ -320,6 +1213,16 @@ public final class BuiltInNameData {
             String deathCause,
             double weight
     ) {
+        return deathCausePattern(id, environment, deathCause, weight, DEFAULT_STYLE_ID);
+    }
+
+    private static NamePattern deathCausePattern(
+            String id,
+            DeathSiteEnvironment environment,
+            String deathCause,
+            double weight,
+            String styleId
+    ) {
         return new NamePattern(
                 id,
                 "living_legends.name.pattern." + id,
@@ -327,7 +1230,7 @@ public final class BuiltInNameData {
                 Set.of(environment),
                 weight,
                 List.of(),
-                Set.of(DEFAULT_STYLE_ID, environment.idString(), "death_cause"),
+                Set.of(builtInStyleId(styleId), environment.idString(), "death_cause", WorldPos.optionalId(deathCause)),
                 NameSemanticRoots.inferPatternRoot(id),
                 NameCauseConstraints.builder()
                         .requiredCauseType(PlaceCauseType.PLAYER_DEATHS)
@@ -4998,12 +5901,12 @@ public final class BuiltInNameData {
 
         private static Map<String, NameDataPack> packs() {
             Map<String, NameDataPack> packs = new LinkedHashMap<>();
-            packs.put(DEFAULT_PACK.styleId(), BuiltInNamePolishData.apply(DEFAULT_PACK));
-            packs.put(NameStyle.DARK_FANTASY.idString(), BuiltInNamePolishData.apply(darkFantasyPack()));
-            packs.put(NameStyle.COZY_SURVIVAL.idString(), BuiltInNamePolishData.apply(cozySurvivalPack()));
-            packs.put(NameStyle.EPIC_MYTHOLOGY.idString(), BuiltInNamePolishData.apply(epicMythologyPack()));
-            packs.put(NameStyle.NEUTRAL_SERVER.idString(), BuiltInNamePolishData.apply(neutralServerPack()));
-            packs.put(NameStyle.FUNNY_COMMUNITY.idString(), BuiltInNamePolishData.apply(funnyCommunityPack()));
+            packs.put(DEFAULT_PACK.styleId(), withContentCompatPatterns(withHighFrequencyCauseVariants(BuiltInNamePolishData.apply(DEFAULT_PACK))));
+            packs.put(NameStyle.DARK_FANTASY.idString(), withContentCompatPatterns(withHighFrequencyCauseVariants(BuiltInNamePolishData.apply(darkFantasyPack()))));
+            packs.put(NameStyle.COZY_SURVIVAL.idString(), withContentCompatPatterns(withHighFrequencyCauseVariants(BuiltInNamePolishData.apply(cozySurvivalPack()))));
+            packs.put(NameStyle.EPIC_MYTHOLOGY.idString(), withContentCompatPatterns(withHighFrequencyCauseVariants(BuiltInNamePolishData.apply(epicMythologyPack()))));
+            packs.put(NameStyle.NEUTRAL_SERVER.idString(), withContentCompatPatterns(withHighFrequencyCauseVariants(BuiltInNamePolishData.apply(neutralServerPack()))));
+            packs.put(NameStyle.FUNNY_COMMUNITY.idString(), withContentCompatPatterns(withHighFrequencyCauseVariants(BuiltInNamePolishData.apply(funnyCommunityPack()))));
             return Map.copyOf(packs);
         }
     }

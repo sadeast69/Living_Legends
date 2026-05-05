@@ -1,0 +1,368 @@
+{
+  "entries": [
+    {
+      "structure": "terralith:desert_outpost",
+      "structureTheme": "terralith_desert_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "desert_outpost",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:fortified_desert_village",
+      "structureTheme": "terralith_fortified_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "fortified_settlement",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:fortified_village",
+      "structureTheme": "terralith_fortified_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "fortified_settlement",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:glacial_hut",
+      "structureTheme": "terralith_glacial_shelter",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "glacial_shelter",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:igloo",
+      "structureTheme": "terralith_glacial_shelter",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "glacial_shelter",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:mage_complex",
+      "structureTheme": "terralith_mage_complex",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "mage_ruin",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:mage_tower",
+      "structureTheme": "terralith_mage_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "mage_tower",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:mage_tower_autumn",
+      "structureTheme": "terralith_mage_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "mage_tower",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:mage_tower_spring",
+      "structureTheme": "terralith_mage_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "mage_tower",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:mage_tower_summer",
+      "structureTheme": "terralith_mage_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "mage_tower",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:mage_tower_winter",
+      "structureTheme": "terralith_mage_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "mage_tower",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:rubble_desert",
+      "structureTheme": "terralith_old_rubble",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:rubble_forest",
+      "structureTheme": "terralith_old_rubble",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:rubble_jungle",
+      "structureTheme": "terralith_old_rubble",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:rubble_mesa",
+      "structureTheme": "terralith_old_rubble",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:rubble_mountain",
+      "structureTheme": "terralith_old_rubble",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:rubble_taiga",
+      "structureTheme": "terralith_old_rubble",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "ancient_ruins",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:spire",
+      "structureTheme": "terralith_spire",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "stone_spire",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:underground/frosted_dungeon",
+      "structureTheme": "terralith_frosted_dungeon",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "frost_dungeon",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:underground/giant_bee_hive",
+      "structureTheme": "terralith_giant_hive",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "hive_cavern",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:underground/mining_outpost",
+      "structureTheme": "terralith_mining_outpost",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "mining_outpost",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:underground/oak_cabin",
+      "structureTheme": "terralith_valley_lodge",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "valley_lodge",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:underground/old_refinery",
+      "structureTheme": "terralith_old_refinery",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "industrial_ruin",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:underground/sunken_tower",
+      "structureTheme": "terralith_sunken_tower",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "sunken_ruin",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:underground/witch_hut",
+      "structureTheme": "terralith_witch_hut",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "witch_site",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:underground_cabin",
+      "structureTheme": "terralith_valley_lodge",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "valley_lodge",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:valley_lodge",
+      "structureTheme": "terralith_valley_lodge",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "valley_lodge",
+        "terralith"
+      ]
+    },
+    {
+      "structure": "terralith:witch_hut",
+      "structureTheme": "terralith_witch_hut",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "witch_site",
+        "terralith"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 package com.worldremembers.livinglegends.neoforge;
 
 import com.worldremembers.livinglegends.neoforge.network.PlaceTitleS2CPayload;
+import com.worldremembers.livinglegends.neoforge.network.MapDestinationS2CPayload;
+import com.worldremembers.livinglegends.neoforge.network.MapIntegrationS2CPayload;
 import com.worldremembers.livinglegends.neoforge.network.WorldJournalC2SPayload;
 import com.worldremembers.livinglegends.neoforge.network.WorldJournalS2CPayload;
 import net.minecraft.server.level.ServerPlayer;
@@ -37,6 +39,16 @@ public final class WorldRemembersLivingLegendsNeoForgeNetworking {
                 WorldJournalS2CPayload.STREAM_CODEC,
                 (payload, context) -> handleWorldJournal(payload)
         );
+        registrar.playToClient(
+                MapIntegrationS2CPayload.TYPE,
+                MapIntegrationS2CPayload.STREAM_CODEC,
+                (payload, context) -> handleMapIntegration(payload)
+        );
+        registrar.playToClient(
+                MapDestinationS2CPayload.TYPE,
+                MapDestinationS2CPayload.STREAM_CODEC,
+                (payload, context) -> handleMapDestination(payload)
+        );
         registrar.playToServer(
                 WorldJournalC2SPayload.TYPE,
                 WorldJournalC2SPayload.STREAM_CODEC,
@@ -59,5 +71,13 @@ public final class WorldRemembersLivingLegendsNeoForgeNetworking {
 
     private static void handleWorldJournal(WorldJournalS2CPayload payload) {
         WorldRemembersLivingLegendsNeoForgeClientBridge.handleWorldJournal(payload);
+    }
+
+    private static void handleMapIntegration(MapIntegrationS2CPayload payload) {
+        WorldRemembersLivingLegendsNeoForgeClientBridge.handleMapIntegration(payload);
+    }
+
+    private static void handleMapDestination(MapDestinationS2CPayload payload) {
+        WorldRemembersLivingLegendsNeoForgeClientBridge.handleMapDestination(payload);
     }
 }

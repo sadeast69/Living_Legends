@@ -69,6 +69,7 @@ final class WorldJournalService {
                 canTeleport(player),
                 config.showExactCoordinates
         ));
+        FabricMapIntegrationManager.syncPlayer(player, logger, "journal_open");
         sendPage(player, WorldJournalC2SPayload.page(
                 0,
                 pageSize,
@@ -217,6 +218,7 @@ final class WorldJournalService {
         }
         NamedPlace updated = place.withManualName(name, WorldRemembersLivingLegendsFabricStorage.gameTimeFor(world));
         if (WorldRemembersLivingLegendsFabricStorage.upsertPlace(world, updated, "journal_rename " + placeId, logger)) {
+            FabricMapIntegrationManager.refreshDestinationFromWorld(world, updated, logger);
             sendPage(player, pageRequestLike(payload, updated.placeIdString(), config));
         }
     }
@@ -257,6 +259,7 @@ final class WorldJournalService {
                 true
         );
         if (WorldRemembersLivingLegendsFabricStorage.upsertPlace(world, updated, "journal_restore_name " + placeId, logger)) {
+            FabricMapIntegrationManager.refreshDestinationFromWorld(world, updated, logger);
             sendPage(player, pageRequestLike(payload, updated.placeIdString(), journalConfig()));
         }
     }

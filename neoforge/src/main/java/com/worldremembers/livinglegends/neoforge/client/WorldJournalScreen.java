@@ -2,6 +2,7 @@ package com.worldremembers.livinglegends.neoforge.client;
 
 import com.worldremembers.livinglegends.PlaceType;
 import com.worldremembers.livinglegends.WorldRemembersLivingLegends;
+import com.worldremembers.livinglegends.map.MapPlaceDescriptor;
 import com.worldremembers.livinglegends.neoforge.network.WorldJournalC2SPayload;
 import com.worldremembers.livinglegends.neoforge.network.WorldJournalS2CPayload;
 import net.minecraft.client.Minecraft;
@@ -38,13 +39,16 @@ final class WorldJournalScreen extends Screen {
     private static final int DETAIL_TITLE_MAX_LINES = 2;
     private static final int DETAIL_LINE_HEIGHT = 12;
     private static final int DETAIL_FONT_HEIGHT = 9;
+    private static final int DETAIL_TOP_Y_OFFSET = 54;
     private static final int DETAIL_BODY_TOP_GAP = 2;
-    private static final int DETAIL_ACTION_BUTTON_Y_OFFSET = 170;
+    private static final int DETAIL_ACTION_BUTTON_Y_OFFSET = 162;
     private static final int DETAIL_ACTION_BUTTON_HEIGHT = 17;
     private static final int DETAIL_BODY_BUTTON_GAP = 4;
-    private static final int DETAIL_BOTTOM_BUTTON_Y_OFFSET = 224;
+    private static final int DETAIL_BOTTOM_BUTTON_Y_OFFSET = 216;
     private static final int DETAIL_BOTTOM_BUTTON_GAP = 8;
     private static final int DETAIL_BODY_MAX_LINES = 2;
+    private static final int DETAIL_MORE_PANEL_Y_OFFSET = 94;
+    private static final int DETAIL_MORE_MENU_Y_OFFSET = 100;
     private static final int TEXT_DARK = 0xFF3D2815;
     private static final int TEXT_MUTED = 0xFF765A35;
     private static final int TEXT_SOFT = 0xFF92764B;
@@ -143,6 +147,7 @@ final class WorldJournalScreen extends Screen {
 
     @Override
     protected void init() {
+        NeoForgeMapIntegrationClient.refreshDestinationUiState();
         rebuild();
     }
 
@@ -211,6 +216,10 @@ final class WorldJournalScreen extends Screen {
 
     static void drawCrispDimBackground(GuiGraphics graphics, int width, int height) {
         graphics.fill(0, 0, width, height, 0x8A000000);
+    }
+
+    void refreshMapIntegrationControls() {
+        rebuild();
     }
 
     private void rebuild() {
@@ -318,8 +327,9 @@ final class WorldJournalScreen extends Screen {
             rebuild();
         }, moreOpen ? JournalButtonStyle.ACTIVE_TAB : JournalButtonStyle.NORMAL));
         more.active = selected != null;
+        addDestinationControl(selected, x, y + DETAIL_ACTION_BUTTON_HEIGHT + DETAIL_BODY_BUTTON_GAP);
         if (moreOpen && selected != null) {
-            int menuY = top + 108;
+            int menuY = top + DETAIL_MORE_MENU_Y_OFFSET;
             JournalButton copy = addRenderableWidget(new JournalButton(x, menuY, 68, 15, Component.translatable("living_legends.journal.button.copy_coordinates"), button -> copyCoordinates(), JournalButtonStyle.SMALL));
             copy.active = showExactCoordinates;
             JournalButton rename = addRenderableWidget(new JournalButton(x + 74, menuY, 68, 15, Component.translatable("living_legends.journal.button.rename"), button -> {
@@ -345,13 +355,35 @@ final class WorldJournalScreen extends Screen {
             }, JournalButtonStyle.DANGER));
             delete.active = canManage;
         }
-        JournalButton create = addRenderableWidget(new JournalButton(left + BOOK_WIDTH - 148, top + 224, 64, 16, Component.translatable("living_legends.journal.button.create_place"), button -> {
+        JournalButton create = addRenderableWidget(new JournalButton(left + BOOK_WIDTH - 148, top + DETAIL_BOTTOM_BUTTON_Y_OFFSET, 64, 16, Component.translatable("living_legends.journal.button.create_place"), button -> {
             if (minecraft != null) {
                 minecraft.setScreen(new WorldJournalCreatePlaceScreen(this));
             }
         }, JournalButtonStyle.NORMAL));
         create.active = canManage;
-        addRenderableWidget(new JournalButton(left + BOOK_WIDTH - 78, top + 224, 58, 16, Component.translatable("gui.done"), button -> onClose(), JournalButtonStyle.NORMAL));
+        addRenderableWidget(new JournalButton(left + BOOK_WIDTH - 78, top + DETAIL_BOTTOM_BUTTON_Y_OFFSET, 58, 16, Component.translatable("gui.done"), button -> onClose(), JournalButtonStyle.NORMAL));
+    }
+
+    private void addDestinationControl(WorldJournalS2CPayload.Entry selected, int x, int y) {
+        if (selected == null || !NeoForgeMapIntegrationClient.destinationButtonVisible()) {
+            return;
+        }
+        boolean active = NeoForgeMapIntegrationClient.isDestinationActive(selected.placeId());
+        JournalButton destination = addRenderableWidget(new JournalButton(
+                x,
+                y,
+                142,
+                15,
+                Component.translatable(active
+                        ? "living_legends.journal.button.remove_destination"
+                        : "living_legends.journal.button.set_destination"),
+                button -> {
+                    NeoForgeMapIntegrationClient.toggleDestination(mapDescriptor(selected));
+                    rebuild();
+                },
+                active ? JournalButtonStyle.ACTIVE_TAB : JournalButtonStyle.SMALL
+        ));
+        destination.active = true;
     }
 
     private void addSettingsControls(int left, int top) {
@@ -447,6 +479,7 @@ final class WorldJournalScreen extends Screen {
             return;
         }
 
+        y = top + DETAIL_TOP_Y_OFFSET;
         List<String> titleLines = wrap(displayName(entry), DETAIL_TITLE_WIDTH, DETAIL_TITLE_MAX_LINES);
         int titleColor = typeColor(entry.placeType());
         for (String line : titleLines) {
@@ -476,7 +509,7 @@ final class WorldJournalScreen extends Screen {
         int bodyBottom = detailActionY(top, entry) - DETAIL_BODY_BUTTON_GAP;
         int bodyLines = Math.min(DETAIL_BODY_MAX_LINES, fittingBodyLines(bodyY, bodyBottom));
         if (moreOpen) {
-            drawMorePanelBackground(graphics, x - 4, top + 102);
+            drawMorePanelBackground(graphics, x - 4, top + DETAIL_MORE_PANEL_Y_OFFSET);
         } else if (bodyLines > 0 && statusMessage != null && !statusMessage.isBlank()) {
             drawWrapped(graphics, statusMessage, x, bodyY, DETAIL_WIDTH, bodyLines, TEXT_SOFT);
         } else if (bodyLines > 0) {
@@ -491,11 +524,14 @@ final class WorldJournalScreen extends Screen {
         int bodyY = detailBodyY(top, entry);
         int preferredY = bodyY + DETAIL_BODY_MAX_LINES * DETAIL_LINE_HEIGHT + DETAIL_BODY_BUTTON_GAP;
         int maxY = top + DETAIL_BOTTOM_BUTTON_Y_OFFSET - DETAIL_ACTION_BUTTON_HEIGHT - DETAIL_BOTTOM_BUTTON_GAP;
+        if (NeoForgeMapIntegrationClient.destinationButtonVisible()) {
+            maxY -= DETAIL_BODY_BUTTON_GAP + 15;
+        }
         return Math.max(top + DETAIL_ACTION_BUTTON_Y_OFFSET, Math.min(maxY, preferredY));
     }
 
     private int detailBodyY(int top, WorldJournalS2CPayload.Entry entry) {
-        int y = top + 62;
+        int y = top + DETAIL_TOP_Y_OFFSET;
         y += wrap(displayName(entry), DETAIL_TITLE_WIDTH, DETAIL_TITLE_MAX_LINES).size() * DETAIL_LINE_HEIGHT;
         int separatorY = y + 5;
         y = separatorY + 11;
@@ -694,6 +730,24 @@ final class WorldJournalScreen extends Screen {
             }
         }
         return entries.isEmpty() ? null : entries.get(0);
+    }
+
+    private MapPlaceDescriptor mapDescriptor(WorldJournalS2CPayload.Entry entry) {
+        return new MapPlaceDescriptor(
+                entry.placeId(),
+                displayName(entry),
+                PlaceType.fromId(entry.placeType()),
+                entry.dimension(),
+                entry.centerX(),
+                entry.centerY(),
+                entry.centerZ(),
+                entry.radius(),
+                entry.manualName(),
+                entry.manualNameText(),
+                entry.nameRecipe(),
+                entry.serverResolvedFallbackName(),
+                ""
+        );
     }
 
     private int totalPages() {

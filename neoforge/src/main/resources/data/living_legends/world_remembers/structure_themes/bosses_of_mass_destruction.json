@@ -1,0 +1,44 @@
+{
+  "entries": [
+    {
+      "structure": "bosses_of_mass_destruction:lich_tower",
+      "structureTheme": "bomd_lich",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["bomd", "tower", "lich"]
+    },
+    {
+      "structure": "bosses_of_mass_destruction:gauntlet_arena",
+      "structureTheme": "bomd_gauntlet",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["bomd", "arena", "gauntlet"]
+    },
+    {
+      "structure": "bosses_of_mass_destruction:obsidilith_arena",
+      "structureTheme": "bomd_obsidilith",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["bomd", "arena", "obsidilith"]
+    },
+    {
+      "structure": "bosses_of_mass_destruction:void_blossom",
+      "structureTheme": "bomd_void_blossom",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["bomd", "cavern", "void_blossom"]
+    }
+  ]
+}

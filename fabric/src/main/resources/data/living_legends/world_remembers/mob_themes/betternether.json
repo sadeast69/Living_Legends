@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "entity": "betternether:jungle_skeleton",
+      "mobTheme": "betternether_jungle_skeleton",
+      "mobGroup": "nether_wild",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "betternether:naga",
+      "mobTheme": "betternether_naga",
+      "mobGroup": "nether_wild",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "betternether:skull",
+      "mobTheme": "betternether_skull",
+      "mobGroup": "nether_ash",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "betternether:hydrogen_jellyfish",
+      "mobTheme": "betternether_hydrogen_jellyfish",
+      "mobGroup": "nether_wild",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

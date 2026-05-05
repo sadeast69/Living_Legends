@@ -1,0 +1,179 @@
+{
+  "entries": [
+    {
+      "biome": "betterend:amber_land",
+      "biomeTheme": "betterend_amber_land",
+      "biomeGroup": "end_mystic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:blossoming_spires",
+      "biomeTheme": "betterend_blossoming_spires",
+      "biomeGroup": "end_mystic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:chorus_forest",
+      "biomeTheme": "betterend_chorus_forest",
+      "biomeGroup": "strange_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:crystal_mountains",
+      "biomeTheme": "betterend_crystal_mountains",
+      "biomeGroup": "end_crystal",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:dragon_graveyards",
+      "biomeTheme": "betterend_dragon_graveyards",
+      "biomeGroup": "end_shadow",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:dry_shrubland",
+      "biomeTheme": "betterend_dry_shrubland",
+      "biomeGroup": "end_mystic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:dust_wastelands",
+      "biomeTheme": "betterend_dust_wastelands",
+      "biomeGroup": "end_shadow",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:empty_aurora_cave",
+      "biomeTheme": "betterend_empty_aurora_cave",
+      "biomeGroup": "end_crystal",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:empty_end_cave",
+      "biomeTheme": "betterend_empty_end_cave",
+      "biomeGroup": "end_shadow",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:empty_smaragdant_cave",
+      "biomeTheme": "betterend_empty_smaragdant_cave",
+      "biomeGroup": "end_crystal",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:foggy_mushroomland",
+      "biomeTheme": "betterend_foggy_mushroomland",
+      "biomeGroup": "strange_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:glowing_grasslands",
+      "biomeTheme": "betterend_glowing_grasslands",
+      "biomeGroup": "end_mystic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:ice_starfield",
+      "biomeTheme": "betterend_ice_starfield",
+      "biomeGroup": "end_crystal",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:jade_cave",
+      "biomeTheme": "betterend_jade_cave",
+      "biomeGroup": "end_crystal",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:lantern_woods",
+      "biomeTheme": "betterend_lantern_woods",
+      "biomeGroup": "strange_forest",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:lush_aurora_cave",
+      "biomeTheme": "betterend_lush_aurora_cave",
+      "biomeGroup": "end_crystal",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:lush_smaragdant_cave",
+      "biomeTheme": "betterend_lush_smaragdant_cave",
+      "biomeGroup": "end_crystal",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:megalake",
+      "biomeTheme": "betterend_megalake",
+      "biomeGroup": "end_mystic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:megalake_grove",
+      "biomeTheme": "betterend_megalake_grove",
+      "biomeGroup": "end_mystic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:neon_oasis",
+      "biomeTheme": "betterend_neon_oasis",
+      "biomeGroup": "end_mystic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:painted_mountains",
+      "biomeTheme": "betterend_painted_mountains",
+      "biomeGroup": "end_mystic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:shadow_forest",
+      "biomeTheme": "betterend_shadow_forest",
+      "biomeGroup": "end_shadow",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:sulphur_springs",
+      "biomeTheme": "betterend_sulphur_springs",
+      "biomeGroup": "end_mystic",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:umbra_valley",
+      "biomeTheme": "betterend_umbra_valley",
+      "biomeGroup": "end_shadow",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betterend:umbrella_jungle",
+      "biomeTheme": "betterend_umbrella_jungle",
+      "biomeGroup": "strange_forest",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

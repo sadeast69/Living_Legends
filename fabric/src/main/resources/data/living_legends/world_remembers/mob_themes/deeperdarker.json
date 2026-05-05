@@ -1,0 +1,76 @@
+{
+  "entries": [
+    {
+      "entity": "deeperdarker:stalker",
+      "mobTheme": "deep_echo",
+      "mobGroup": "sculk_echo",
+      "combatRole": "boss",
+      "placeType": "BOSS_SITE",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "deeperdarker:angler_fish",
+      "mobTheme": "deep_echo",
+      "mobGroup": "otherside",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "deeperdarker:sculk_centipede",
+      "mobTheme": "sculk_echo",
+      "mobGroup": "sculk_echo",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "deeperdarker:sculk_leech",
+      "mobTheme": "sculk_echo",
+      "mobGroup": "sculk_echo",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "deeperdarker:sculk_snapper",
+      "mobTheme": "sculk_echo",
+      "mobGroup": "sculk_echo",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "deeperdarker:shattered",
+      "mobTheme": "ancient_temple",
+      "mobGroup": "sculk_echo",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "deeperdarker:shriek_worm",
+      "mobTheme": "sculk_echo",
+      "mobGroup": "sculk_echo",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "deeperdarker:sludge",
+      "mobTheme": "deep_echo",
+      "mobGroup": "otherside",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

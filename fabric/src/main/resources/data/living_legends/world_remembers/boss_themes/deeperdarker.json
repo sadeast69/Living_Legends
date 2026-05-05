@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entity": "deeperdarker:stalker",
+      "bossTheme": "deep_echo",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["otherside", "sculk", "stalker"]
+    }
+  ]
+}

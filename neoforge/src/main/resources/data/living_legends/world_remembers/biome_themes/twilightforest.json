@@ -1,0 +1,158 @@
+{
+  "entries": [
+    {
+      "biome": "twilightforest:forest",
+      "biomeTheme": "tf_twilight_forest",
+      "biomeGroup": "tf_twilight",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:dense_forest",
+      "biomeTheme": "tf_twilight_forest",
+      "biomeGroup": "tf_twilight",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:firefly_forest",
+      "biomeTheme": "tf_firefly_forest",
+      "biomeGroup": "tf_twilight",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:clearing",
+      "biomeTheme": "tf_twilight_forest",
+      "biomeGroup": "tf_twilight",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:lake",
+      "biomeTheme": "tf_twilight_water",
+      "biomeGroup": "tf_twilight",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:stream",
+      "biomeTheme": "tf_twilight_water",
+      "biomeGroup": "tf_twilight",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:oak_savannah",
+      "biomeTheme": "tf_twilight_forest",
+      "biomeGroup": "tf_twilight",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:enchanted_forest",
+      "biomeTheme": "tf_enchanted_forest",
+      "biomeGroup": "tf_enchanted",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:mushroom_forest",
+      "biomeTheme": "tf_mushroom_forest",
+      "biomeGroup": "tf_mushroom",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:dense_mushroom_forest",
+      "biomeTheme": "tf_mushroom_forest",
+      "biomeGroup": "tf_mushroom",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:spooky_forest",
+      "biomeTheme": "tf_dark_forest",
+      "biomeGroup": "tf_dark",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:dark_forest",
+      "biomeTheme": "tf_dark_forest",
+      "biomeGroup": "tf_dark",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:dark_forest_center",
+      "biomeTheme": "tf_dark_forest",
+      "biomeGroup": "tf_dark",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:swamp",
+      "biomeTheme": "tf_swamp",
+      "biomeGroup": "tf_swamp",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:fire_swamp",
+      "biomeTheme": "tf_fire_swamp",
+      "biomeGroup": "tf_swamp",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:snowy_forest",
+      "biomeTheme": "tf_snow",
+      "biomeGroup": "tf_snow",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:glacier",
+      "biomeTheme": "tf_glacier",
+      "biomeGroup": "tf_snow",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:highlands",
+      "biomeTheme": "tf_highlands",
+      "biomeGroup": "tf_highlands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:highlands_underground",
+      "biomeTheme": "tf_highlands",
+      "biomeGroup": "tf_highlands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:underground",
+      "biomeTheme": "tf_highlands",
+      "biomeGroup": "tf_highlands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:thornlands",
+      "biomeTheme": "tf_thornlands",
+      "biomeGroup": "tf_highlands",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "twilightforest:final_plateau",
+      "biomeTheme": "tf_final_plateau",
+      "biomeGroup": "tf_highlands",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

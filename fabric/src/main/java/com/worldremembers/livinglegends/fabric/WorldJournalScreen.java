@@ -2,6 +2,7 @@ package com.worldremembers.livinglegends.fabric;
 
 import com.worldremembers.livinglegends.PlaceType;
 import com.worldremembers.livinglegends.WorldRemembersLivingLegends;
+import com.worldremembers.livinglegends.map.MapPlaceDescriptor;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
@@ -182,8 +183,13 @@ final class WorldJournalScreen extends Screen {
         context.fill(0, 0, width, height, 0x8A000000);
     }
 
+    void refreshMapIntegrationControls() {
+        rebuild();
+    }
+
     private void rebuild() {
         clearChildren();
+        FabricMapIntegrationClient.refreshDestinationUiState();
         int left = bookLeft();
         int top = bookTop();
         addTabs(left, top);
@@ -283,6 +289,7 @@ final class WorldJournalScreen extends Screen {
             rebuild();
         }, moreOpen ? JournalButtonStyle.ACTIVE_TAB : JournalButtonStyle.NORMAL));
         more.active = selected != null;
+        addDestinationControl(selected, x, top + 190);
         if (moreOpen && selected != null) {
             int menuY = top + 108;
             JournalButtonWidget copy = addDrawableChild(new JournalButtonWidget(x, menuY, 68, 15, Text.translatable("living_legends.journal.button.copy_coordinates"), button -> copyCoordinates(), JournalButtonStyle.SMALL));
@@ -317,6 +324,31 @@ final class WorldJournalScreen extends Screen {
         }, JournalButtonStyle.NORMAL));
         create.active = true;
         addDrawableChild(new JournalButtonWidget(left + BOOK_WIDTH - 78, top + 224, 58, 16, Text.translatable("gui.done"), button -> close(), JournalButtonStyle.NORMAL));
+    }
+
+    private void addDestinationControl(WorldJournalS2CPayload.Entry selected, int x, int y) {
+        int width = 142;
+        int height = 15;
+        boolean showDestinationButton = selected != null && FabricMapIntegrationClient.destinationButtonVisible();
+        if (!showDestinationButton) {
+            return;
+        }
+        boolean active = FabricMapIntegrationClient.isDestinationActive(selected.placeId());
+        JournalButtonWidget destination = addDrawableChild(new JournalButtonWidget(
+                x,
+                y,
+                width,
+                height,
+                Text.translatable(active
+                        ? "living_legends.journal.button.remove_destination"
+                        : "living_legends.journal.button.set_destination"),
+                button -> {
+                    FabricMapIntegrationClient.toggleDestination(mapDescriptor(selected));
+                    rebuild();
+                },
+                active ? JournalButtonStyle.ACTIVE_TAB : JournalButtonStyle.SMALL
+        ));
+        destination.active = true;
     }
 
     private void addSettingsControls(int left, int top) {
@@ -607,6 +639,24 @@ final class WorldJournalScreen extends Screen {
         return entries.isEmpty() ? null : entries.get(0);
     }
 
+    private MapPlaceDescriptor mapDescriptor(WorldJournalS2CPayload.Entry entry) {
+        return new MapPlaceDescriptor(
+                entry.placeId(),
+                displayName(entry),
+                PlaceType.fromId(entry.placeType()),
+                entry.dimension(),
+                entry.centerX(),
+                entry.centerY(),
+                entry.centerZ(),
+                entry.radius(),
+                entry.manualName(),
+                entry.manualNameText(),
+                entry.nameRecipe(),
+                entry.serverResolvedFallbackName(),
+                ""
+        );
+    }
+
     private int totalPages() {
         int resolvedPageSize = Math.max(1, pageSize);
         return Math.max(1, (totalCount + resolvedPageSize - 1) / resolvedPageSize);
@@ -774,6 +824,7 @@ final class WorldJournalScreen extends Screen {
             default -> TEXT_DARK;
         };
     }
+
 }
 
 final class WorldJournalRenameScreen extends Screen {

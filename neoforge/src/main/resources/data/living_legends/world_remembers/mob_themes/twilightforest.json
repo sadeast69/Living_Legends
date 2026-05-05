@@ -1,0 +1,283 @@
+{
+  "entries": [
+    {
+      "entity": "twilightforest:kobold",
+      "mobTheme": "tf_forest_mob",
+      "mobGroup": "tf_forest",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:redcap",
+      "mobTheme": "tf_forest_mob",
+      "mobGroup": "tf_forest",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:redcap_sapper",
+      "mobTheme": "tf_forest_mob",
+      "mobGroup": "tf_forest",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:hedge_spider",
+      "mobTheme": "tf_hedge_mob",
+      "mobGroup": "tf_forest",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:swarm_spider",
+      "mobTheme": "tf_hedge_mob",
+      "mobGroup": "tf_forest",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:skeleton_druid",
+      "mobTheme": "tf_forest_mob",
+      "mobGroup": "tf_forest",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:minotaur",
+      "mobTheme": "tf_labyrinth_mob",
+      "mobGroup": "tf_labyrinth",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:maze_slime",
+      "mobTheme": "tf_labyrinth_mob",
+      "mobGroup": "tf_labyrinth",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:fire_beetle",
+      "mobTheme": "tf_labyrinth_mob",
+      "mobGroup": "tf_labyrinth",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:slime_beetle",
+      "mobTheme": "tf_labyrinth_mob",
+      "mobGroup": "tf_labyrinth",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:pinch_beetle",
+      "mobTheme": "tf_labyrinth_mob",
+      "mobGroup": "tf_labyrinth",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:death_tome",
+      "mobTheme": "tf_dark_tower_mob",
+      "mobGroup": "tf_dark_tower",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:towerwood_borer",
+      "mobTheme": "tf_dark_tower_mob",
+      "mobGroup": "tf_dark_tower",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:carminite_ghastguard",
+      "mobTheme": "tf_dark_tower_mob",
+      "mobGroup": "tf_dark_tower",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:carminite_ghastling",
+      "mobTheme": "tf_dark_tower_mob",
+      "mobGroup": "tf_dark_tower",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:carminite_golem",
+      "mobTheme": "tf_dark_tower_mob",
+      "mobGroup": "tf_dark_tower",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:carminite_broodling",
+      "mobTheme": "tf_dark_tower_mob",
+      "mobGroup": "tf_dark_tower",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:blockchain_goblin",
+      "mobTheme": "tf_knight_mob",
+      "mobGroup": "tf_knights",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:lower_goblin_knight",
+      "mobTheme": "tf_knight_mob",
+      "mobGroup": "tf_knights",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:upper_goblin_knight",
+      "mobTheme": "tf_knight_mob",
+      "mobGroup": "tf_knights",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:helmet_crab",
+      "mobTheme": "tf_knight_mob",
+      "mobGroup": "tf_knights",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:wraith",
+      "mobTheme": "tf_knight_mob",
+      "mobGroup": "tf_knights",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:yeti",
+      "mobTheme": "tf_snow_mob",
+      "mobGroup": "tf_snow",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:snow_guardian",
+      "mobTheme": "tf_snow_mob",
+      "mobGroup": "tf_snow",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:ice_crystal",
+      "mobTheme": "tf_snow_mob",
+      "mobGroup": "tf_snow",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:stable_ice_core",
+      "mobTheme": "tf_snow_mob",
+      "mobGroup": "tf_snow",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:unstable_ice_core",
+      "mobTheme": "tf_snow_mob",
+      "mobGroup": "tf_snow",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:winter_wolf",
+      "mobTheme": "tf_snow_mob",
+      "mobGroup": "tf_snow",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:troll",
+      "mobTheme": "tf_troll_mob",
+      "mobGroup": "tf_troll",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:giant_miner",
+      "mobTheme": "tf_giant_mob",
+      "mobGroup": "tf_troll",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "twilightforest:armored_giant",
+      "mobTheme": "tf_giant_mob",
+      "mobGroup": "tf_troll",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

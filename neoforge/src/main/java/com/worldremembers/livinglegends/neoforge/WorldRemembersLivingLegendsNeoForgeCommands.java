@@ -658,6 +658,9 @@ public final class WorldRemembersLivingLegendsNeoForgeCommands {
                     + " oldName=" + oldName
                     + " newManualName=" + updated.manualName());
         }
+        if (changed) {
+            NeoForgeMapIntegrationManager.refreshDestinationFromWorld(world, updated, logger);
+        }
         send(source, changed
                 ? "World Remembers renamed place " + place.placeIdString() + " to \"" + updated.manualName() + "\""
                 : "World Remembers rename made no changes for " + place.placeIdString());
@@ -787,6 +790,8 @@ public final class WorldRemembersLivingLegendsNeoForgeCommands {
                     + (result.config().validationWarnings().size() - 8)
                     + " more warnings in latest.log");
         }
+        NeoForgeMapIntegrationManager.clearSyncFingerprints();
+        NeoForgeMapIntegrationManager.syncAllFromWorld(source.getServer(), logger);
         return 1;
     }
 
@@ -1234,10 +1239,12 @@ public final class WorldRemembersLivingLegendsNeoForgeCommands {
                 WorldRemembersLivingLegends.config().naming.allowMixedStyleTokens
         );
         PlaceCause cause = debugCauseFor(placeType, causeType, targetId, runtimeName);
-        NameContext nameContext = NameContext.from(placeType, DeathSiteEnvironment.UNKNOWN, cause, nameData.styleId());
+        DeathSiteEnvironment environment = debugEnvironmentForCause(placeType, causeType, targetId);
+        NameContext nameContext = NameContext.from(placeType, environment, cause, nameData.styleId());
         long baseSeed = 9137L * placeType.ordinal() + 1777L * causeType.ordinal() + targetId.hashCode() + 31L * runtimeName.hashCode();
         send(source, "World Remembers name cause"
                 + " placeType=" + placeType.name()
+                + " environment=" + environment.name()
                 + " causeType=" + causeType.name()
                 + " targetId=" + targetId
                 + (runtimeName.isBlank() ? "" : " runtimeName=" + runtimeName)
@@ -1335,17 +1342,47 @@ public final class WorldRemembersLivingLegendsNeoForgeCommands {
                 WorldRemembersLivingLegends.config().naming.allowMixedStyleTokens
         );
         PlaceCause cause = debugCauseFor(placeType, causeType, targetId, runtimeName);
-        NameContext nameContext = NameContext.from(placeType, DeathSiteEnvironment.UNKNOWN, cause, nameData.styleId());
-        NameGenerationDiagnostics diagnostics = new NameGenerationDiagnostics();
-        NameRecipe recipe = NameGenerator.generate(nameContext, 0x51A7E5L + targetId.hashCode(), nameData, List.of(), diagnostics);
+        DeathSiteEnvironment environment = debugEnvironmentForCause(placeType, causeType, targetId);
+        NameContext nameContext = NameContext.from(placeType, environment, cause, nameData.styleId());
+        List<NameRecipe> generatedRecipes = new ArrayList<>();
+        Set<String> patternKeys = new HashSet<>();
+        Set<String> resolvedNames = new HashSet<>();
+        List<String> samples = new ArrayList<>();
+        NameGenerationDiagnostics diagnostics = new NameGenerationDiagnostics(false);
+        long baseSeed = 0x51A7E5L + 31L * placeType.ordinal() + 997L * causeType.ordinal() + targetId.hashCode();
+        for (int index = 0; index < 64; index++) {
+            NameRecipe recipe = NameGenerator.generate(
+                    nameContext,
+                    baseSeed + index * 10_007L,
+                    nameData,
+                    generatedRecipes,
+                    diagnostics
+            );
+            generatedRecipes.add(recipe);
+            patternKeys.add(recipe.patternKey());
+            String resolvedName = WorldRemembersLivingLegendsNeoForgeNameResolver.resolveToString(recipe);
+            if (!resolvedName.isBlank()) {
+                resolvedNames.add(normalizedResolvedName(resolvedName));
+                if (samples.size() < 8 && !samples.contains(resolvedName)) {
+                    samples.add(resolvedName);
+                }
+            }
+        }
+        boolean fixedFrequentScenario = highFrequencyNameScenario(placeType, causeType, targetId)
+                && patternKeys.size() <= 1
+                && resolvedNames.size() <= 1;
         String message = "World Remembers name audit cause"
                 + " requestedStyle=" + requestedStyleId
                 + " selectedStyle=" + nameData.styleId()
                 + " placeType=" + placeType.name()
+                + " environment=" + environment.name()
                 + " causeType=" + causeType.name()
                 + " targetId=" + targetId
-                + " sample=" + WorldRemembersLivingLegendsNeoForgeNameResolver.resolveToString(recipe)
-                + " patternKey=" + recipe.patternKey()
+                + " samples=64"
+                + " uniquePatternKeys=" + patternKeys.size()
+                + " uniqueNames=" + resolvedNames.size()
+                + (fixedFrequentScenario ? " warning=fixed_pattern_pool" : "")
+                + " firstNames=" + samples
                 + " " + diagnostics.summary();
         send(source, message);
         if (logger != null) {
@@ -1643,6 +1680,7 @@ public final class WorldRemembersLivingLegendsNeoForgeCommands {
         String target = targetId == null ? "" : targetId.trim().toLowerCase(Locale.ROOT);
         String name = RuntimeNameFormatter.sanitize(runtimeName);
         return switch (causeType) {
+            case PLAYER_DEATHS -> new PlaceCause(causeType, EventType.PLAYER_DEATH, "", "", "", "", "", "", "", target, "", "", Map.of("debug_target=" + target, 1L));
             case FIRST_STRUCTURE_DISCOVERY -> new PlaceCause(causeType, EventType.STRUCTURE_DISCOVERED, firstDiscoveryKeyForTarget(causeType, target), "structure", target, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", Map.of("debug_target=" + target, 1L));
             case MINING, FIRST_BLOCK_DISCOVERY -> new PlaceCause(causeType, EventType.VALUABLE_BLOCK_MINED, firstDiscoveryKeyForTarget(causeType, target), causeType == PlaceCauseType.FIRST_BLOCK_DISCOVERY ? "block" : "", "", target, "", "", "", "", "", "", target, "", "", "", "", "", "", "", "", Map.of("debug_target=" + target, 1L));
             case MOB_BATTLE -> new PlaceCause(causeType, EventType.PLAYER_KILLED_HOSTILE_MOB, "", "", "", "", target, "", target, "", target, "", "", "", "", "", "", "", "", "", "", Map.of("debug_target=" + target, 1L));
@@ -1662,6 +1700,30 @@ public final class WorldRemembersLivingLegendsNeoForgeCommands {
                     Map.of("debug_target=" + target, 1L)
             );
             default -> new PlaceCause(causeType, EventType.CUSTOM, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", Map.of("debug_target=" + target, 1L));
+        };
+    }
+
+    private static DeathSiteEnvironment debugEnvironmentForCause(PlaceType placeType, PlaceCauseType causeType, String targetId) {
+        if (placeType != PlaceType.DEATH_SITE || causeType != PlaceCauseType.PLAYER_DEATHS) {
+            return DeathSiteEnvironment.UNKNOWN;
+        }
+        String target = targetId == null ? "" : targetId.trim().toLowerCase(Locale.ROOT);
+        return switch (target) {
+            case "lava", "fire" -> DeathSiteEnvironment.NETHER;
+            case "drowning", "drown", "water" -> DeathSiteEnvironment.WATER;
+            case "void" -> DeathSiteEnvironment.END;
+            case "fall", "" -> DeathSiteEnvironment.SURFACE;
+            default -> DeathSiteEnvironment.SURFACE;
+        };
+    }
+
+    private static boolean highFrequencyNameScenario(PlaceType placeType, PlaceCauseType causeType, String targetId) {
+        if (placeType == PlaceType.DEATH_SITE && causeType == PlaceCauseType.PLAYER_DEATHS) {
+            return true;
+        }
+        return switch (placeType) {
+            case BATTLEFIELD, MINING_SITE, PORTAL_LANDMARK, DIMENSION_THRESHOLD, GENERAL_LANDMARK -> true;
+            default -> false;
         };
     }
 

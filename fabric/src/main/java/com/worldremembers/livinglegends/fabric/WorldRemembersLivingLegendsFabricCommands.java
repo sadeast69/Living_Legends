@@ -993,6 +993,9 @@ final class WorldRemembersLivingLegendsFabricCommands {
         if (changed && logger != null) {
             logger.info("World Remembers place renamed id=" + placeId + " oldName=" + oldName + " newManualName=" + updated.manualName());
         }
+        if (changed) {
+            FabricMapIntegrationManager.refreshDestinationFromWorld(world, updated, logger);
+        }
         sendFeedback(source, changed
                 ? "World Remembers renamed place " + placeId + " to \"" + updated.manualName() + "\""
                 : "World Remembers rename made no changes for " + placeId);
@@ -1198,6 +1201,9 @@ final class WorldRemembersLivingLegendsFabricCommands {
                     + (result.config().validationWarnings().size() - 8)
                     + " more warnings in latest.log");
         }
+        Object server = invokeNoArg(source, "method_9211");
+        FabricMapIntegrationManager.clearSyncFingerprints();
+        FabricMapIntegrationManager.syncAllFromWorld(server == null ? invokeNoArg(source, "method_9225") : server, logger);
         return 1;
     }
 
@@ -1280,7 +1286,13 @@ final class WorldRemembersLivingLegendsFabricCommands {
                 + " enabledPlaceTypes=" + enabled
                 + " disabledPlaceTypes=" + disabled
                 + " displayExistingWhenDisabled=" + config.placeTypes.displayExistingWhenDisabled
-                + " allowManualCreateWhenDisabled=" + config.placeTypes.allowManualCreateWhenDisabled);
+                + " allowManualCreateWhenDisabled=" + config.placeTypes.allowManualCreateWhenDisabled
+                + " mapIntegration=" + config.mapIntegration.enabled
+                + " journeyMap=" + config.mapIntegration.journeyMap.enabled
+                + " xaero=" + config.mapIntegration.xaero.enabled
+                + " ftbChunks=" + config.mapIntegration.ftbChunks.enabled
+                + " mapLabels=" + config.mapIntegration.placeLabels.enabled
+                + " destinations=" + config.mapIntegration.destinations.enabled);
         for (String warning : config.validationSummary().firstWarnings(8)) {
             sendFeedback(source, "World Remembers config warning: " + warning);
         }
@@ -1302,7 +1314,7 @@ final class WorldRemembersLivingLegendsFabricCommands {
         sendFeedback(source, "World Remembers config validate"
                 + " " + summary.compact()
                 + " configFile=" + LivingLegendsConfigManager.currentConfigPath()
-                + " sections=general,generation,thresholds,requiredCounts,scoreThresholds,display,performance,eventCollection,antiFarm,naming,commands,placeTypes,biomeThemes,notifications,titleOverlay,decay,candidateDecay,journal,permissions,debug");
+                + " sections=general,generation,thresholds,requiredCounts,scoreThresholds,display,performance,eventCollection,antiFarm,naming,commands,placeTypes,biomeThemes,notifications,titleOverlay,mapIntegration,decay,candidateDecay,journal,permissions,debug");
         for (String warning : summary.firstWarnings(10)) {
             sendFeedback(source, "World Remembers config warning: " + warning);
         }
@@ -1860,11 +1872,13 @@ final class WorldRemembersLivingLegendsFabricCommands {
         );
         int count = Math.max(1, Math.min(50, requestedCount == null ? 10 : requestedCount));
         PlaceCause cause = debugCauseFor(placeType, causeType, targetId, runtimeName);
-        NameContext nameContext = NameContext.from(placeType, DeathSiteEnvironment.UNKNOWN, cause, nameData.styleId());
+        DeathSiteEnvironment environment = debugEnvironmentForCause(placeType, causeType, targetId);
+        NameContext nameContext = NameContext.from(placeType, environment, cause, nameData.styleId());
         long baseSeed = 9137L * placeType.ordinal() + 1777L * causeType.ordinal() + targetId.hashCode() + 31L * runtimeName.hashCode();
 
         sendFeedback(source, "World Remembers name cause"
                 + " placeType=" + placeType.name()
+                + " environment=" + environment.name()
                 + " causeType=" + causeType.name()
                 + " targetId=" + targetId
                 + (runtimeName.isBlank() ? "" : " runtimeName=" + runtimeName)
@@ -1960,8 +1974,9 @@ final class WorldRemembersLivingLegendsFabricCommands {
                 WorldRemembersLivingLegends.config().naming.allowMixedStyleTokens
         );
         PlaceCause cause = debugCauseFor(placeType, causeType, targetId, runtimeName);
-        NameContext nameContext = NameContext.from(placeType, DeathSiteEnvironment.UNKNOWN, cause, nameData.styleId());
-        NameReachabilityAudit audit = auditReachability(nameData, placeType, DeathSiteEnvironment.UNKNOWN, nameContext, null);
+        DeathSiteEnvironment environment = debugEnvironmentForCause(placeType, causeType, targetId);
+        NameContext nameContext = NameContext.from(placeType, environment, cause, nameData.styleId());
+        NameReachabilityAudit audit = auditReachability(nameData, placeType, environment, nameContext, null);
         sendFeedback(source, audit.message("cause", requestedStyleId, causeType.name(), targetId));
         if (logger != null) {
             logger.info(audit.message("cause", requestedStyleId, causeType.name(), targetId));
@@ -2044,6 +2059,9 @@ final class WorldRemembersLivingLegendsFabricCommands {
                 resolvedNames.add(resolved);
             }
         }
+        boolean fixedFrequentScenario = highFrequencyNameScenario(placeType, context.causeType(), context.deathCause())
+                && patternKeys.size() <= 1
+                && resolvedNames.size() <= 1;
 
         return new NameReachabilityAudit(
                 nameData.styleId(),
@@ -2058,6 +2076,7 @@ final class WorldRemembersLivingLegendsFabricCommands {
                 selectedSourcePatterns.size(),
                 patternKeys.size(),
                 resolvedNames,
+                fixedFrequentScenario,
                 bySource,
                 diagnostics.summary()
         );
@@ -2292,6 +2311,7 @@ final class WorldRemembersLivingLegendsFabricCommands {
         private final int selectedSourceCandidates;
         private final int sampledPatternKeysAfterRootConstraints;
         private final Set<String> resolvedNames;
+        private final boolean fixedFrequentScenario;
         private final Map<String, Integer> bySource;
         private final String diagnosticsSummary;
 
@@ -2308,6 +2328,7 @@ final class WorldRemembersLivingLegendsFabricCommands {
                 int selectedSourceCandidates,
                 int sampledPatternKeysAfterRootConstraints,
                 Set<String> resolvedNames,
+                boolean fixedFrequentScenario,
                 Map<String, Integer> bySource,
                 String diagnosticsSummary
         ) {
@@ -2323,6 +2344,7 @@ final class WorldRemembersLivingLegendsFabricCommands {
             this.selectedSourceCandidates = selectedSourceCandidates;
             this.sampledPatternKeysAfterRootConstraints = sampledPatternKeysAfterRootConstraints;
             this.resolvedNames = resolvedNames;
+            this.fixedFrequentScenario = fixedFrequentScenario;
             this.bySource = bySource;
             this.diagnosticsSummary = diagnosticsSummary;
         }
@@ -2356,6 +2378,7 @@ final class WorldRemembersLivingLegendsFabricCommands {
                     .append("  bySource=").append(compactCounts(bySource, 8))
                     .append(" selectedSource=").append(selectedSource.name())
                     .append(" selectedSourceCandidates=").append(selectedSourceCandidates)
+                    .append(fixedFrequentScenario ? " warning=fixed_pattern_pool" : "")
                     .append('\n')
                     .append("  sampledPatternKeysAfterRootConstraints=").append(sampledPatternKeysAfterRootConstraints)
                     .append(" finalReachableUniqueResolvedNames=").append(resolvedNames.size())
@@ -2523,6 +2546,7 @@ final class WorldRemembersLivingLegendsFabricCommands {
         String target = targetId == null ? "" : targetId.trim().toLowerCase(Locale.ROOT);
         String name = RuntimeNameFormatter.sanitize(runtimeName);
         return switch (causeType) {
+            case PLAYER_DEATHS -> new PlaceCause(causeType, EventType.PLAYER_DEATH, "", "", "", "", "", "", "", target, "", "", java.util.Map.of("debug_target=" + target, 1L));
             case FIRST_STRUCTURE_DISCOVERY -> new PlaceCause(causeType, EventType.STRUCTURE_DISCOVERED, firstDiscoveryKeyForTarget(causeType, target), "structure", target, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", java.util.Map.of("debug_target=" + target, 1L));
             case MINING, FIRST_BLOCK_DISCOVERY -> new PlaceCause(causeType, EventType.VALUABLE_BLOCK_MINED, firstDiscoveryKeyForTarget(causeType, target), causeType == PlaceCauseType.FIRST_BLOCK_DISCOVERY ? "block" : "", "", target, "", "", "", "", "", "", target, "", "", "", "", "", "", "", "", java.util.Map.of("debug_target=" + target, 1L));
             case MOB_BATTLE -> new PlaceCause(causeType, EventType.PLAYER_KILLED_HOSTILE_MOB, "", "", "", "", target, "", target, "", target, "", "", "", "", "", "", "", "", "", "", java.util.Map.of("debug_target=" + target, 1L));
@@ -2542,6 +2566,30 @@ final class WorldRemembersLivingLegendsFabricCommands {
                     java.util.Map.of("debug_target=" + target, 1L)
             );
             default -> new PlaceCause(causeType, EventType.CUSTOM, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", java.util.Map.of("debug_target=" + target, 1L));
+        };
+    }
+
+    private static DeathSiteEnvironment debugEnvironmentForCause(PlaceType placeType, PlaceCauseType causeType, String targetId) {
+        if (placeType != PlaceType.DEATH_SITE || causeType != PlaceCauseType.PLAYER_DEATHS) {
+            return DeathSiteEnvironment.UNKNOWN;
+        }
+        String target = targetId == null ? "" : targetId.trim().toLowerCase(Locale.ROOT);
+        return switch (target) {
+            case "lava", "fire" -> DeathSiteEnvironment.NETHER;
+            case "drowning", "drown", "water" -> DeathSiteEnvironment.WATER;
+            case "void" -> DeathSiteEnvironment.END;
+            case "fall", "" -> DeathSiteEnvironment.SURFACE;
+            default -> DeathSiteEnvironment.SURFACE;
+        };
+    }
+
+    private static boolean highFrequencyNameScenario(PlaceType placeType, PlaceCauseType causeType, String targetId) {
+        if (placeType == PlaceType.DEATH_SITE && causeType == PlaceCauseType.PLAYER_DEATHS) {
+            return true;
+        }
+        return switch (placeType) {
+            case BATTLEFIELD, MINING_SITE, PORTAL_LANDMARK, DIMENSION_THRESHOLD, GENERAL_LANDMARK -> true;
+            default -> false;
         };
     }
 

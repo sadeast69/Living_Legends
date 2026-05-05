@@ -46,6 +46,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.slf4j.Logger;
 
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,6 +55,7 @@ import java.util.Set;
 final class WorldRemembersLivingLegendsNeoForgeEvents {
     private static final int DEFAULT_VISIT_SAMPLE_INTERVAL_TICKS = 20 * 20;
     private static final int DEFAULT_STRUCTURE_DISCOVERY_CHECK_INTERVAL_TICKS = 20 * 10;
+    private static final long SOURCE_ANCHOR_MAX_AGE_TICKS = 200L;
     private static final TagKey<Block> VALUABLE_BLOCKS_TAG = TagKey.create(
             Registries.BLOCK,
             ResourceLocation.fromNamespaceAndPath(WorldRemembersLivingLegends.MOD_ID, "valuable_blocks")
@@ -135,6 +137,7 @@ final class WorldRemembersLivingLegendsNeoForgeEvents {
     private static long visitSampleTickCounter;
     private static long structureDiscoveryTickCounter;
     private static final Map<String, Long> STRUCTURE_DISCOVERY_CHECK_CACHE = new LinkedHashMap<>();
+    private static final Map<String, SourceAnchor> PLAYER_SOURCE_ANCHORS = new LinkedHashMap<>();
 
     private WorldRemembersLivingLegendsNeoForgeEvents() {
     }
@@ -166,6 +169,7 @@ final class WorldRemembersLivingLegendsNeoForgeEvents {
         MinecraftServer server = event.getServer();
         visitSampleTickCounter++;
         structureDiscoveryTickCounter++;
+        cachePlayerSourceAnchors(server);
 
         EventCollector.expireTemporaryWindows();
         WorldRemembersLivingLegendsNeoForgeStorage.processDirtyScoreQueue(server, logger);
@@ -215,33 +219,77 @@ final class WorldRemembersLivingLegendsNeoForgeEvents {
 
         String originDimension = event.getFrom().location().toString();
         String destinationDimension = event.getTo().location().toString();
+        SourceAnchor sourceAnchor = resolveSourceAnchor(player, originDimension);
+        boolean fallback = sourceAnchor == null;
+        ServerLevel sourceWorld = player.getServer() == null ? null : player.getServer().getLevel(event.getFrom());
+        ServerLevel fallbackWorld = player.level() instanceof ServerLevel serverLevel ? serverLevel : sourceWorld;
+        BlockPos destinationPos = player.blockPosition();
+        debug(logger, "portal_travel_source_anchor"
+                + " player=" + entityName(player)
+                + " from=" + originDimension
+                + " to=" + destinationDimension
+                + " sourcePos=" + sourcePositionLog(sourceAnchor, destinationDimension, destinationPos)
+                + " destinationPos=" + positionLog(destinationDimension, destinationPos)
+                + " fallback=" + fallback);
         if (!destinationDimension.isBlank() && !destinationDimension.equals(originDimension)) {
-            collect(
-                    player,
-                    EventType.PLAYER_ENTERED_DIMENSION,
-                    player.blockPosition(),
-                    playerId(player),
-                    destinationDimension,
-                    1.0,
-                    "player_entered_dimension player_name=" + entityName(player)
-                            + " from=" + originDimension
-                            + " to=" + destinationDimension,
-                    logger
-            );
+            String note = "player_entered_dimension player_name=" + entityName(player)
+                    + " from=" + originDimension
+                    + " to=" + destinationDimension;
+            if (fallback) {
+                collect(
+                        player,
+                        EventType.PLAYER_ENTERED_DIMENSION,
+                        destinationPos,
+                        playerId(player),
+                        destinationDimension,
+                        1.0,
+                        note,
+                        logger
+                );
+            } else {
+                collectAtSource(
+                        sourceWorld,
+                        fallbackWorld,
+                        player,
+                        EventType.PLAYER_ENTERED_DIMENSION,
+                        sourceAnchor,
+                        playerId(player),
+                        destinationDimension,
+                        1.0,
+                        note,
+                        logger
+                );
+            }
         }
 
         EventType portalEvent = portalEventType(originDimension, destinationDimension);
         if (portalEvent != null) {
-            collect(
-                    player,
-                    portalEvent,
-                    player.blockPosition(),
-                    playerId(player),
-                    destinationDimension,
-                    portalEvent == EventType.END_PORTAL_USED ? 8.0 : 3.0,
-                    "portal_travel from=" + originDimension + " to=" + destinationDimension,
-                    logger
-            );
+            String note = "portal_travel from=" + originDimension + " to=" + destinationDimension;
+            if (fallback) {
+                collect(
+                        player,
+                        portalEvent,
+                        destinationPos,
+                        playerId(player),
+                        destinationDimension,
+                        portalEvent == EventType.END_PORTAL_USED ? 8.0 : 3.0,
+                        note,
+                        logger
+                );
+            } else {
+                collectAtSource(
+                        sourceWorld,
+                        fallbackWorld,
+                        player,
+                        portalEvent,
+                        sourceAnchor,
+                        playerId(player),
+                        destinationDimension,
+                        portalEvent == EventType.END_PORTAL_USED ? 8.0 : 3.0,
+                        note,
+                        logger
+                );
+            }
         }
     }
 
@@ -363,6 +411,43 @@ final class WorldRemembersLivingLegendsNeoForgeEvents {
                 );
             }
         }
+    }
+
+    private static void cachePlayerSourceAnchors(MinecraftServer server) {
+        if (server == null) {
+            PLAYER_SOURCE_ANCHORS.clear();
+            return;
+        }
+        Set<String> onlinePlayerIds = new HashSet<>();
+        for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+            if (player == null || !(player.level() instanceof ServerLevel world)) {
+                continue;
+            }
+            String playerId = playerId(player);
+            if (playerId.isBlank()) {
+                continue;
+            }
+            BlockPos pos = player.blockPosition();
+            onlinePlayerIds.add(playerId);
+            PLAYER_SOURCE_ANCHORS.put(playerId, new SourceAnchor(
+                    dimensionId(world),
+                    pos.getX(),
+                    pos.getY(),
+                    pos.getZ(),
+                    gameTime(world),
+                    visitSampleTickCounter
+            ));
+        }
+        PLAYER_SOURCE_ANCHORS.keySet().removeIf(playerId -> !onlinePlayerIds.contains(playerId));
+    }
+
+    private static SourceAnchor resolveSourceAnchor(ServerPlayer player, String originDimension) {
+        SourceAnchor anchor = PLAYER_SOURCE_ANCHORS.get(playerId(player));
+        if (anchor == null || !anchor.dimensionId().equals(originDimension)) {
+            return null;
+        }
+        long ageTicks = Math.max(0L, visitSampleTickCounter - anchor.capturedAtTick());
+        return ageTicks <= SOURCE_ANCHOR_MAX_AGE_TICKS ? anchor : null;
     }
 
     private static EventType classifyKill(Entity killedEntity) {
@@ -766,14 +851,69 @@ final class WorldRemembersLivingLegendsNeoForgeEvents {
         WorldRemembersLivingLegendsNeoForgeStorage.recordEvent(serverLevel, event, logger);
     }
 
+    private static void collectAtSource(
+            ServerLevel sourceWorld,
+            ServerLevel fallbackWorld,
+            Entity anchorEntity,
+            EventType eventType,
+            SourceAnchor sourceAnchor,
+            String actorId,
+            String subjectId,
+            double importance,
+            String note,
+            Logger logger
+    ) {
+        if (sourceAnchor == null) {
+            collect(anchorEntity, eventType, anchorEntity.blockPosition(), actorId, subjectId, importance, note, logger);
+            return;
+        }
+        ServerLevel storageWorld = sourceWorld == null ? fallbackWorld : sourceWorld;
+        if (storageWorld == null) {
+            return;
+        }
+        long time = sourceAnchor.gameTime() > 0L ? sourceAnchor.gameTime() : gameTime(storageWorld);
+        WorldMemoryEvent event = new WorldMemoryEvent(
+                eventId(eventType, anchorEntity, sourceAnchor.dimensionId(), sourceAnchor.x(), sourceAnchor.y(), sourceAnchor.z(), time),
+                eventType,
+                new WorldPos(sourceAnchor.dimensionId(), sourceAnchor.x(), sourceAnchor.y(), sourceAnchor.z()),
+                actorId,
+                subjectId,
+                time,
+                System.currentTimeMillis(),
+                importance,
+                note
+        );
+        WorldRemembersLivingLegendsNeoForgeStorage.recordEvent(storageWorld, event, logger);
+    }
+
     private static String eventId(EventType eventType, Entity entity, Level world, BlockPos pos) {
+        return eventId(
+                eventType,
+                entity,
+                dimensionId(world),
+                pos.getX(),
+                pos.getY(),
+                pos.getZ(),
+                gameTime(world)
+        );
+    }
+
+    private static String eventId(
+            EventType eventType,
+            Entity entity,
+            String dimensionId,
+            int x,
+            int y,
+            int z,
+            long gameTime
+    ) {
         return eventType.idString()
                 + ":" + entityId(entity)
-                + ":" + dimensionId(world)
-                + ":" + pos.getX()
-                + "," + pos.getY()
-                + "," + pos.getZ()
-                + ":" + gameTime(world);
+                + ":" + (dimensionId == null || dimensionId.isBlank() ? "minecraft:overworld" : dimensionId)
+                + ":" + x
+                + "," + y
+                + "," + z
+                + ":" + gameTime;
     }
 
     private static WorldPos worldPos(Level world, BlockPos pos) {
@@ -786,6 +926,25 @@ final class WorldRemembersLivingLegendsNeoForgeEvents {
 
     private static String positionNote(String key, BlockPos pos) {
         return key + "=" + pos.getX() + "," + pos.getY() + "," + pos.getZ();
+    }
+
+    private static String sourcePositionLog(SourceAnchor sourceAnchor, String fallbackEventDimension, BlockPos fallbackPos) {
+        if (sourceAnchor != null) {
+            return positionLog(sourceAnchor.dimensionId(), sourceAnchor.x(), sourceAnchor.y(), sourceAnchor.z());
+        }
+        return positionLog(fallbackEventDimension, fallbackPos);
+    }
+
+    private static String positionLog(String dimensionId, BlockPos pos) {
+        if (pos == null) {
+            return positionLog(dimensionId, 0, 0, 0);
+        }
+        return positionLog(dimensionId, pos.getX(), pos.getY(), pos.getZ());
+    }
+
+    private static String positionLog(String dimensionId, int x, int y, int z) {
+        String resolvedDimension = dimensionId == null || dimensionId.isBlank() ? "minecraft:overworld" : dimensionId;
+        return resolvedDimension + "@" + x + "," + y + "," + z;
     }
 
     private static long gameTime(Level world) {
@@ -902,6 +1061,12 @@ final class WorldRemembersLivingLegendsNeoForgeEvents {
     private record StructureDetection(boolean found, PlaceBounds bounds) {
         private static StructureDetection missing() {
             return new StructureDetection(false, null);
+        }
+    }
+
+    private record SourceAnchor(String dimensionId, int x, int y, int z, long gameTime, long capturedAtTick) {
+        private SourceAnchor {
+            dimensionId = dimensionId == null || dimensionId.isBlank() ? "minecraft:overworld" : dimensionId;
         }
     }
 }

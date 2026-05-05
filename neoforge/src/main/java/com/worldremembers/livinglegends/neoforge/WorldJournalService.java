@@ -53,6 +53,7 @@ public final class WorldJournalService {
         if (player == null) {
             return;
         }
+        NeoForgeMapIntegrationManager.syncPlayer(player, logger, "journal_open");
         LivingLegendsConfig.Journal config = journalConfig();
         if (!config.enabled) {
             sendError(player, "living_legends.journal.error.disabled", "World Journal is disabled.");
@@ -216,6 +217,7 @@ public final class WorldJournalService {
         }
         NamedPlace updated = place.withManualName(name, WorldRemembersLivingLegendsNeoForgeStorage.gameTimeFor(world));
         if (WorldRemembersLivingLegendsNeoForgeStorage.upsertPlace(world, updated, "journal_rename " + placeId, logger)) {
+            NeoForgeMapIntegrationManager.refreshDestinationFromWorld(world, updated, logger);
             sendPage(player, pageRequestLike(payload, updated.placeIdString(), config));
         }
     }
@@ -262,6 +264,7 @@ public final class WorldJournalService {
                 true
         );
         if (WorldRemembersLivingLegendsNeoForgeStorage.upsertPlace(world, updated, "journal_restore_name " + placeId, logger)) {
+            NeoForgeMapIntegrationManager.refreshDestinationFromWorld(world, updated, logger);
             sendPage(player, pageRequestLike(payload, updated.placeIdString(), journalConfig()));
         }
     }

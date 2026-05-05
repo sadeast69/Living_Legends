@@ -13,7 +13,7 @@ import java.util.Map;
 
 public final class LivingLegendsConfig implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static final int CURRENT_CONFIG_VERSION = 3;
+    private static final int CURRENT_CONFIG_VERSION = 4;
 
     public General general = new General();
     public Generation generation = new Generation();
@@ -30,6 +30,7 @@ public final class LivingLegendsConfig implements Serializable {
     public BiomeThemes biomeThemes = new BiomeThemes();
     public Notifications notifications = new Notifications();
     public TitleOverlay titleOverlay = new TitleOverlay();
+    public MapIntegration mapIntegration = new MapIntegration();
     public Decay decay = new Decay();
     public CandidateDecay candidateDecay = new CandidateDecay();
     public Journal journal = new Journal();
@@ -67,6 +68,7 @@ public final class LivingLegendsConfig implements Serializable {
         config.biomeThemes.apply(section(root, "biomeThemes"));
         config.notifications.apply(section(root, "notifications"));
         config.titleOverlay.apply(section(root, "titleOverlay"));
+        config.mapIntegration.apply(section(root, "mapIntegration"));
         config.decay.apply(section(root, "decay"));
         config.candidateDecay.apply(section(root, "candidateDecay"));
         config.journal.apply(section(root, "journal"));
@@ -127,6 +129,7 @@ public final class LivingLegendsConfig implements Serializable {
         values.put("biomeThemes", biomeThemes.toMap());
         values.put("notifications", notifications.toMap());
         values.put("titleOverlay", titleOverlay.toMap());
+        values.put("mapIntegration", mapIntegration.toMap());
         values.put("decay", decay.toMap());
         values.put("candidateDecay", candidateDecay.toMap());
         values.put("journal", journal.toMap());
@@ -181,6 +184,9 @@ public final class LivingLegendsConfig implements Serializable {
         if (titleOverlay == null) {
             titleOverlay = new TitleOverlay();
         }
+        if (mapIntegration == null) {
+            mapIntegration = new MapIntegration();
+        }
         if (decay == null) {
             decay = new Decay();
         }
@@ -212,6 +218,7 @@ public final class LivingLegendsConfig implements Serializable {
         biomeThemes.normalize();
         notifications.normalize();
         titleOverlay.normalize();
+        mapIntegration.normalize();
         decay.normalize();
         candidateDecay.normalize();
         journal.normalize();
@@ -1547,6 +1554,186 @@ public final class LivingLegendsConfig implements Serializable {
             values.put("generalLandmarkOnlyIfNoHigherPriority", generalLandmarkOnlyIfNoHigherPriority);
             values.put("verticalToleranceBlocks", verticalToleranceBlocks);
             return values;
+        }
+    }
+
+    public static final class MapIntegration implements Serializable {
+        private static final long serialVersionUID = 1L;
+
+        public boolean enabled = true;
+        public JourneyMap journeyMap = new JourneyMap();
+        public Xaero xaero = new Xaero();
+        public FtbChunks ftbChunks = new FtbChunks();
+        public PlaceLabels placeLabels = new PlaceLabels();
+        public Destinations destinations = new Destinations();
+
+        private void normalize() {
+            if (journeyMap == null) {
+                journeyMap = new JourneyMap();
+            }
+            if (xaero == null) {
+                xaero = new Xaero();
+            }
+            if (ftbChunks == null) {
+                ftbChunks = new FtbChunks();
+            }
+            if (placeLabels == null) {
+                placeLabels = new PlaceLabels();
+            }
+            if (destinations == null) {
+                destinations = new Destinations();
+            }
+            journeyMap.normalize();
+            xaero.normalize();
+            ftbChunks.normalize();
+            placeLabels.normalize();
+            destinations.normalize();
+        }
+
+        private void apply(Map<String, Object> values) {
+            enabled = bool(values, "enabled", enabled);
+            journeyMap.apply(section(values, "journeyMap"));
+            xaero.apply(section(values, "xaero"));
+            ftbChunks.apply(section(values, "ftbChunks"));
+            placeLabels.apply(section(values, "placeLabels"));
+            destinations.apply(section(values, "destinations"));
+        }
+
+        private Map<String, Object> toMap() {
+            Map<String, Object> values = new LinkedHashMap<>();
+            values.put("enabled", enabled);
+            values.put("journeyMap", journeyMap.toMap());
+            values.put("xaero", xaero.toMap());
+            values.put("ftbChunks", ftbChunks.toMap());
+            values.put("placeLabels", placeLabels.toMap());
+            values.put("destinations", destinations.toMap());
+            return values;
+        }
+
+        public static final class JourneyMap implements Serializable {
+            private static final long serialVersionUID = 1L;
+
+            public boolean enabled = true;
+
+            private void normalize() {
+            }
+
+            private void apply(Map<String, Object> values) {
+                enabled = bool(values, "enabled", enabled);
+            }
+
+            private Map<String, Object> toMap() {
+                Map<String, Object> values = new LinkedHashMap<>();
+                values.put("enabled", enabled);
+                return values;
+            }
+        }
+
+        public static final class Xaero implements Serializable {
+            private static final long serialVersionUID = 1L;
+
+            public boolean enabled = true;
+
+            private void normalize() {
+            }
+
+            private void apply(Map<String, Object> values) {
+                enabled = bool(values, "enabled", enabled);
+            }
+
+            private Map<String, Object> toMap() {
+                Map<String, Object> values = new LinkedHashMap<>();
+                values.put("enabled", enabled);
+                return values;
+            }
+        }
+
+        public static final class FtbChunks implements Serializable {
+            private static final long serialVersionUID = 1L;
+
+            public boolean enabled = true;
+
+            private void normalize() {
+            }
+
+            private void apply(Map<String, Object> values) {
+                enabled = bool(values, "enabled", enabled);
+            }
+
+            private Map<String, Object> toMap() {
+                Map<String, Object> values = new LinkedHashMap<>();
+                values.put("enabled", enabled);
+                return values;
+            }
+        }
+
+        public static final class PlaceLabels implements Serializable {
+            private static final long serialVersionUID = 1L;
+
+            public boolean enabled = true;
+            public boolean showGeneralLandmarks = false;
+            public boolean showTooltips = true;
+            public boolean showCoordinatesInTooltip = true;
+            public boolean showDimensionInTooltip = true;
+            public boolean showPlaceTypeInTooltip = true;
+
+            private void normalize() {
+            }
+
+            private void apply(Map<String, Object> values) {
+                enabled = bool(values, "enabled", enabled);
+                showGeneralLandmarks = bool(values, "showGeneralLandmarks", showGeneralLandmarks);
+                showTooltips = bool(values, "showTooltips", showTooltips);
+                showCoordinatesInTooltip = bool(values, "showCoordinatesInTooltip", showCoordinatesInTooltip);
+                showDimensionInTooltip = bool(values, "showDimensionInTooltip", showDimensionInTooltip);
+                showPlaceTypeInTooltip = bool(values, "showPlaceTypeInTooltip", showPlaceTypeInTooltip);
+            }
+
+            private Map<String, Object> toMap() {
+                Map<String, Object> values = new LinkedHashMap<>();
+                values.put("enabled", enabled);
+                values.put("showGeneralLandmarks", showGeneralLandmarks);
+                values.put("showTooltips", showTooltips);
+                values.put("showCoordinatesInTooltip", showCoordinatesInTooltip);
+                values.put("showDimensionInTooltip", showDimensionInTooltip);
+                values.put("showPlaceTypeInTooltip", showPlaceTypeInTooltip);
+                return values;
+            }
+        }
+
+        public static final class Destinations implements Serializable {
+            private static final long serialVersionUID = 1L;
+
+            public boolean enabled = true;
+            public boolean onlyOneActiveDestination = true;
+            public boolean clearWhenEnteringPlaceRadius = true;
+            public int fallbackClearDistanceBlocks = 16;
+
+            private void normalize() {
+                fallbackClearDistanceBlocks = defaultIfOutside(
+                        "mapIntegration.destinations.fallbackClearDistanceBlocks",
+                        fallbackClearDistanceBlocks,
+                        1,
+                        1024,
+                        16
+                );
+            }
+
+            private void apply(Map<String, Object> values) {
+                enabled = bool(values, "enabled", enabled);
+                onlyOneActiveDestination = bool(values, "onlyOneActiveDestination", onlyOneActiveDestination);
+                clearWhenEnteringPlaceRadius = bool(values, "clearWhenEnteringPlaceRadius", clearWhenEnteringPlaceRadius);
+                fallbackClearDistanceBlocks = integer(values, "fallbackClearDistanceBlocks", fallbackClearDistanceBlocks);
+            }
+
+            private Map<String, Object> toMap() {
+                Map<String, Object> values = new LinkedHashMap<>();
+                values.put("enabled", enabled);
+                values.put("onlyOneActiveDestination", onlyOneActiveDestination);
+                values.put("clearWhenEnteringPlaceRadius", clearWhenEnteringPlaceRadius);
+                values.put("fallbackClearDistanceBlocks", fallbackClearDistanceBlocks);
+                return values;
+            }
         }
     }
 

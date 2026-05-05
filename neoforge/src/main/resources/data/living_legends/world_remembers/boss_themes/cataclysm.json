@@ -1,0 +1,103 @@
+{
+  "entries": [
+    {
+      "entity": "cataclysm:netherite_monstrosity",
+      "bossTheme": "cataclysm_monstrosity",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "nether", "forge", "boss"]
+    },
+    {
+      "entity": "cataclysm:ignis",
+      "bossTheme": "cataclysm_ignis",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "fire", "boss"]
+    },
+    {
+      "entity": "cataclysm:the_harbinger",
+      "bossTheme": "cataclysm_harbinger",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "wither", "machine", "boss"]
+    },
+    {
+      "entity": "cataclysm:the_leviathan",
+      "bossTheme": "cataclysm_leviathan",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "abyss", "ocean", "boss"]
+    },
+    {
+      "entity": "cataclysm:ender_guardian",
+      "bossTheme": "cataclysm_ender_guardian",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "end", "guardian", "boss"]
+    },
+    {
+      "entity": "cataclysm:maledictus",
+      "bossTheme": "cataclysm_maledictus",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "curse", "undead", "boss"]
+    },
+    {
+      "entity": "cataclysm:ancient_remnant",
+      "bossTheme": "cataclysm_remnant",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "desert", "ancient", "boss"]
+    },
+    {
+      "entity": "cataclysm:scylla",
+      "bossTheme": "cataclysm_scylla",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "storm", "acropolis", "boss"]
+    },
+    {
+      "entity": "cataclysm:clawdian",
+      "bossTheme": "cataclysm_clawdian",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "acropolis", "boss"]
+    },
+    {
+      "entity": "cataclysm:ignited_revenant",
+      "bossTheme": "cataclysm_revenant",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "fire", "undead", "boss"]
+    },
+    {
+      "entity": "cataclysm:ender_golem",
+      "bossTheme": "cataclysm_ender_golem",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["cataclysm", "end", "construct", "boss"]
+    }
+  ]
+}

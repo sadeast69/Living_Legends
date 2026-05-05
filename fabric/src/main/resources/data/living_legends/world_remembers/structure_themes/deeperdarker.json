@@ -1,0 +1,14 @@
+{
+  "entries": [
+    {
+      "structure": "deeperdarker:ancient_temple",
+      "structureTheme": "ancient_temple",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["otherside", "temple", "sculk"]
+    }
+  ]
+}

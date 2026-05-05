@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "dimension": "voidz:void",
+      "dimensionTheme": "voidz_void",
+      "portalTheme": "voidz_void_portal",
+      "firstDiscoveryKey": "compat:first_dimension:voidz:void",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

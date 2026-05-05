@@ -1,0 +1,34 @@
+{
+  "entries": [
+    {
+      "structure": "aether:bronze_dungeon",
+      "structureTheme": "aether_slider",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["aether", "dungeon", "bronze"]
+    },
+    {
+      "structure": "aether:silver_dungeon",
+      "structureTheme": "aether_valkyrie",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["aether", "dungeon", "silver", "valkyrie"]
+    },
+    {
+      "structure": "aether:gold_dungeon",
+      "structureTheme": "aether_sun_spirit",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": ["aether", "dungeon", "gold", "sun"]
+    }
+  ]
+}

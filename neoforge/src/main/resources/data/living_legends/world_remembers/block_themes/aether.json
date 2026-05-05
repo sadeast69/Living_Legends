@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "block": "aether:ambrosium_ore",
+      "blockTheme": "aether_gold",
+      "miningTheme": "aether_gold",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:aether:ambrosium_ore",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "aether:zanite_ore",
+      "blockTheme": "aether_zanite",
+      "miningTheme": "aether_zanite",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:aether:zanite_ore",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "block": "aether:gravitite_ore",
+      "blockTheme": "aether_gravitite",
+      "miningTheme": "aether_gravitite",
+      "valuable": true,
+      "firstDiscoveryKey": "compat:first_block:aether:gravitite_ore",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

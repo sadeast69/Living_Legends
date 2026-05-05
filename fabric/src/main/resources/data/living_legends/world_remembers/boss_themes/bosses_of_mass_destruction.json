@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "entity": "bosses_of_mass_destruction:lich",
+      "bossTheme": "bomd_lich",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["bomd", "night", "undead", "boss"]
+    },
+    {
+      "entity": "bosses_of_mass_destruction:gauntlet",
+      "bossTheme": "bomd_gauntlet",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["bomd", "nether", "boss"]
+    },
+    {
+      "entity": "bosses_of_mass_destruction:obsidilith",
+      "bossTheme": "bomd_obsidilith",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["bomd", "end", "boss"]
+    },
+    {
+      "entity": "bosses_of_mass_destruction:void_blossom",
+      "bossTheme": "bomd_void_blossom",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["bomd", "forest", "boss"]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "entries": [
+    {
+      "entity": "twilightforest:naga",
+      "bossTheme": "tf_naga",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["twilightforest", "naga", "boss"]
+    },
+    {
+      "entity": "twilightforest:lich",
+      "bossTheme": "tf_lich",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["twilightforest", "undead", "tower", "boss"]
+    },
+    {
+      "entity": "twilightforest:minoshroom",
+      "bossTheme": "tf_minoshroom",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["twilightforest", "labyrinth", "boss"]
+    },
+    {
+      "entity": "twilightforest:hydra",
+      "bossTheme": "tf_hydra",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["twilightforest", "swamp", "fire", "boss"]
+    },
+    {
+      "entity": "twilightforest:knight_phantom",
+      "bossTheme": "tf_knight_phantom",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["twilightforest", "knight", "boss"]
+    },
+    {
+      "entity": "twilightforest:ur_ghast",
+      "bossTheme": "tf_ur_ghast",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["twilightforest", "dark_tower", "boss"]
+    },
+    {
+      "entity": "twilightforest:alpha_yeti",
+      "bossTheme": "tf_alpha_yeti",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["twilightforest", "snow", "boss"]
+    },
+    {
+      "entity": "twilightforest:snow_queen",
+      "bossTheme": "tf_snow_queen",
+      "placeType": "BOSS_SITE",
+      "causeType": "BOSS_KILL",
+      "priority": 100,
+      "enabled": true,
+      "tags": ["twilightforest", "aurora", "snow", "boss"]
+    }
+  ]
+}

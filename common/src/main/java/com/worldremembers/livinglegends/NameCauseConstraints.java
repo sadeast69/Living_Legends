@@ -21,6 +21,7 @@ public final class NameCauseConstraints implements Serializable {
     private final Set<String> requiredDominantValuableBlocks;
     private final String requiredPortalType;
     private final Set<String> requiredBiomeGroups;
+    private final Set<String> requiredBiomeThemes;
     private final String requiredFromDimension;
     private final String requiredToDimension;
     private final String requiredDeathCause;
@@ -59,6 +60,7 @@ public final class NameCauseConstraints implements Serializable {
         requiredDominantValuableBlocks = immutableIds(builder.requiredDominantValuableBlocks);
         requiredPortalType = WorldPos.optionalId(builder.requiredPortalType);
         requiredBiomeGroups = immutableIds(builder.requiredBiomeGroups);
+        requiredBiomeThemes = immutableIds(builder.requiredBiomeThemes);
         requiredFromDimension = WorldPos.optionalId(builder.requiredFromDimension);
         requiredToDimension = WorldPos.optionalId(builder.requiredToDimension);
         requiredDeathCause = WorldPos.optionalId(builder.requiredDeathCause);
@@ -139,6 +141,9 @@ public final class NameCauseConstraints implements Serializable {
         if (!requiredBiomeGroups.isEmpty() && !requiredBiomeGroups.contains(resolvedContext.biomeGroup())) {
             return false;
         }
+        if (!requiredBiomeThemes.isEmpty() && !requiredBiomeThemes.contains(resolvedContext.biomeTheme())) {
+            return false;
+        }
         if (!requiredFromDimension.isBlank() && !requiredFromDimension.equals(resolvedContext.fromDimension())) {
             return false;
         }
@@ -201,6 +206,7 @@ public final class NameCauseConstraints implements Serializable {
                 || !requiredDominantValuableBlocks.isEmpty()
                 || !requiredPortalType.isBlank()
                 || !requiredBiomeGroups.isEmpty()
+                || !requiredBiomeThemes.isEmpty()
                 || !requiredDeathCause.isBlank();
     }
 
@@ -240,6 +246,9 @@ public final class NameCauseConstraints implements Serializable {
         }
         if (!requiredBiomeGroups.isEmpty() && requiredBiomeGroups.contains(resolvedContext.biomeGroup())) {
             priority = Math.max(priority, 350);
+        }
+        if (!requiredBiomeThemes.isEmpty() && requiredBiomeThemes.contains(resolvedContext.biomeTheme())) {
+            priority = Math.max(priority, 450);
         }
         if (!requiredDeathCause.isBlank() && requiredDeathCause.equals(resolvedContext.deathCause())) {
             priority = Math.max(priority, 500);
@@ -350,6 +359,7 @@ public final class NameCauseConstraints implements Serializable {
         private final Set<String> requiredDominantValuableBlocks = new LinkedHashSet<>();
         private String requiredPortalType = "";
         private final Set<String> requiredBiomeGroups = new LinkedHashSet<>();
+        private final Set<String> requiredBiomeThemes = new LinkedHashSet<>();
         private String requiredFromDimension = "";
         private String requiredToDimension = "";
         private String requiredDeathCause = "";
@@ -442,6 +452,11 @@ public final class NameCauseConstraints implements Serializable {
 
         public Builder requiredBiomeGroups(String... biomeGroups) {
             addIds(requiredBiomeGroups, biomeGroups);
+            return this;
+        }
+
+        public Builder requiredBiomeThemes(String... biomeThemes) {
+            addIds(requiredBiomeThemes, biomeThemes);
             return this;
         }
 

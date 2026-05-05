@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "dimension": "deeperdarker:otherside",
+      "dimensionTheme": "otherside",
+      "portalTheme": "otherside",
+      "firstDiscoveryKey": "compat:first_dimension:deeperdarker:otherside",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

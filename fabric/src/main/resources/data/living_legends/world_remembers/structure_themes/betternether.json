@@ -1,0 +1,134 @@
+{
+  "entries": [
+    {
+      "structure": "betternether:altars",
+      "structureTheme": "betternether_altars",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "altars"
+      ]
+    },
+    {
+      "structure": "betternether:gardens",
+      "structureTheme": "betternether_gardens",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "gardens"
+      ]
+    },
+    {
+      "structure": "betternether:ghast_hive",
+      "structureTheme": "betternether_ghast_hive",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "ghast"
+      ]
+    },
+    {
+      "structure": "betternether:jungle_temples",
+      "structureTheme": "betternether_jungle_temples",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "jungle"
+      ]
+    },
+    {
+      "structure": "betternether:nether_city",
+      "structureTheme": "betternether_nether_city",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "nether"
+      ]
+    },
+    {
+      "structure": "betternether:pillars",
+      "structureTheme": "betternether_pillars",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "pillars"
+      ]
+    },
+    {
+      "structure": "betternether:portals",
+      "structureTheme": "betternether_portals",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "portals"
+      ]
+    },
+    {
+      "structure": "betternether:pyramid",
+      "structureTheme": "betternether_pyramid",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "pyramid"
+      ]
+    },
+    {
+      "structure": "betternether:respawn_points",
+      "structureTheme": "betternether_respawn_points",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "respawn"
+      ]
+    },
+    {
+      "structure": "betternether:spawn_altar_ladder",
+      "structureTheme": "betternether_spawn_altar_ladder",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betternether",
+        "spawn"
+      ]
+    }
+  ]
+}

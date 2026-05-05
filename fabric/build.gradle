@@ -12,6 +12,10 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
     modCompileOnly "com.terraformersmc:modmenu:${modmenu_version}"
+    modCompileOnly "info.journeymap:journeymap-api-fabric:${journeymap_api_version}"
+    modCompileOnly "xaero.minimap:xaerominimap-fabric-${minecraft_version}:${xaero_minimap_version}"
+    modCompileOnly "dev.ftb.mods:ftb-chunks-fabric:${ftb_chunks_version}"
+    modCompileOnly "dev.ftb.mods:ftb-library-fabric:${ftb_library_version}"
 
     implementation project(':common')
 }

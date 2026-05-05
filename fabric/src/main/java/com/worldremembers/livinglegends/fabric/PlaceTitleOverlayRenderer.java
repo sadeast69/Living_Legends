@@ -1,6 +1,7 @@
 package com.worldremembers.livinglegends.fabric;
 
 import com.worldremembers.livinglegends.PlaceType;
+import com.worldremembers.livinglegends.visual.PlaceVisualTheme;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
@@ -38,7 +39,7 @@ final class PlaceTitleOverlayRenderer {
             return;
         }
         currentPayload = payload;
-        currentTitle = resolveTitle(payload);
+        currentTitle = decorateTitle(resolveTitle(payload), theme(payload));
         currentSubtitle = Text.translatable("living_legends.place_type." + payload.placeType());
         WorldRemembersLivingLegendsFabricClientConfig config = WorldRemembersLivingLegendsFabricClientConfig.get();
         ageTicks = 0;
@@ -101,10 +102,11 @@ final class PlaceTitleOverlayRenderer {
         int centerX = screenWidth / 2;
         int baseY = Math.max(18, screenHeight / 3 - 56 + config.yOffset);
         double scale = effectiveScale(config);
-        int titleColor = withAlpha(config.useStyleColors ? styleTitleColor(currentPayload.nameStyle()) : 0xFFEFEFEF, alpha);
-        int lineColor = withAlpha(config.useStyleColors ? styleLineColor(currentPayload.nameStyle()) : 0xFFB8BEC8, alpha * 0.85F);
-        int subtitleColor = withAlpha(0xFFE6E2D5, alpha * 0.86F);
-        int backgroundColor = withAlpha(0xAA050505, alpha * 0.22F);
+        PlaceVisualTheme theme = theme(currentPayload);
+        int titleColor = withAlpha(config.useStyleColors ? theme.mainColor() : 0xFFEFEFEF, alpha);
+        int lineColor = withAlpha(config.useStyleColors ? theme.lineColor() : 0xFFB8BEC8, alpha * 0.85F);
+        int subtitleColor = withAlpha(config.useStyleColors ? theme.secondaryColor() : 0xFFE6E2D5, alpha * 0.86F);
+        int backgroundColor = withAlpha(config.useStyleColors ? theme.shadowColor() : 0xAA050505, alpha * 0.22F);
 
         var matrices = drawContext.getMatrices();
         matrices.push();
@@ -130,7 +132,7 @@ final class PlaceTitleOverlayRenderer {
             int lineY = config.showSubtitle ? subtitleY + Math.max(3, subtitleHeight / 2) : titleHeight + 9;
             int lineGap = Math.max(36, (config.showSubtitle ? subtitleVisualWidth : titleVisualWidth) / 2 + 16);
             int lineLength = Math.max(24, config.decorativeLineLength);
-            int lineWidth = Math.max(1, config.lineWidth);
+            int lineWidth = Math.max(1, config.lineWidth + (theme.emphasis() >= 4 ? 1 : 0));
             drawContext.fill(-lineGap - lineLength, lineY, -lineGap, lineY + lineWidth, lineColor);
             drawContext.fill(lineGap, lineY, lineGap + lineLength, lineY + lineWidth, lineColor);
         }
@@ -160,6 +162,21 @@ final class PlaceTitleOverlayRenderer {
             return Text.literal(payload.serverResolvedFallbackName());
         }
         return resolved;
+    }
+
+    private static Text decorateTitle(Text title, PlaceVisualTheme theme) {
+        if (title == null) {
+            title = Text.empty();
+        }
+        String glyph = theme == null ? "" : theme.glyph();
+        if (glyph == null || glyph.isBlank()) {
+            return title;
+        }
+        return Text.literal(glyph + " ").append(title).append(Text.literal(" " + glyph));
+    }
+
+    private static PlaceVisualTheme theme(PlaceTitleS2CPayload payload) {
+        return payload == null || payload.visualTheme() == null ? PlaceVisualTheme.DEFAULT : payload.visualTheme();
     }
 
     private static void recalculateLayout(MinecraftClient client, WorldRemembersLivingLegendsFabricClientConfig config) {

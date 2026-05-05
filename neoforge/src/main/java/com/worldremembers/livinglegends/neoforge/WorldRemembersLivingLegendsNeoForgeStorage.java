@@ -16,6 +16,7 @@ import com.worldremembers.livinglegends.NameGenerationDiagnostics;
 import com.worldremembers.livinglegends.NameGenerator;
 import com.worldremembers.livinglegends.NamePatternSource;
 import com.worldremembers.livinglegends.NameRecipe;
+import com.worldremembers.livinglegends.NameTextSafety;
 import com.worldremembers.livinglegends.NameTokenForm;
 import com.worldremembers.livinglegends.NamedPlace;
 import com.worldremembers.livinglegends.PlaceBounds;
@@ -124,6 +125,8 @@ public final class WorldRemembersLivingLegendsNeoForgeStorage {
                 place -> onGeneratedPlace(minecraftServer, place, logger)
         );
         if (result.namedPlaceChanges() > 0) {
+            WorldRemembersLivingLegendsNeoForgePlaceTitles.invalidateIndex();
+            NeoForgeMapIntegrationManager.syncAllFromWorld(minecraftServer, logger);
             markDirty(state, "place_generation", logger);
         }
     }
@@ -174,6 +177,7 @@ public final class WorldRemembersLivingLegendsNeoForgeStorage {
         boolean changed = state.data().upsertNamedPlace(place);
         if (changed) {
             WorldRemembersLivingLegendsNeoForgePlaceTitles.invalidateIndex();
+            NeoForgeMapIntegrationManager.syncAllFromWorld(world, logger);
             markDirty(state, reason == null || reason.isBlank() ? "upsert_place" : reason, logger);
         }
         return changed;
@@ -195,6 +199,8 @@ public final class WorldRemembersLivingLegendsNeoForgeStorage {
         if (changed) {
             state.data().removeDiscoveredPlaceFromAllPlayers(placeId);
             WorldRemembersLivingLegendsNeoForgePlaceTitles.invalidateIndex();
+            NeoForgeMapIntegrationManager.syncAllFromWorld(world, logger);
+            NeoForgeMapIntegrationManager.removeDestinationFromWorld(world, placeId, logger);
             markDirty(state, "delete_place " + placeId, logger);
         }
         return changed;
@@ -429,6 +435,7 @@ public final class WorldRemembersLivingLegendsNeoForgeStorage {
         boolean changed = state.data().recordDiscoveredPlace(playerId, placeId);
         if (changed) {
             markDirty(state, "journal_discovery " + placeId, logger);
+            NeoForgeMapIntegrationManager.syncPlayerById(world, playerId, logger);
         }
         return changed;
     }
@@ -464,6 +471,7 @@ public final class WorldRemembersLivingLegendsNeoForgeStorage {
         RegenerateResult result = regenerateOne(state.data(), place, force, gameTime(world));
         if (result.changed()) {
             WorldRemembersLivingLegendsNeoForgePlaceTitles.invalidateIndex();
+            NeoForgeMapIntegrationManager.syncAllFromWorld(world, logger);
             markDirty(state, "regenerate_place " + placeId, logger);
         }
         return result.message();
@@ -488,6 +496,7 @@ public final class WorldRemembersLivingLegendsNeoForgeStorage {
         }
         if (changed > 0) {
             WorldRemembersLivingLegendsNeoForgePlaceTitles.invalidateIndex();
+            NeoForgeMapIntegrationManager.syncAllFromWorld(world, logger);
             markDirty(state, "regenerate_all", logger);
         }
         message.insert("World Remembers regenerate all".length(), " changed=" + changed + " skipped=" + skipped);
@@ -592,6 +601,7 @@ public final class WorldRemembersLivingLegendsNeoForgeStorage {
             }
             if (imported > 0) {
                 WorldRemembersLivingLegendsNeoForgePlaceTitles.invalidateIndex();
+                NeoForgeMapIntegrationManager.syncAllFromWorld(world, logger);
                 markDirty(state, "import_places", logger);
             }
             return "World Remembers imported " + imported
@@ -1017,6 +1027,9 @@ public final class WorldRemembersLivingLegendsNeoForgeStorage {
     }
 
     private static boolean looksTechnical(String resolved) {
+        if (NameTextSafety.looksBrokenOrTechnical(resolved)) {
+            return true;
+        }
         String value = resolved == null ? "" : resolved.trim().toLowerCase(Locale.ROOT);
         return value.isBlank()
                 || value.contains("living_legends.")

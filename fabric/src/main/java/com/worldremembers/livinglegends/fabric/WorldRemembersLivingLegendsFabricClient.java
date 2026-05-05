@@ -18,14 +18,24 @@ public final class WorldRemembersLivingLegendsFabricClient implements ClientModI
         PlaceTitleS2CPayload.registerType();
         WorldJournalC2SPayload.registerType();
         WorldJournalS2CPayload.registerType();
+        MapIntegrationS2CPayload.registerType();
+        MapDestinationS2CPayload.registerType();
         WorldRemembersLivingLegendsFabricClientConfig.load(LOGGER);
+        FabricMapIntegrationClient.registerBuiltInIntegrations(LOGGER);
         ClientPlayNetworking.registerGlobalReceiver(PlaceTitleS2CPayload.ID, (payload, context) ->
                 context.client().execute(() -> PlaceTitleOverlayRenderer.show(payload))
         );
         ClientPlayNetworking.registerGlobalReceiver(WorldJournalS2CPayload.ID, (payload, context) ->
                 context.client().execute(() -> WorldJournalClient.handle(payload))
         );
+        ClientPlayNetworking.registerGlobalReceiver(MapIntegrationS2CPayload.ID, (payload, context) ->
+                context.client().execute(() -> FabricMapIntegrationClient.handle(payload))
+        );
+        ClientPlayNetworking.registerGlobalReceiver(MapDestinationS2CPayload.ID, (payload, context) ->
+                context.client().execute(() -> FabricMapIntegrationClient.handle(payload))
+        );
         ClientTickEvents.END_CLIENT_TICK.register(PlaceTitleOverlayRenderer::tick);
+        ClientTickEvents.END_CLIENT_TICK.register(FabricMapIntegrationClient::tick);
         HudRenderCallback.EVENT.register((drawContext, tickCounter) ->
                 PlaceTitleOverlayRenderer.render(drawContext, tickCounter.getTickDelta(false))
         );

@@ -1,0 +1,158 @@
+{
+  "entries": [
+    {
+      "biome": "betternether:bone_reef",
+      "biomeTheme": "betternether_bone_reef",
+      "biomeGroup": "nether_ash",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:crimson_glowing_woods",
+      "biomeTheme": "betternether_crimson_glowing_woods",
+      "biomeGroup": "nether_fire",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:crimson_pinewood",
+      "biomeTheme": "betternether_crimson_pinewood",
+      "biomeGroup": "nether_fire",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:flooded_deltas",
+      "biomeTheme": "betternether_flooded_deltas",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:gravel_desert",
+      "biomeTheme": "betternether_gravel_desert",
+      "biomeGroup": "nether_ash",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:magma_land",
+      "biomeTheme": "betternether_magma_land",
+      "biomeGroup": "nether_fire",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:nether_grasslands",
+      "biomeTheme": "betternether_nether_grasslands",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:nether_jungle",
+      "biomeTheme": "betternether_nether_jungle",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:nether_mushroom_forest",
+      "biomeTheme": "betternether_nether_mushroom_forest",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:nether_mushroom_forest_edge",
+      "biomeTheme": "betternether_nether_mushroom_forest_edge",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:nether_swampland",
+      "biomeTheme": "betternether_nether_swampland",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:nether_swampland_terraces",
+      "biomeTheme": "betternether_nether_swampland_terraces",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:old_fungiwoods",
+      "biomeTheme": "betternether_old_fungiwoods",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:old_swampland",
+      "biomeTheme": "betternether_old_swampland",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:old_warped_woods",
+      "biomeTheme": "betternether_old_warped_woods",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:poor_nether_grasslands",
+      "biomeTheme": "betternether_poor_nether_grasslands",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:soul_plain",
+      "biomeTheme": "betternether_soul_plain",
+      "biomeGroup": "nether_soul",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:sulfuric_bone_reef",
+      "biomeTheme": "betternether_sulfuric_bone_reef",
+      "biomeGroup": "nether_ash",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:upside_down_forest",
+      "biomeTheme": "betternether_upside_down_forest",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:upside_down_forest_cleared",
+      "biomeTheme": "betternether_upside_down_forest_cleared",
+      "biomeGroup": "nether_wild",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:wart_forest",
+      "biomeTheme": "betternether_wart_forest",
+      "biomeGroup": "nether_fire",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "biome": "betternether:wart_forest_edge",
+      "biomeTheme": "betternether_wart_forest_edge",
+      "biomeGroup": "nether_fire",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}

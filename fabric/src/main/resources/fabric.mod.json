@@ -17,6 +17,9 @@
     "client": [
       "com.worldremembers.livinglegends.fabric.WorldRemembersLivingLegendsFabricClient"
     ],
+    "journeymap": [
+      "com.worldremembers.livinglegends.fabric.JourneyMapFabricPlugin"
+    ],
     "modmenu": [
       "com.worldremembers.livinglegends.fabric.WorldRemembersLivingLegendsModMenuIntegration"
     ]
@@ -28,6 +31,10 @@
     "java": ">=21"
   },
   "suggests": {
-    "modmenu": "*"
+    "modmenu": "*",
+    "journeymap": "*",
+    "ftbchunks": "*",
+    "xaerominimap": "*",
+    "xaeroworldmap": "*"
   }
 }

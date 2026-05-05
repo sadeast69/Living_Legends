@@ -278,13 +278,14 @@ Who: OP/admin.
 
 Generates test names for a specific place type, cause, target id, and style.
 
-Example:
+Examples:
 
 ```mcfunction
 /places debug namecause PET_MEMORIAL PET_DEATH minecraft:wolf cozy_survival 10 name=Барсик
+/places debug namecause death_site player_deaths fall vanilla_adventure 12
 ```
 
-Useful for pet, named mob, boss, and compat naming tests.
+Useful for pet, named mob, boss, death-cause, and compat naming tests.
 
 ### `/places debug nameaudit`
 
@@ -296,9 +297,11 @@ Example:
 
 ```mcfunction
 /places debug nameaudit
+/places debug nameaudit cause death_site player_deaths fall vanilla_adventure
 ```
 
-Useful before release or after adding naming data.
+Useful before release, after adding naming data, or when checking for
+fixed-pattern naming pools.
 
 ### `/places debug decay`
 
@@ -359,6 +362,7 @@ Examples:
 /places debug compat lookup mob minecraft:creeper
 /places debug compat lookup block minecraft:diamond_ore
 /places debug compat lookup dimension minecraft:the_nether
+/places debug compat lookup structure minecraft:village_plains
 ```
 
 Useful when testing datapack overrides or modded ids.

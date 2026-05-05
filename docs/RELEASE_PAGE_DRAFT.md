@@ -5,34 +5,70 @@
 World Remembers turns important moments in your Minecraft world into named
 places.
 
-Version `1.0.0` supports Minecraft `1.21.1` on Fabric `1.21.1` and NeoForge
+Version `1.1.0` supports Minecraft `1.21.1` on Fabric `1.21.1` and NeoForge
 `1.21.1`, with Java 21.
 
-## What It Does
+## Summary
 
-The mod watches for things that matter: deaths, fights, discoveries, portals,
-mining, pet deaths, named mob deaths, settlements, and repeated visits. When
-enough local history builds up, the world can save that location as a named
+World Remembers watches for events that matter: deaths, fights, discoveries,
+portals, mining, pet deaths, named mob deaths, settlements, and repeated visits.
+When enough local history builds up, the world can save that location as a named
 place.
 
-Players can browse places in the World Journal and see a clean title overlay
-when entering a saved place.
+Players can browse remembered places in the World Journal and see a clean title
+overlay when entering a saved place.
 
-## Features
+## Highlights In 1.1.0
 
-- Automatic named places from world events.
-- Death sites, battlefields, landmarks, mining sites, settlements, memorials,
-  boss sites, raid sites, and first discoveries.
-- Six generated-name styles.
-- Craftable World Journal.
-- Place title overlay.
-- Admin commands for create, rename, delete, import, export, and validation.
-- Config options for balance and title behavior.
-- Candidate decay so old unpromoted activity fades away.
-- Storage, events, networking, title overlay, World Journal, commands, and
-  data-driven compat registry support on both supported loaders.
-- Data-driven compat registry foundation for datapacks and future addons.
-- Fabric and NeoForge `1.21.1` loader builds.
+- Built-in optional content compat packs for selected popular mods and
+  datapacks.
+- Better generated names in English and Russian for vanilla and compat places.
+- Fall-death names now have deterministic variety instead of repeating one
+  visible name.
+- Naming audit tools better report fixed-pattern risks.
+- JourneyMap, Xaero's Minimap, and FTB Chunks behavior remains unchanged.
+
+## Built-in Compatibility
+
+Map integrations:
+
+- JourneyMap: discovered themed place labels, World Journal destinations, and
+  Place Visual Themes.
+- Xaero's Minimap: manual World Journal destination waypoints only.
+- FTB Chunks: manual World Journal destination waypoints only.
+
+Cross-loader content compat:
+
+- The Aether
+- Deeper and Darker
+- Bosses of Mass Destruction
+- Terralith
+- Incendium
+- Dungeons and Taverns
+- When Dungeons Arise
+- Towns and Towers
+- Regions Unexplored
+- Explorify
+- Illager Invasion
+
+Loader-specific content compat:
+
+- NeoForge: L_Ender's Cataclysm, The Twilight Forest
+- Fabric: BetterEnd, BetterNether, AdventureZ, VoidZ, Mythic Metals
+
+Some compat entries are intentionally loader-specific because their target mods
+are loader-specific in this release.
+
+## Installation
+
+Choose the jar that matches your loader:
+
+- Fabric: `living_legends-fabric-1.1.0.jar`
+- NeoForge: `living_legends-neoforge-1.1.0.jar`
+
+Fabric builds require Fabric API. ModMenu is optional on Fabric.
+
+Back up important worlds before installing or updating the mod on a live server.
 
 ## World Journal
 
@@ -61,6 +97,7 @@ If something looks wrong:
 ```mcfunction
 /places debug selftest
 /places debug validate
+/places debug compat summary
 ```
 
 ## Config
@@ -74,19 +111,13 @@ config/world_remembers/living_legends/
 Server owners can tune how often places appear, how title overlays behave, and
 which place types are enabled.
 
-## Compatibility
-
-This release includes data-driven compat registries for bosses, structures,
-biomes, mobs, blocks, and dimensions on both Fabric and NeoForge. Simple compat
-packs can be datapacks and do not need a direct mod dependency.
-
 ## Known Limitations
 
 - Fabric and NeoForge are both targeted at Minecraft `1.21.1`.
-- No map or waypoint integration yet.
-- Large third-party compat packs are not bundled yet.
+- Map integrations are optional and require the matching client map mod.
+- Xaero and FTB Chunks compatibility is destination-only.
+- Some content compat is loader-specific.
+- Existing named places do not automatically rename themselves after a naming
+  update.
 - Balance may change in future updates.
 
-## Backup Warning
-
-Back up important worlds before installing or updating the mod on a live server.

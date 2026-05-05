@@ -1,0 +1,108 @@
+{
+  "entries": [
+    {
+      "structure": "betterend:end_village",
+      "structureTheme": "betterend_end_village",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betterend",
+        "end"
+      ]
+    },
+    {
+      "structure": "betterend:eternal_portal",
+      "structureTheme": "betterend_eternal_portal",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betterend",
+        "eternal"
+      ]
+    },
+    {
+      "structure": "betterend:giant_ice_star",
+      "structureTheme": "betterend_giant_ice_star",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betterend",
+        "giant"
+      ]
+    },
+    {
+      "structure": "betterend:giant_mossy_glowshroom",
+      "structureTheme": "betterend_giant_mossy_glowshroom",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betterend",
+        "giant"
+      ]
+    },
+    {
+      "structure": "betterend:megalake",
+      "structureTheme": "betterend_megalake",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betterend",
+        "megalake"
+      ]
+    },
+    {
+      "structure": "betterend:megalake_small",
+      "structureTheme": "betterend_megalake_small",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betterend",
+        "megalake"
+      ]
+    },
+    {
+      "structure": "betterend:mountain",
+      "structureTheme": "betterend_mountain",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betterend",
+        "mountain"
+      ]
+    },
+    {
+      "structure": "betterend:painted_mountain",
+      "structureTheme": "betterend_painted_mountain",
+      "placeType": "FIRST_DISCOVERY",
+      "discoveryKind": "structure",
+      "priority": 100,
+      "useStructureBounds": true,
+      "enabled": true,
+      "tags": [
+        "betterend",
+        "painted"
+      ]
+    }
+  ]
+}

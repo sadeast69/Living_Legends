@@ -7,7 +7,7 @@ If a raid or long fight happens near a village, it can become a battlefield.
 Discoveries, portals, mines, pets, named mobs, settlements, and often-visited
 spots can also become places with names, journal entries, and title overlays.
 
-This is the `1.0.0` release for Minecraft `1.21.1`. It supports Fabric
+This is the `1.1.0` release for Minecraft `1.21.1`. It supports Fabric
 `1.21.1`, NeoForge `1.21.1`, and Java 21. Back up important worlds before
 installing or updating the mod.
 
@@ -35,6 +35,10 @@ installing or updating the mod.
   debug validation tools.
 - Data-driven compat registries for bosses, structures, biomes, mobs, blocks,
   and dimensions.
+- Built-in optional compatibility for selected content and worldgen mods.
+- Optional map integrations: JourneyMap can show discovered themed place labels,
+  World Journal destinations, and Place Visual Themes, while Xaero and FTB
+  Chunks can receive manual World Journal destination waypoints.
 - Optional ModMenu support for the Fabric client title overlay settings screen.
 
 ## Current Support
@@ -53,10 +57,34 @@ data-driven compat registries are available on both supported loaders.
 
 Choose the jar that matches your loader:
 
-- Fabric users install `living_legends-fabric-1.0.0.jar`.
-- NeoForge users install `living_legends-neoforge-1.0.0.jar`.
+- Fabric users install `living_legends-fabric-1.1.0.jar`.
+- NeoForge users install `living_legends-neoforge-1.1.0.jar`.
 
 Back up important worlds before installing or updating.
+
+## Built-in Compatibility
+
+Built-in compat is data-driven and optional. Missing mods do not make World
+Remembers fail to load.
+
+Map integrations:
+
+- JourneyMap: discovered fantasy labels, World Journal destination waypoints,
+  and Place Visual Themes.
+- Xaero's Minimap: manual World Journal destination waypoints only.
+- FTB Chunks: manual World Journal destination waypoints only.
+
+Content compat:
+
+- Cross-loader: The Aether, Deeper and Darker, Bosses of Mass Destruction,
+  Terralith, Incendium, Dungeons and Taverns, When Dungeons Arise, Towns and
+  Towers, Regions Unexplored, Explorify, and Illager Invasion.
+- NeoForge: L_Ender's Cataclysm and The Twilight Forest.
+- Fabric: BetterEnd, BetterNether, AdventureZ, VoidZ, and Mythic Metals.
+
+Fabric jars contain Fabric-only and cross-loader compat. NeoForge jars contain
+NeoForge-specific and cross-loader compat. Some entries are intentionally
+loader-specific because their target mods are loader-specific in this release.
 
 ## Quick Start
 
@@ -127,8 +155,13 @@ See [docs/COMPAT_API.md](docs/COMPAT_API.md).
 ## Known Limitations
 
 - Fabric and NeoForge are both targeted at Minecraft `1.21.1`.
-- No map or waypoint integration yet.
-- Large third-party compat packs are not bundled yet.
+- Map integrations are optional and depend on the matching client map mod being
+  installed.
+- Xaero and FTB Chunks compatibility is destination-only; permanent discovered
+  place labels are JourneyMap-only.
+- Some content compat is intentionally loader-specific.
+- Existing named places do not automatically rename themselves after a naming
+  update. Create new places or regenerate names where appropriate.
 - Balance may change in future updates.
 
 ## Documentation
@@ -153,8 +186,8 @@ gradlew.bat build
 
 The release jars are produced by the loader modules:
 
-- `fabric/build/libs/living_legends-fabric-1.0.0.jar`
-- `neoforge/build/libs/living_legends-neoforge-1.0.0.jar`
+- `fabric/build/libs/living_legends-fabric-1.1.0.jar`
+- `neoforge/build/libs/living_legends-neoforge-1.1.0.jar`
 
 ## License
 

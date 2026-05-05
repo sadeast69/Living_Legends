@@ -1,0 +1,112 @@
+{
+  "entries": [
+    {
+      "block": "mythicmetals:adamantite_ore",
+      "blockTheme": "mythicmetals_adamantite_ore",
+      "miningTheme": "mythicmetals_adamantite_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:adamantite_ore"
+    },
+    {
+      "block": "mythicmetals:deepslate_adamantite_ore",
+      "blockTheme": "mythicmetals_deepslate_adamantite_ore",
+      "miningTheme": "mythicmetals_deepslate_adamantite_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:deepslate_adamantite_ore"
+    },
+    {
+      "block": "mythicmetals:mythril_ore",
+      "blockTheme": "mythicmetals_mythril_ore",
+      "miningTheme": "mythicmetals_mythril_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:mythril_ore"
+    },
+    {
+      "block": "mythicmetals:deepslate_mythril_ore",
+      "blockTheme": "mythicmetals_deepslate_mythril_ore",
+      "miningTheme": "mythicmetals_deepslate_mythril_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:deepslate_mythril_ore"
+    },
+    {
+      "block": "mythicmetals:orichalcum_ore",
+      "blockTheme": "mythicmetals_orichalcum_ore",
+      "miningTheme": "mythicmetals_orichalcum_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:orichalcum_ore"
+    },
+    {
+      "block": "mythicmetals:deepslate_orichalcum_ore",
+      "blockTheme": "mythicmetals_deepslate_orichalcum_ore",
+      "miningTheme": "mythicmetals_deepslate_orichalcum_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:deepslate_orichalcum_ore"
+    },
+    {
+      "block": "mythicmetals:prometheum_ore",
+      "blockTheme": "mythicmetals_prometheum_ore",
+      "miningTheme": "mythicmetals_prometheum_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:prometheum_ore"
+    },
+    {
+      "block": "mythicmetals:deepslate_prometheum_ore",
+      "blockTheme": "mythicmetals_deepslate_prometheum_ore",
+      "miningTheme": "mythicmetals_deepslate_prometheum_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:deepslate_prometheum_ore"
+    },
+    {
+      "block": "mythicmetals:runite_ore",
+      "blockTheme": "mythicmetals_runite_ore",
+      "miningTheme": "mythicmetals_runite_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:runite_ore"
+    },
+    {
+      "block": "mythicmetals:deepslate_runite_ore",
+      "blockTheme": "mythicmetals_deepslate_runite_ore",
+      "miningTheme": "mythicmetals_deepslate_runite_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:deepslate_runite_ore"
+    },
+    {
+      "block": "mythicmetals:unobtainium_ore",
+      "blockTheme": "mythicmetals_unobtainium_ore",
+      "miningTheme": "mythicmetals_unobtainium_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:unobtainium_ore"
+    },
+    {
+      "block": "mythicmetals:deepslate_unobtainium_ore",
+      "blockTheme": "mythicmetals_deepslate_unobtainium_ore",
+      "miningTheme": "mythicmetals_deepslate_unobtainium_ore",
+      "valuable": true,
+      "priority": 100,
+      "enabled": true,
+      "firstDiscoveryKey": "compat:first_block:mythicmetals:deepslate_unobtainium_ore"
+    }
+  ]
+}

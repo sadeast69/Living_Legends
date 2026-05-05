@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "entity": "betterend:shadow_walker",
+      "mobTheme": "betterend_shadow_walker",
+      "mobGroup": "end_shadow",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "betterend:end_slime",
+      "mobTheme": "betterend_end_slime",
+      "mobGroup": "end_mystic",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    },
+    {
+      "entity": "betterend:cubozoa",
+      "mobTheme": "betterend_cubozoa",
+      "mobGroup": "end_mystic",
+      "combatRole": "hostile",
+      "placeType": "BATTLEFIELD",
+      "priority": 100,
+      "enabled": true
+    }
+  ]
+}
